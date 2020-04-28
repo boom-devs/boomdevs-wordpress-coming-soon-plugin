@@ -41,13 +41,11 @@
      * */
 
     $theme = wp_get_theme(); // For use with some settings. Not necessary.
-    // Get plugin data
-    $plugin_data = get_plugin_data( CST_FILE );
     $args = array(
         // TYPICAL -> Change these values as you need/desire
         'opt_name'             => $opt_name,
         // This is where your data is stored in the database and also becomes your global variable name.
-        'display_name'         => $plugin_data['Name'],
+        'display_name'         => CST_NAME,
         // Name that appears at the top of your panel
         'display_version'      => CST_VERSION,
         // Version that appears at the top of your panel
