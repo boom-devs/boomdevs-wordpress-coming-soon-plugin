@@ -36,7 +36,7 @@ global $cst_taspristudio;
  * Rename this for your plugin and update it as you release new versions.
  */
 define( 'CST_VERSION', '1.0.0' );
-
+define( 'CST_NAME', 'Coming Soon By TaspriStudio' );
 /**
  * Define constant
  */
