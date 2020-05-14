@@ -21,7 +21,7 @@ class Redirect
 		// Check if user is logged in.
 		if ( ! is_user_logged_in() )
 		{
-			$file = plugin_dir_path( __FILE__ )."templates/index.php";
+			$file = plugin_dir_path( __FILE__ )."public/index.php";
 			include($file);
 			exit();
 		}
@@ -29,7 +29,7 @@ class Redirect
 		{
 			if( false === current_user_can('administrator') )
 			{
-				$file = plugin_dir_path( __FILE__ )."templates/index.php";
+				$file = plugin_dir_path( __FILE__ )."public/index.php";
 				include($file);
 				exit();
 			}

@@ -36,7 +36,7 @@ global $cst_taspristudio;
  * Rename this for your plugin and update it as you release new versions.
  */
 define( 'CST_VERSION', '1.0.0' );
-define( 'CST_NAME', 'Coming Soon By TaspriStudio' );
+
 /**
  * Define constant
  */
@@ -44,7 +44,7 @@ define("CST_TEXT_DOMAIN", "cs_taspristudio" );
 define('CST_FILE', __FILE__);
 define('CST_PATH', __DIR__);
 define('CST_URL', plugins_url( '', CST_FILE ));
-define('CST_ASSETS', CST_URL.'/templates/assets');
+define('CST_ASSETS', CST_URL.'/public');
 
 /**
  * The code that runs during plugin activation.
@@ -81,21 +81,6 @@ function cst_language() {
 }
 add_action('plugins_loaded', 'cst_language');
 
-// Load coming soon template
-require_once('redirect.php');
-
-/**
- * Load Redux framwork
- */
-if (!class_exists('ReduxFramework') && file_exists(plugin_dir_path(__FILE__) . '/includes/cst_field/ReduxCore/framework.php'))
-{
-	require_once ('includes/cst_field/ReduxCore/framework.php');
-}
-
-if (!isset($redux_demo) && file_exists(plugin_dir_path(__FILE__) . '/includes/cst_field/config.php'))
-{
-	require_once ('includes/cst_field/config.php');
-}
 
 /**
  * Begins execution of the plugin.
