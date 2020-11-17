@@ -182,9 +182,6 @@ class Csts {
 				require_once CSTS_DIR . 'public/template/template.php';
 				exit();
 			}
-
-			// Dequeue unnecessary styles function
-			$this->load_wp_dequeue_scripts();
 		}
 
 	}
@@ -200,26 +197,18 @@ class Csts {
 		$this->get_template();
 		
 	}
-
-	// Dequeue unnecessary styles
-	public function load_wp_dequeue_scripts () {
-
-		//call in my object
-		add_action( 'wp_enqueue_scripts', array( $this , "clean_unnecessary_styles" ), 9999 );
-	}
-
+	
 	public function clean_unnecessary_styles(){
 
-		wp_debug_log();
 		global $wp_styles;
 		foreach( $wp_styles->queue as $style ) :
 			//List the css src and handle
 			$handle = $wp_styles->registered[$style]->handle;
 			//array of css I want to keep
-			$css_exception = [ "csts_font-awesome", "csts__bootstrap", "csts_responsive", "csts_style",  ];
+			$css_exception = [ "csts-font-awesome", "csts-bootstrap", "csts-responsive", "csts-style",  ];
 			if( !in_array( $handle, $css_exception ) ){
 				wp_dequeue_style( $handle );
-				wp_deregister_style( $handle );
+            	wp_deregister_style( $handle );
 			}
 		endforeach;
 	}
@@ -227,6 +216,7 @@ class Csts {
 	// Call template redirect function by template redirect hook
 	public function call_redirect_template_hook_function() {
 		add_action('template_redirect', array($this, 'load_template'));
+		// add_action( 'wp_enqueue_scripts', array( $this , "clean_unnecessary_styles" ), 999 );
 	}
 
 	/**
@@ -273,8 +263,8 @@ class Csts {
 
 		$plugin_public = new Csts_Public( $this->get_plugin_name(), $this->get_version() );
 
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles', 999 );
+		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts', 999 );
 
 	}
 

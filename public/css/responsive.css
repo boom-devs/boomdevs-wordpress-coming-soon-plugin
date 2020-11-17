@@ -1,4 +1,4 @@
-@media screen and (max-width: 1500px){
+@media only screen and (max-width: 1500px){
 	.countdown-box .number{
 		font-size: 120px;
 	}

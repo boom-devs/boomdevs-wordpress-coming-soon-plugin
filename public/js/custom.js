@@ -25,9 +25,9 @@
 
 	/*=================== One Page Scrolling ===================*/
 	$(".navbar-nav a.nav-link").click(function(){ 
-	    var $anchor = $(this);
+		var $anchor = $(this);
 	    $anchor.parent().addClass("active").siblings().removeClass("active");
 	    $($anchor.attr('href')).addClass("show").siblings().removeClass("show");
 	});
 	
-})($);
+})(jQuery);

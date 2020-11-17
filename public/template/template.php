@@ -52,7 +52,7 @@
                             <!-- Service -->
                             <?php
                                 if( $settings['service_enable_disable'] == "1" ) {
-                                    echo '<li class="nav-item active">
+                                    echo '<li class="nav-item">
                                         <a class="nav-link" href="#'.str_replace(' ', '-', strtolower($settings["service_title"])).'"> '.$settings["service_title"].'</a>
                                     </li>';
                                 }
@@ -61,7 +61,7 @@
                             <!-- Blog -->
                             <?php
                                 if( $settings['blog_enable_disable'] == "1" ) {
-                                    echo '<li class="nav-item active">
+                                    echo '<li class="nav-item ">
                                         <a class="nav-link" href="#'.str_replace(' ', '-', strtolower($settings["blog_title"])).'"> '.$settings["blog_title"].'</a>
                                     </li>';
                                 }
@@ -70,7 +70,7 @@
                             <!-- Contact -->
                             <?php
                                 if( $settings['contact_enable_disable'] == "1" && !empty($settings["contact_title"]) ) {
-                                    echo '<li class="nav-item active">
+                                    echo '<li class="nav-item">
                                         <a class="nav-link" href="#'.str_replace(' ', '-', strtolower($settings["contact_title"])).'"> '.$settings["contact_title"].'</a>
                                     </li>';
                                 }
@@ -133,7 +133,9 @@
                                 <p><?php echo $settings['service_description']; ?></p>
                             </div>
                         </div>
-                        <?php foreach( $settings['service_box'] as $item ): ?>
+                        <?php 
+                        if( !empty( $settings['service_box'] ) ):
+                            foreach( $settings['service_box'] as $item ): ?>
                             <div class="col-lg-3 col-sm-6">
                                 <div class="service-item">
                                     <div class="item-icon">
@@ -147,6 +149,7 @@
                                 </div>
                             </div>
                         <?php endforeach; ?>
+                        <?php endif; ?>
 
                     </div>
                 </div>
