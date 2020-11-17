@@ -37,5 +37,4 @@ class Redirect
 	}
 	
 }
-// Call the class
 new Redirect;
