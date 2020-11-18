@@ -1,123 +1,123 @@
 @media only screen and (max-width: 1500px){
-	.countdown-box .number{
+	.csts-page-wrapper .countdown-box .number{
 		font-size: 120px;
 	}
 
-	.coming-soon-content h2{
+	.csts-page-wrapper .coming-soon-content h2{
 		font-size: 48px;
 	}
 
-	.coming-soon-content p{
+	.csts-page-wrapper .coming-soon-content p{
 		font-size: 18px;
 	}
 
-	.countdown-box span{
+	.csts-page-wrapper .countdown-box span{
 		font-size: 15px;
 	}
 
-	.s-title{
+	.csts-page-wrapper .s-title{
 		margin-bottom: 35px;
 	}
 
-	.s-title h2 {
+	.csts-page-wrapper .s-title h2 {
 	    font-size: 36px;
 	    margin-bottom: .3em;
 	}
 
-	.s-title p {
+	.csts-page-wrapper .s-title p {
 	    max-width: none;
 	    font-size: 15px;
 	}
 
-	.service-item .item-icon svg {
+	.csts-page-wrapper .service-item .item-icon svg {
 	    width: 60px;
 	}
 
-	.service-item .item-title {
+	.csts-page-wrapper .service-item .item-title {
 	    font-size: 16px;
 	}
 
-	.service-item p {
+	.csts-page-wrapper .service-item p {
 	    font-size: 13px;
 	}
 
-	.polygon-1,
-	.polygon-2,
-	.polygon-3{
+	.csts-page-wrapper .polygon-1,
+	.csts-page-wrapper .polygon-2,
+	.csts-page-wrapper .polygon-3{
 		width: 60px;
 		height: 60px;
 	}
 
-	.triangle-1,
-	.triangle-2,
-	.triangle-3,
-	.triangle-4{
+	.csts-page-wrapper .triangle-1,
+	.csts-page-wrapper .triangle-2,
+	.csts-page-wrapper .triangle-3,
+	.csts-page-wrapper .triangle-4{
 		width: 40px;
 		height: 40px;
 	}
 
-	.star-1,
-	.star-2,
-	.star-3,
-	.circle-o-1,
-	.circle-o-2,
-	.circle-o-3{
+	.csts-page-wrapper .star-1,
+	.csts-page-wrapper .star-2,
+	.csts-page-wrapper .star-3,
+	.csts-page-wrapper .circle-o-1,
+	.csts-page-wrapper .circle-o-2,
+	.csts-page-wrapper .circle-o-3{
 		width: 55px;
 		height: 55px;
 	}
 
-	.line-1,
-	.line-2,
-	.line-3,
-	.line-4{
+	.csts-page-wrapper .line-1,
+	.csts-page-wrapper .line-2,
+	.csts-page-wrapper .line-3,
+	.csts-page-wrapper .line-4{
 		width: 65px;
 		height: 50px;
 	}
 
-	.blog-post .post-meta span, 
-	.blog-post .post-meta span a {
+	.csts-page-wrapper .blog-post .post-meta span, 
+	.csts-page-wrapper .blog-post .post-meta span a {
 	    font-size: 13px;
 	}
 
-	.blog-post .post-title, 
-	.blog-post .post-title a {
+	.csts-page-wrapper .blog-post .post-title, 
+	.csts-page-wrapper .blog-post .post-title a {
 	    font-size: 14px;
 	}
 
-	.blog-post .post-meta .meta-like {
+	.csts-page-wrapper .blog-post .post-meta .meta-like {
 	    width: 48px;
 	    height: 48px;
 	}
 
-	.blog-post .post-meta .meta-like a{
+	.csts-page-wrapper .blog-post .post-meta .meta-like a{
 		font-size: 15px;
 	}
 
-	.contact-form .form-group{
+	.csts-page-wrapper .contact-form .form-group{
 		margin-bottom: 20px;
 	}
 
-	.contact-form .form-control{
+	.csts-page-wrapper .contact-form .form-control{
 		padding: .7em 0;
 	}
 }
 
 @media screen and (max-width: 991.98px){
-	.page-wrapper{
+	.csts-page-wrapper.page-wrapper{
 		height: auto;
 	}
 
-	.px-wrapper{
+	.csts-page-wrapper .px-wrapper{
 		display: none;
 	}
 
-	.main-content{
+	.csts-page-wrapper .main-content{
 		position: relative;
 		padding-top: 110px;
 		padding-bottom: 60px;
 	}
 
-	.toggle-section{
+	.csts-page-wrapper .toggle-section{
 		position: relative;
 		top: 0;
 		left: 0;
@@ -126,19 +126,19 @@
 		transform: translate(0);
 	}
 
-	.toggle-section.show{
+	.csts-page-wrapper .toggle-section.show{
 		display: block;
 	}
 
-	.copyright{
+	.csts-page-wrapper .copyright{
 		font-size: 14px;
 	}
 
-	.social-profile li a{
-		margin: 0 0 0 1.5em;
+	.csts-page-wrapper .social-profile li a{
+		margin: 0 15px;
 	}
 
-	.countdown-area .row .col{
+	.csts-page-wrapper .countdown-area .row .col{
 		width: auto;
 		-webkit-box-flex: 0;
 	    -ms-flex: 0 0 100%;
@@ -146,110 +146,110 @@
 	    max-width: 100%;	
 	}
 
-	.coming-soon-content{
+	.csts-page-wrapper .coming-soon-content{
 		text-align: center;
 	}
 
-	.countdown-area .row .col:first-child{
+	.csts-page-wrapper .countdown-area .row .col:first-child{
 		margin-left: auto;
 		margin-right: auto;
 		margin-bottom: 50px;
 	}
 
-	.newsletter{
+	.csts-page-wrapper .newsletter{
 		width: 570px;
 		max-width: 100%;
 		margin-left: auto;
 		margin-right: auto;
 	}
 	
-	.footer{
+	.csts-page-wrapper .footer{
 		position: relative;
 	}
 
-	.page-wrapper{
+	.csts-page-wrapper.page-wrapper{
 		display: block;
 	}
 
-	.navbar-expand-lg>.container, 
-	.navbar-expand-lg>.container-fluid{
+	.csts-page-wrapper .navbar-expand-lg>.container, 
+	.csts-page-wrapper .navbar-expand-lg>.container-fluid{
 		padding-left: 25px;
 		padding-right: 25px;
 	}
 
-	nav.navbar{
+	.csts-page-wrapper nav.navbar{
 		background: linear-gradient(to bottom, #4082f9 0%,#1e67f0 100%);
 		padding-top: 10px;
 	}
 
-	.navbar-nav li a{
+	.csts-page-wrapper .navbar-nav li a{
 		font-size: 18px;
 		text-align: center;
 	}
 
-	.service-item{
+	.csts-page-wrapper .service-item{
 		margin-bottom: 30px;
 		height: auto;
 	}
 
-	.blog-post{
+	.csts-page-wrapper .blog-post{
 		margin-bottom: 30px;
 	}
 
-	.navbar-nav li{
+	.csts-page-wrapper .navbar-nav li{
 		margin-left: 0;
 	}
 
-	.navbar-nav{
+	.csts-page-wrapper .navbar-nav{
 		padding-top: 10px;
 		padding-bottom: 5px;
 	}
 }
 
 @media screen and (max-width: 767.98px){
-	.f-col{
+	.csts-page-wrapper .f-col{
 		-webkit-box-flex: 0;
 	    -ms-flex: 0 0 100%;
 	    flex: 0 0 100%;
 	    text-align: center;
 	}
 
-	.footer{
+	.csts-page-wrapper .footer{
 		padding-bottom: 20px;
 	}
 }
 
 @media screen and (max-width: 575.98px){
-	.countdown-box .number{
+	.csts-page-wrapper .countdown-box .number{
 		font-size: 80px;
 	}
 
-	.coming-soon-content h2{
+	.csts-page-wrapper .coming-soon-content h2{
 		font-size: 28px;
 	}
 
-	.coming-soon-content p{
+	.csts-page-wrapper .coming-soon-content p{
 		font-size: 15px;
 	}
 
-	.countdown-box span{
+	.csts-page-wrapper .countdown-box span{
 		font-size: 12px;
 	}
 
-	.newsletter .btn{
+	.csts-page-wrapper .newsletter .btn{
 		padding-left: 1.5em;
 		padding-right: 1.5em;
 	}
 	
-	.container,
-	.navbar-expand-lg>.container, 
-	.navbar-expand-lg>.container-fluid{
+	.csts-page-wrapper .container,
+	.csts-page-wrapper .navbar-expand-lg>.container, 
+	.csts-page-wrapper .navbar-expand-lg>.container-fluid{
 		padding-left: 15px;
 		padding-right: 15px;
 	}
 
-	.newsletter .btn,
-	.newsletter .form-control{
+	.csts-page-wrapper .newsletter .btn,
+	.csts-page-wrapper .newsletter .form-control{
 		font-size: 14px;
 	}
 }

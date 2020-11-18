@@ -73,20 +73,19 @@ class Csts_Public {
 		 * class.
 		 */
 
-        // Enqueue Fontawesome
-		wp_enqueue_style( $this->plugin_name . '-font-awesome', plugin_dir_url( __FILE__ ) . 'css/font-awesome.min.css', array(), $this->version, 'all' );
-
         // Enqueue Bootstrap
-        wp_enqueue_style( $this->plugin_name . '-bootstrap', plugin_dir_url( __FILE__ ) . 'css/bootstrap.min.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name . '-bootstrap', plugin_dir_url( __FILE__ ) . 'css/bootstrap.min.css', array(), $this->version, 'all' );
+
+		// Enqueue fontawesome
+		wp_enqueue_style( $this->plugin_name . '-fa5', 'https://use.fontawesome.com/releases/v5.13.0/css/all.css', array(), '5.13.0', 'all' );
 
         // Enqueue default css
         wp_enqueue_style( $this->plugin_name . '-style', plugin_dir_url( __FILE__ ) . 'css/style.css', array(), $this->version, 'all' );
 
         // Enqueue Responsive
-        wp_enqueue_style( $this->plugin_name . '-responsive', plugin_dir_url( __FILE__ ) . 'css/responsive.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name . '-responsive', plugin_dir_url( __FILE__ ) . 'css/responsive.css', array(), $this->version, 'all' );
 	}
-
-
+	
 	/**
 	 * Register the JavaScript for the public-facing side of the site.
 	 *
@@ -106,8 +105,6 @@ class Csts_Public {
 		 * class.
 		 */
 
-		//	Enqueue bootstrap js
-		// wp_enqueue_script( $this->plugin_name . '-jquery', plugin_dir_url( __FILE__ ) . 'js/jquery-2.2.3.min.js', array( 'jquery' ), $this->version, true );
 		wp_enqueue_script( 'jquery' );
 
         //	Enqueue bootstrap js
@@ -124,7 +121,5 @@ class Csts_Public {
 
         // Enqueue custom js
         wp_enqueue_script( $this->plugin_name . '-custom', plugin_dir_url( __FILE__ ) . 'js/custom.js', array( 'jquery' ), $this->version, true );
-
 	}
-
 }

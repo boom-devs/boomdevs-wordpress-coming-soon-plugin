@@ -153,6 +153,7 @@ class Csts {
 
 	}
 
+
     /**
      * Register plugin settings.
      *
@@ -198,20 +199,20 @@ class Csts {
 		
 	}
 	
-	public function clean_unnecessary_styles(){
+	// public function clean_unnecessary_styles(){
 
-		global $wp_styles;
-		foreach( $wp_styles->queue as $style ) :
-			//List the css src and handle
-			$handle = $wp_styles->registered[$style]->handle;
-			//array of css I want to keep
-			$css_exception = [ "csts-font-awesome", "csts-bootstrap", "csts-responsive", "csts-style",  ];
-			if( !in_array( $handle, $css_exception ) ){
-				wp_dequeue_style( $handle );
-            	wp_deregister_style( $handle );
-			}
-		endforeach;
-	}
+	// 	global $wp_styles;
+	// 	foreach( $wp_styles->queue as $style ) :
+	// 		//List the css src and handle
+	// 		$handle = $wp_styles->registered[$style]->handle;
+	// 		//array of css I want to keep
+	// 		$css_exception = [ "csts-font-awesome", "csts-bootstrap", "csts-responsive", "csts-style",  ];
+	// 		if( !in_array( $handle, $css_exception ) ){
+	// 			wp_dequeue_style( $handle );
+    //         	wp_deregister_style( $handle );
+	// 		}
+	// 	endforeach;
+	// }
 
 	// Call template redirect function by template redirect hook
 	public function call_redirect_template_hook_function() {

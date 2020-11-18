@@ -98,15 +98,16 @@ defined( 'ABSPATH' ) || exit;
                     // Seo description
                     array(
                         'id'            => 'seo_description',
-                        'type'          => 'wp_editor',
+                        'type'          => 'textarea',
                         'title'         => __('Description', 'csts'),
                     ),
 
                     // Seo keywords
                     array(
                         'id'            => 'seo_keywords',
-                        'type'          => 'wp_editor',
+                        'type'          => 'textarea',
                         'title'         => __('Keywords', 'csts'),
+                        'desc'          => __('Enter your seo keywords with (,)', 'csts'),
                     ),
                 )
             ));
@@ -231,29 +232,12 @@ defined( 'ABSPATH' ) || exit;
                         'title'     => __('Service item list'),
                         'fields'    => array(
 
-                            // Switch for icon or image
-                            array(
-                                'id'            => 'icon_image',
-                                'type'          => 'switcher',
-                                'title'         => __('Icon or image ?'),
-                                'default'       => false,
-                            ),
-                    
                             // Icon
                             array(
                                 'id'            => 'icon',
                                 'type'          => 'icon',
                                 'title'         => __('Icon', 'csts'),
-                                'dependency'    => array( 'icon_image', '==', 'true' ),
                             ),
-
-                            // Service image
-                            array(
-                                'id'            => 'image',
-                                'type'          => 'media',
-                                'title'         => __('Image', 'Image'),
-                                'dependency'    => array( 'icon_image', '==', 'false' ),
-                              ),
 
                             // Ttitle
                             array(

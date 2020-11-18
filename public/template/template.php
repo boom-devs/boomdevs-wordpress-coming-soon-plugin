@@ -8,14 +8,13 @@
 <html class="no-js no-svg">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Coming soon template">
-    <meta name="keywords" content="HTML, CSS, JavaScript">
-    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <meta name="description" content="<?php echo $settings['seo_description']; ?>">
+    <meta name="keywords" content="<?php echo $settings['seo_keywords']; ?>">
     <?php wp_head(); ?>
 </head>
 
 <body data-spy="click" data-target=".navbar-nav">
-    <div class="page-wrapper">
+    <div class="csts-page-wrapper  page-wrapper">
         <header class="header">
             <nav class="navbar navbar-expand-lg fixed-top">
                 <div class="container">
@@ -108,15 +107,7 @@
                             <div class="coming-soon-content">
                                 <h2><?php echo $settings['home_title']; ?></h2>
                                 <p><?php echo $settings['home_description']; ?></p>
-                                <form class="newsletter">
-                                    <div class="input-group">
-                                        <?php echo do_shortcode($settings['subscribe_form_shortcode']); ?>
-                                        <!-- <input type="text" class="form-control" placeholder="Your email Here" aria-label="Your email Here" autocomplete="off">
-                                        <span class="input-group-btn">
-                                            <button class="btn newsletter-btn" type="button">Subscribe Now!</button>
-                                        </span> -->
-                                    </div>
-                                </form>
+                                <?php echo do_shortcode($settings['subscribe_form_shortcode']); ?>
                             </div>
                         </div>
                     </div>
@@ -140,8 +131,8 @@
                                 <div class="service-item">
                                     <div class="item-icon">
                                     <?php
-                                        if( $item["icon_image"] == 0 ): ?>
-                                            <img src="<?php echo $item['image']['url'] ?>">
+                                        if( $item['icon'] == 0 ): ?>
+                                            <i class="<?php echo $item['icon']; ?>" ></i>
                                         <?php endif; ?>
                                     </div>
                                     <h4 class="item-title"><?php echo $item['title']; ?></h4>
@@ -150,7 +141,6 @@
                             </div>
                         <?php endforeach; ?>
                         <?php endif; ?>
-
                     </div>
                 </div>
             </div>
@@ -171,10 +161,9 @@
                                 array( 
                                     'post_type'         => 'post',
                                     'post_status'       => 'publish',
-                                    'post_per_page'     => 4
+                                    'posts_per_page'    => '4',
                                 ) 
                             ); ?>
-
                         <?php
                         
                         while ( $query->have_posts() ) {
@@ -198,9 +187,7 @@
                                     </div>
                                 </div>
                             ';
-                        }
-                        
-                        ?>
+                        } ?>
                     </div>
                 </div>
             </div>
@@ -249,7 +236,8 @@
                         <div class="f-col ml-auto">
                             <ul class="social-profile">
 
-                                <?php foreach( $settings['footer_social_icons'] as $item ): ?>
+                                <?php foreach( $settings['footer_social_icons'] as $item ):
+                                    ?>
 
                                     <li>
                                         <a href="<?php echo $item['social_icon_link']; ?>">
