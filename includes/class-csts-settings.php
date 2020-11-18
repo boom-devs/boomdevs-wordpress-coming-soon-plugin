@@ -65,10 +65,8 @@ defined( 'ABSPATH' ) || exit;
 
              CSF::createSection( $prefix, array(
                     'parent'        => $prefix . '_settings',
-                    'title'     => __('Trun on edit mode', 'csts'),
+                    'title'     => __('Trun On Edit Mode', 'csts'),
                     'fields'    => array(
-
-                        // Trun on edit mode
                         array(
                             'id'            => 'enable_plugin_edit',
                             'type'          => 'switcher',
@@ -84,30 +82,24 @@ defined( 'ABSPATH' ) || exit;
              * @csts seo
              */
             CSF::createSection( $prefix, array(
-                'title'         => __('Seo section', 'csts'),
+                'title'         => __('SEO Meta', 'csts'),
                 'parent'        => $prefix . '_settings',
                 'fields'        => array(
-
-                    // Seo title
                     array(
                         'id'            => 'seo_title',
                         'type'          => 'text',
                         'title'         => __('Title','csts'),
                     ),
-
-                    // Seo description
                     array(
                         'id'            => 'seo_description',
                         'type'          => 'textarea',
                         'title'         => __('Description', 'csts'),
                     ),
-
-                    // Seo keywords
                     array(
                         'id'            => 'seo_keywords',
                         'type'          => 'textarea',
                         'title'         => __('Keywords', 'csts'),
-                        'desc'          => __('Enter your seo keywords with (,)', 'csts'),
+                        'desc'          => __('Separate different keywords with trailing `,`', 'csts'),
                     ),
                 )
             ));
@@ -121,7 +113,6 @@ defined( 'ABSPATH' ) || exit;
                 'title'         => __('Header', 'csts'),
                 'parent'        => $prefix . '_settings',
                 'fields'        => array(
-                    // Header
                     array(
                         'id'            => 'logo',
                         'type'          => 'media',
@@ -140,54 +131,41 @@ defined( 'ABSPATH' ) || exit;
                 'title'     => 'Home',
                 'parent'    => $prefix . '_settings',
                 'fields'    => array(
-                   
-                    // Page title
+                    array(
+                        'id'            => 'home_enable_disable',
+                        'type'          => 'switcher',
+                        'title'         => __('Enable or Disable', 'csts'),
+                        'default'       => true,
+                    ),
+                    array(
+                        'id'            => 'home_menu_title',
+                        'type'          => 'text',
+                        'title'         => __('Menu title','csts'),
+                    ),
                     array(
                         'id'            => 'home_title',
                         'type'          => 'text',
                         'title'         => __('Title','csts'),
                     ),
-
-                    // Page description
                     array(
                         'id'            => 'home_description',
                         'type'          => 'wp_editor',
                         'title'         => __('Description', 'csts'),
                     ),
-
-                     // Countdown Heading
-                     array(
+                    array(
                         'type'          => 'heading',
                         'content'       => 'Countdown setting',
                     ),
-
-                    // Countdown date
                     array(
                         'id'            => 'count_down_date',
                         'type'          => 'date',
                         'title'         => __('Date', 'csts'),
                     ),
-
-                    // Countdown time
                     array(
                         'id'            => 'count_down_time',
                         'type'          => 'text',
                         'title'         => __('Time', 'csts'),
                         'desc'          => __('Enter countdown time (h:m:s)(12:30:00)', 'csts')
-                    ),
-
-                     // Subscribe form Heading
-                     array(
-                        'type'          => 'heading',
-                        'content'       => __('Subscribe form', 'csts'),
-                    ),
-
-                     // Subscribe form shortcode
-                     array(
-                        'id'            => 'subscribe_form_shortcode',
-                        'type'          => 'textarea',
-                        'title'         => __('Subscribe form shortcode', 'csts'),
-                        'desc'          => __('Enter form shortcode', 'csts')
                     ),
                 )
             ));
@@ -201,52 +179,42 @@ defined( 'ABSPATH' ) || exit;
                 'title'         => __('Service', 'csts'),
                 'parent'        => $prefix . '_settings',
                 'fields'        => array(
-                    
-                    // Service page enable or disable
                     array(
                         'id'            => 'service_enable_disable',
                         'type'          => 'switcher',
-                        'title'         => __('Service page enable or disable', 'csts'),
+                        'title'         => __('Enable or Disable', 'csts'),
                         'default'       => true,
                     ),
-            
-                    // Page title
-                     array(
+                    array(
+                        'id'            => 'service_menu_title',
+                        'type'          => 'text',
+                        'title'         => __('Menu title','csts'),
+                    ),
+                    array(
                         'id'            => 'service_title',
                         'type'          => 'text',
                         'title'         => __('Title','csts'),
                     ),
-
-                    // Page description
                     array(
                         'id'            => 'service_description',
                         'type'          => 'wp_editor',
                         'title'         => __('Description', 'csts'),
                     ),
-
-
-                    // Service list item
                     array(
                         'id'        => 'service_box',
                         'type'      => 'repeater',
                         'title'     => __('Service item list'),
                         'fields'    => array(
-
-                            // Icon
                             array(
                                 'id'            => 'icon',
                                 'type'          => 'icon',
                                 'title'         => __('Icon', 'csts'),
                             ),
-
-                            // Ttitle
                             array(
                                 'id'            => 'title',
                                 'type'          => 'text',
                                 'title'         => __('Title', 'csts'),
                             ),
-
-                            // Description
                             array(
                                 'id'            => 'description',
                                 'type'          => 'textarea',
@@ -267,27 +235,48 @@ defined( 'ABSPATH' ) || exit;
                 'title'         => __('Blog', 'csts'),
                 'parent'        => $prefix . '_settings',
                 'fields'        => array(
-
-                    // Blog page enable or disable
                     array(
                         'id'            => 'blog_enable_disable',
                         'type'          => 'switcher',
                         'title'         => __('Blog page enable or disable', 'csts'),
                         'default'       => true,
                     ),
-            
-                    // Page title
+                    array(
+                        'id'            => 'blog_menu_title',
+                        'type'          => 'text',
+                        'title'         => __('Menu title','csts'),
+                    ),
                     array(
                         'id'            => 'blog_title',
                         'type'          => 'text',
                         'title'         => __('Title','csts'),
                     ),
-
-                    // Page description
                     array(
                         'id'            => 'blog_description',
                         'type'          => 'wp_editor',
                         'title'         => __('Description', 'csts'),
+                    ),
+                    array(
+                        'id'            => 'blog_category',
+                        'type'          => 'select',
+                        'title'         => __('Selec post category', 'csts'),
+                        'placeholder'   => __('Selec post category', 'csts'),
+                        'options'       => 'categories',
+                        'query_args'  => array(
+                            'taxonomy'    => 'category',
+                        ),
+                    ),
+                    array(
+                        'id'            => 'blog_grid_list',
+                        'type'          => 'select',
+                        'title'         => 'Select',
+                        'placeholder'   => __('Select blog column', 'csts'),
+                        'options'       => array(
+                            '2'         => '2 Column',
+                            '3'         => '3 Column',
+                            '4'         => '4 Column',
+                        ),
+                        '3'             => '3 Column'
                     ),
                 )
             ));
@@ -301,34 +290,26 @@ defined( 'ABSPATH' ) || exit;
                 'title'         => __('Contact', 'csts'),
                 'parent'        => $prefix . '_settings',
                 'fields'        => array(
-
-                    // Contact page enable or disable
                     array(
                         'id'            => 'contact_enable_disable',
                         'type'          => 'switcher',
-                        'title'         => __('Contact page enable or disable', 'csts'),
+                        'title'         => __('Enable or disable', 'csts'),
                         'default'       => true,
                     ),
-            
-                    // Page title
+                    array(
+                        'id'            => 'contact_menu_title',
+                        'type'          => 'text',
+                        'title'         => __('Menu title','csts'),
+                    ),
                     array(
                         'id'            => 'contact_title',
                         'type'          => 'text',
                         'title'         => __('Title','csts'),
                     ),
-
-                    // Page description
                     array(
                         'id'            => 'contact_description',
                         'type'          => 'wp_editor',
                         'title'         => __('Description', 'csts'),
-                    ),
-
-                    // Contact form shortcode
-                    array(
-                        'id'            => 'contact_form_shortcode',
-                        'type'          => 'wp_editor',
-                        'title'         => __('Contact form shortcode', 'csts'),
                     ),
                 )
             ));
@@ -342,36 +323,21 @@ defined( 'ABSPATH' ) || exit;
                 'title'             => __('Footer', 'csts'),
                 'parent'            => $prefix . '_settings',
                 'fields'            => array(
-
-                    // Copyright left text
                     array(
                         'id'            => 'copyright_left_text',
                         'type'          => 'text',
-                        'title'         => __('Copyright left text', 'csts'),
+                        'title'         => __('Copyright text', 'csts'),
                     ),
-
-                    // Copyright center text
-                    array(
-                        'id'            => 'copyright_center_text',
-                        'type'          => 'text',
-                        'title'         => __('Copyright center text', 'csts'),
-                    ),
-
-                    // Social icons
                     array(
                         'id'        => 'footer_social_icons',
                         'type'      => 'repeater',
                         'title'     => __('Social icons'),
                         'fields'    => array(
-                            
-                            // Icon
                             array(
                                 'id'        => 'social_icon',
                                 'type'      => 'icon',
                                 'title'     => 'Icon',
                             ),
-
-                            // Link
                             array( 
                                 'id'        => 'social_icon_link',
                                 'type'      => 'text',
@@ -389,45 +355,167 @@ defined( 'ABSPATH' ) || exit;
              * @csts pages
              */
             CSF::createSection( $prefix, array(
-                'title'         => __('Settings', 'csts'),
+                'title'         => __('Typography', 'csts'),
                 'parent'        => $prefix . '_settings',
                 'fields'        => array(
-                    
-                    // Content Typography
                     array(
-                        'id'                => 'content_typography',
-                        'type'              => 'typography',
-                        'title'             => __('Content Typography', 'csts'),
-                        'default'           => array(
-                            'color'           => '#ffbc00',
-                            'font-family'     => 'Open Sans',
-                            'font-size'       => '16',
-                            'line-height'     => '20',
-                            'unit'            => 'px',
-                            'type'            => 'google',
-                        ),
+                        'type'                  => 'heading',
+                        'content'               => 'Title Typography',
                     ),
-
-                    // Title Typography
                     array(
-                        'id'                => 'title_typography',
-                        'type'              => 'typography',
-                        'title'             => __('Title Typography', 'csts'),
-                        'default'           => array(
-                            'color'           => '#ffbc00',
-                            'font-family'     => 'Open Sans',
-                            'font-size'       => '16',
-                            'line-height'     => '20',
-                            'unit'            => 'px',
-                            'type'            => 'google',
-                        ),
+                        'id'                    => 'title_typography',
+                        'type'                  => 'typography',
+                        'title'                 => __('Title typography', 'csts'),
+                        'output'                => array( '.csts-page-wrapper .s-title h2', '.csts-page-wrapper .coming-soon-content h2' ),
                     ),
-
-                    // Background color
                     array(
-                        'id'            => 'bg_color',
-                        'type'          => 'color',
-                        'title'         => __('Background color', 'csts'),
+                        'type'                  => 'heading',
+                        'content'               => 'Content Typography',
+                    ),
+                    array(
+                        'id'                    => 'content_typography',
+                        'type'                  => 'typography',
+                        'title'                 => __('Content typography', 'csts'),
+                        'output'                => array('.csts-page-wrapper .s-title p', '.csts-page-wrapper .coming-soon-content p', ),
+                    ),
+                    array(
+                        'type'                  => 'heading',
+                        'content'               => 'Background Setting',
+                    ),
+                    array(
+                        'id'                    => 'bg_image',
+                        'type'                  => 'media',
+                        'title'                 =>  __('Background image', 'csts'),
+                    ),
+                    array(
+                        'id'                    => 'bg_image_style',
+                        'type'                  => 'background',
+                        'title'                 => __('Background image style', 'csts'),
+                        'output'                => '.csts-page-wrapper.page-wrapper',
+                      ),
+                    array(
+                        'id'                    => 'bg_color',
+                        'type'                  => 'color',
+                        'title'                 => __('Background color', 'csts'),
+                        'output'                => array('.csts-page-wrapper.page-wrapper'),
+                        'output_mode'           => 'background',
+                    ),
+                    array(
+                        'type'                  => 'heading',
+                        'content'               => 'Button Typography',
+                    ),
+                    array(
+                        'id'                    => 'button_typography',
+                        'type'                  => 'typography',
+                        'title'                 => __('Button typography', 'csts'),
+                        'output'                => array('.csts-page-wrapper .newsletter .btn', '.csts-page-wrapper .blog-post .post-thumb .overlay-btn a'),
+                    ),
+                    array(
+                        'id'                    => 'button_bg_color',
+                        'type'                  => 'color',
+                        'title'                 => __('Button background color', 'csts'),
+                        'output'                => array('.csts-page-wrapper .newsletter .btn', '.csts-page-wrapper .blog-post .post-thumb .overlay-btn a'),
+                        'output_mode'           => 'background-color',
+                    ),
+                    array(
+                        'id'                    => 'input_bg_color',
+                        'type'                  => 'color',
+                        'title'                 => __('Input background color', 'csts'),
+                        'output_mode'           => 'background-color',
+                        'output'                => array('.csts-page-wrapper .newsletter .form-control'),
+                    ),
+                    array(
+                        'type'                  => 'heading',
+                        'content'               => 'Menu typography',
+                    ),
+                    array(
+                        'id'                    => 'menu_typography',
+                        'type'                  => 'typography',
+                        'title'                 => __('Menu typography', 'csts'),
+                        'output'                => array('.csts-page-wrapper .navbar-nav li a'),
+                    ),
+                    array(
+                        'type'                  => 'heading',
+                        'content'               => 'Countdown Typography',
+                    ),
+                    array(
+                        'id'                    => 'countdown_count_typography',
+                        'type'                  => 'typography',
+                        'title'                 => __('Countdown count typography', 'csts'),
+                        'output'                => array('.csts-page-wrapper .countdown-box .number'),
+                    ),
+                    array(
+                        'id'                    => 'countdown_title_typography',
+                        'type'                  => 'typography',
+                        'title'                 => __('Countdown title typography', 'csts'),
+                        'output'                => array('.csts-page-wrapper .countdown-box span'),
+                    ),
+                    array(
+                        'type'                  => 'heading',
+                        'content'               => 'Service Page Typography',
+                    ),
+                    array(
+                        'id'                    => 'service_item_background_color',
+                        'type'                  => 'color',
+                        'title'                 => __('Background color', 'csts'),
+                        'output_mode'           => 'background-color',
+                        'output'                => array('.csts-page-wrapper .service-item::before')
+                    ),
+                    array(
+                        'id'                    => 'service_item_background_hover_color',
+                        'type'                  => 'color',
+                        'title'                 => __('Background hover color', 'csts'),
+                        'output_mode'           => 'background',
+                        'output'                => array('.csts-page-wrapper .service-item::after'),
+                    ),
+                    array(
+                        'id'                    => 'service_item_icon_typography',
+                        'type'                  => 'typography',
+                        'title'                 => __('Service item icon typography', 'csts'),
+                        'output'                => array('.csts-page-wrapper .service-item .item-icon i'),
+                    ),
+                    array(
+                        'id'                    => 'service_item_icon_hover_color',
+                        'type'                  => 'color',
+                        'title'                 => __('Icon hover color', 'csts'),
+                        'output_mode'           => 'color',
+                        'output'                => '.csts-page-wrapper .service-item:hover i',
+                    ),
+                    array(
+                        'id'                    => 'service_item_title_typography',
+                        'type'                  => 'typography',
+                        'title'                 => __('Service item title typography', 'csts'),
+                        'output'                => '.csts-page-wrapper .service-item .item-title',
+                    ),
+                    array(
+                        'id'                    => 'service_item_title_hover_color',
+                        'type'                  => 'color',
+                        'title'                 => __('Title hover color', 'csts'),
+                        'output_mode'           => 'color',
+                        'output'                => array('.csts-page-wrapper .service-item:hover .item-title'),
+                    ),
+                    array(
+                        'id'                    => 'service_item_content_typography',
+                        'type'                  => 'typography',
+                        'title'                 => __('Service item content typography', 'csts'),
+                        'output'                => array('.csts-page-wrapper .service-item p'),
+                    ),
+                    array(
+                        'id'                    => 'service_item_content_hover_color',
+                        'type'                  => 'color',
+                        'title'                 => __('Content hover color', 'csts'),
+                        'output_mode'           => 'color',
+                        'output'                => array('.csts-page-wrapper .service-item:hover p'),
+                    ),
+                    array(
+                        'type'                  => 'heading',
+                        'content'               => 'Footer Typography',
+                    ),
+                    array(
+                        'id'                    => 'footer_typography',
+                        'type'                  => 'typography',
+                        'title'                 => __('Footer typography', 'csts'),
+                        'output'                => array('.csts-page-wrapper .social-profile li a', '.csts-page-wrapper .copyright'),
                     ),
                 )
             ));

@@ -1,6 +1,12 @@
 <?php
     require_once CSTS_DIR . 'includes/class-csts-settings.php';
     $settings = Csts_Settings::get_settings();
+
+    // if( !empty($settings['bg_image']['url']) ) {
+    //     $background_image = 'data-bg="'.$settings["bg_image"]["url"].'"';
+    // } else {
+    //     $background_image = '';
+    // }
     
 ?>
 
@@ -11,9 +17,46 @@
     <meta name="description" content="<?php echo $settings['seo_description']; ?>">
     <meta name="keywords" content="<?php echo $settings['seo_keywords']; ?>">
     <?php wp_head(); ?>
+    <?php
+        if( !empty($settings["bg_image"]["url"]) ) {
+            $background_image = 'background-image:url('.$settings["bg_image"]["url"].')';
+        } else {
+            $background_image = '';
+        }
+        echo '<style>
+                .csts-page-wrapper .navbar-nav li a::after{
+                    background-color: '.$settings["menu_typography"]['color'].';
+                }
+                .csts-page-wrapper.page-wrapper {
+                    '.$background_image.'
+                }
+
+            </style>'
+    ?>
+    
 </head>
 
 <body data-spy="click" data-target=".navbar-nav">
+    <!-- Single Blog popup wrapper -->
+    <div class="single-blog-popup-wrapper">
+        <div class="close-button">
+            <span class="fab fa-times"></span>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="single-blog-content">
+                        <div class="title">
+                            <span>12 Sep 20</span>
+                            <h1>Hello world</h1>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vel pariatur exercitationem temporibus aliquid dolorem saepe expedita! Incidunt harum, sit neque dignissimos voluptatem nesciunt commodi suscipit nam possimus, accusantium natus!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Single Blog Popup wrapper -->
     <div class="csts-page-wrapper  page-wrapper">
         <header class="header">
             <nav class="navbar navbar-expand-lg fixed-top">
@@ -43,16 +86,18 @@
                     <div class="collapse navbar-collapse" id="main-nav">
                         <ul class="navbar-nav ml-auto">
 
-                            <!-- Home menu -->
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#home"> <?php echo __('Home', 'csts'); ?></a>
-                            </li>
+                            <?php
+                                if( $settings['home_enable_disable'] == "1" ) {
+                                    echo '<li class="nav-item active">
+                                        <a class="nav-link" href="#'.str_replace(' ', '-', strtolower($settings["home_menu_title"])).'"> '.$settings["home_menu_title"].'</a>
+                                    </li>';
+                                }
+                            ?>
 
-                            <!-- Service -->
                             <?php
                                 if( $settings['service_enable_disable'] == "1" ) {
                                     echo '<li class="nav-item">
-                                        <a class="nav-link" href="#'.str_replace(' ', '-', strtolower($settings["service_title"])).'"> '.$settings["service_title"].'</a>
+                                        <a class="nav-link" href="#'.str_replace(' ', '-', strtolower($settings["service_menu_title"])).'"> '.$settings["service_menu_title"].'</a>
                                     </li>';
                                 }
                             ?>
@@ -61,16 +106,16 @@
                             <?php
                                 if( $settings['blog_enable_disable'] == "1" ) {
                                     echo '<li class="nav-item ">
-                                        <a class="nav-link" href="#'.str_replace(' ', '-', strtolower($settings["blog_title"])).'"> '.$settings["blog_title"].'</a>
+                                        <a class="nav-link" href="#'.str_replace(' ', '-', strtolower($settings["blog_menu_title"])).'"> '.$settings["blog_menu_title"].'</a>
                                     </li>';
                                 }
                             ?>
 
                             <!-- Contact -->
                             <?php
-                                if( $settings['contact_enable_disable'] == "1" && !empty($settings["contact_title"]) ) {
+                                if( $settings['contact_enable_disable'] == "1" ) {
                                     echo '<li class="nav-item">
-                                        <a class="nav-link" href="#'.str_replace(' ', '-', strtolower($settings["contact_title"])).'"> '.$settings["contact_title"].'</a>
+                                        <a class="nav-link" href="#'.str_replace(' ', '-', strtolower($settings["contact_menu_title"])).'"> '.$settings["contact_menu_title"].'</a>
                                     </li>';
                                 }
                             ?>
@@ -83,7 +128,7 @@
 
         <div class="main-content">
             <!-- Home section -->
-            <div class="countdown-area toggle-section show" id="home">
+            <div class="countdown-area toggle-section show" id="<?php echo str_replace(' ', '-', strtolower($settings["home_menu_title"])); ?>">
                 <div class="container">
                     <div class="row align-items-center">
 
@@ -106,8 +151,7 @@
                         <div class="col">
                             <div class="coming-soon-content">
                                 <h2><?php echo $settings['home_title']; ?></h2>
-                                <p><?php echo $settings['home_description']; ?></p>
-                                <?php echo do_shortcode($settings['subscribe_form_shortcode']); ?>
+                                <p><?php echo do_shortcode($settings['home_description']); ?></p>
                             </div>
                         </div>
                     </div>
@@ -115,7 +159,7 @@
             </div>
 
             <!-- Service section -->
-            <div class="services toggle-section" id="<?php echo str_replace(' ', '-', strtolower($settings["service_title"])); ?>">
+            <div class="services toggle-section" id="<?php echo str_replace(' ', '-', strtolower($settings["service_menu_title"])); ?>">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
@@ -146,7 +190,8 @@
             </div>
 
             <!-- Blog section -->
-            <div class="blog toggle-section" id="<?php echo str_replace(' ', '-', strtolower($settings["blog_title"])); ?>">
+            <div class="blog toggle-section" id="<?php echo str_replace(' ', '-', strtolower($settings["blog_menu_title"])); ?>">
+                
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
@@ -161,7 +206,7 @@
                                 array( 
                                     'post_type'         => 'post',
                                     'post_status'       => 'publish',
-                                    'posts_per_page'    => '4',
+                                    'cat'               => $settings['blog_category']
                                 ) 
                             ); ?>
                         <?php
@@ -170,19 +215,31 @@
                             $query->the_post();
                             $featured_img_url = get_the_post_thumbnail_url($post->ID, 'full'); 
                             echo '
-                                <div class="col-lg-3 col-sm-6">
+                                <div class="col-lg-'.$settings['blog_grid_list'].'">
                                     <div class="blog-post">
                                         <div class="post-thumb">
                                             <img src="'.$featured_img_url.'">
                                             <div class="overlay-btn">
-                                                <a href="' . get_the_permalink() . '">'.__('Read More', 'csts').'</a>
+                                                <a href="#">'.__('Read More', 'csts').'</a>
                                             </div>
                                         </div>
                                         <div class="post-des">
                                             <div class="post-meta">
-                                                <span class="meta-category">'.get_the_category_list(',').'</span>
+                                                <span class="meta-category">';
+                                                $i = 1;
+                                                $total_category = count(get_categories());
+
+                                                foreach ( get_categories() as $key => $category ) {
+                                                    $separator = ', ';
+                                                    if( $total_category == $i ) {
+                                                       $separator = ''; 
+                                                    }
+                                                    echo $category->name.$separator;
+                                                    $i++;
+                                                }
+                                            echo ' </span>
                                             </div>
-                                            <h2 class="post-title"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h2>
+                                            <h2 class="post-title">' . get_the_title() . '</h2>
                                         </div>
                                     </div>
                                 </div>
@@ -193,20 +250,15 @@
             </div>
 
             <!-- Contact section -->
-            <div class="contact toggle-section" id="<?php echo str_replace(' ', '-', strtolower($settings["contact_title"])); ?>">
+            <div class="contact toggle-section" id="<?php echo str_replace(' ', '-', strtolower($settings["contact_menu_title"])); ?>">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
                             <div class="s-title">
                                 <h2><?php echo $settings["contact_title"]; ?></h2>
-                                <p><?php echo $settings["contact_description"]; ?></p>
+                                <p><?php echo do_shortcode($settings["contact_description"]); ?></p>
                             </div>
                         </div>
-                        <?php if( !empty( $settings['contact_form_shortcode'] ) ): ?>
-                            <div class="col-lg-6">
-                                <?php echo do_shortcode($settings['contact_form_shortcode']); ?>
-                            </div>
-                        <?php endif; ?>
                     </div>
                 </div>
             </div>
@@ -224,13 +276,9 @@
 
                     <?php endif; ?>
 
-                    <?php if( !empty( $settings['copyright_center_text'] ) ): ?>
-
-                        <div class="f-col">
-                            <p class="copyright"><?php echo $settings['copyright_center_text']; ?></p>
-                        </div>
-
-                    <?php endif; ?>
+                    <div class="f-col">
+                        <p class="copyright"><?php __('', 'csts'); ?></p>
+                    </div>
 
                     <?php if( !empty( $settings['footer_social_icons'] ) ): ?>
                         <div class="f-col ml-auto">
@@ -253,81 +301,6 @@
                 </div>
             </div>
         </footer>
-        <div data-relative-input="true" id="scene" class="px-wrapper">
-            <div class="layer d-none" data-depth="0.2"></div>
-            <div class="px-layer" data-depth="0.2">
-                <div class="circle-1"></div>
-            </div>
-            <div class="px-layer" data-depth="0.2" data-limit-x="0">
-                <div class="circle-2"></div>
-            </div>
-        </div>
-        <div data-relative-input="true" id="circle"  class="px-wrapper">
-            <div class="layer d-none" data-depth="1"></div>
-            <div class="px-layer" data-depth="1">
-                <div class="circle-o-1"></div>
-            </div>
-            <div class="px-layer" data-depth="1" data-limit-x="0">
-                <div class="circle-o-2"></div>
-            </div>
-            <div class="px-layer" data-depth="1" data-limit-x="0">
-                <div class="circle-o-3"></div>
-            </div>
-        </div>
-        <div data-relative-input="true" id="line"  class="px-wrapper">
-            <div class="layer d-none" data-depth="0.4"></div>
-            <div class="px-layer" data-depth="0.4">
-                <div class="line-1"></div>
-            </div>
-            <div class="px-layer" data-depth="0.4" data-limit-x="0">
-                <div class="line-2"></div>
-            </div>
-            <div class="px-layer" data-depth="0.4" data-limit-x="0">
-                <div class="line-3"></div>
-            </div>
-            <div class="px-layer" data-depth="0.4" data-limit-x="0">
-                <div class="line-4"></div>
-            </div>
-        </div>
-        <div data-relative-input="true" id="star"  class="px-wrapper">
-            <div class="layer d-none" data-depth="0.7"></div>
-            <div class="px-layer" data-depth="0.7">
-                <div class="star-1"></div>
-            </div>
-            <div class="px-layer" data-depth="0.7" data-limit-x="0">
-                <div class="star-2"></div>
-            </div>
-            <div class="px-layer" data-depth="0.7" data-limit-x="0">
-                <div class="star-3"></div>
-            </div>
-        </div>
-        <div data-relative-input="true" id="triangle"  class="px-wrapper">
-            <div class="layer d-none" data-depth="0.3"></div>
-            <div class="px-layer" data-depth="0.3">
-                <div class="triangle-1"></div>
-            </div>
-            <div class="px-layer" data-depth="0.3" data-limit-x="0">
-                <div class="triangle-2"></div>
-            </div>
-            <div class="px-layer" data-depth="0.3" data-limit-x="0">
-                <div class="triangle-3"></div>
-            </div>
-            <div class="px-layer" data-depth="0.3" data-limit-x="0">
-                <div class="triangle-4"></div>
-            </div>
-        </div>
-        <div data-relative-input="true" id="polygon"  class="px-wrapper">
-            <div class="layer d-none" data-depth="0.5"></div>
-            <div class="px-layer" data-depth="0.5">
-                <div class="polygon-1"></div>
-            </div>
-            <div class="px-layer" data-depth="0.5" data-limit-x="0">
-                <div class="polygon-2"></div>
-            </div>
-            <div class="px-layer" data-depth="0.5" data-limit-x="0">
-                <div class="polygon-3"></div>
-            </div>
-        </div>
     </div>
 
     <!-- Include footer -->

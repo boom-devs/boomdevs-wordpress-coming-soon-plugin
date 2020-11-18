@@ -1,19 +1,6 @@
 (function($) {
 	"use strict";
 
-	var scene = document.getElementById('scene');
-	var circle = document.getElementById('circle');
-	var square = document.getElementById('polygon');
-	var triangle = document.getElementById('triangle');
-	var line = document.getElementById('line');
-	var star = document.getElementById('star');
-	var parallaxInstance = new Parallax(scene);
-	var parallaxInstance2 = new Parallax(circle);
-	var parallaxInstance3 = new Parallax(polygon);
-	var parallaxInstance4 = new Parallax(triangle);
-	var parallaxInstance5 = new Parallax(line);
-	var parallaxInstance6 = new Parallax(star);
-
 	/*=================== Countdown ===================*/
 	$('[data-countdown]').each(function () {
 	    var $this = $(this),
@@ -29,5 +16,23 @@
 	    $anchor.parent().addClass("active").siblings().removeClass("active");
 	    $($anchor.attr('href')).addClass("show").siblings().removeClass("show");
 	});
+
+	$(".overlay-btn a").click(function() {
+		$(".single-blog-popup-wrapper").addClass('active');
+	});
+
+	$(".close-button").click(function(){
+		alert();
+		$(".single-blog-popup-wrapper").removeClass('active');
+	});
+
+	/*=================== Load image ===================*/
+	$('[data-bg]').each(function () {
+		var imgUrl = $(this).data('bg');
+		$(this).css({
+			'background': 'url("' + imgUrl + '")'
+		});
+	});
+
 	
 })(jQuery);
