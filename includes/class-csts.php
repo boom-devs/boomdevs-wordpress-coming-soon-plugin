@@ -77,7 +77,7 @@ class Csts {
 		if ( defined( 'CSTS_FULL_NAME' ) ) {
             $this->plugin_full_name = CSTS_FULL_NAME;
         } else {
-            $this->plugin_full_name = 'Coming Sooon Template by TaspriStudio';
+            $this->plugin_full_name = 'TS Coming Sooon Template';
         }
 
         if ( defined( 'CSTS_NAME' ) ) {
@@ -177,7 +177,10 @@ class Csts {
 		$LoggedInUserID = $wp_get_current_user->ID;
 		$UserData = get_userdata( $LoggedInUserID );
 
-		if( !is_user_logged_in() || $UserData->roles[0] = "administrator") { 
+		if( !is_user_logged_in() || $UserData->roles[0] = "administrator") {
+			// require_once CSTS_DIR . 'public/template/template.php';
+
+			// If plugin editor setting on
 			$settings = Csts_Settings::get_settings();
 			if( $settings['enable_plugin_edit'] == true ) {
 				require_once CSTS_DIR . 'public/template/template.php';
@@ -186,7 +189,6 @@ class Csts {
 		}
 
 	}
-
 
 	public function load_template() {
 
@@ -198,21 +200,6 @@ class Csts {
 		$this->get_template();
 		
 	}
-	
-	// public function clean_unnecessary_styles(){
-
-	// 	global $wp_styles;
-	// 	foreach( $wp_styles->queue as $style ) :
-	// 		//List the css src and handle
-	// 		$handle = $wp_styles->registered[$style]->handle;
-	// 		//array of css I want to keep
-	// 		$css_exception = [ "csts-font-awesome", "csts-bootstrap", "csts-responsive", "csts-style",  ];
-	// 		if( !in_array( $handle, $css_exception ) ){
-	// 			wp_dequeue_style( $handle );
-    //         	wp_deregister_style( $handle );
-	// 		}
-	// 	endforeach;
-	// }
 
 	// Call template redirect function by template redirect hook
 	public function call_redirect_template_hook_function() {

@@ -37,6 +37,7 @@ include_once( ABSPATH . 'wp-includes/pluggable.php' );
  * Plugin basic information.
  */
 define( 'CSTS_DIR', plugin_dir_path( __FILE__ ) );
+define('CSTS_DIR_URI', plugin_dir_url(__FILE__));  
 define( 'CSTS_NAME', 'csts' );
 define( 'CSTS_FULL_NAME', 'Coming Sooon Template by TaspriStudio' );
 define( 'CSTS_VERSION', '1.0.0' );

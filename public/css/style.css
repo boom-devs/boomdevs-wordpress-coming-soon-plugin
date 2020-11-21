@@ -550,10 +550,11 @@ body{
 	border-radius: 3px;
 }
 .single-blog-popup-wrapper {
-	display: none;
 	position: fixed;
     height: 100%;
-    width: 100%;
+	width: 0;
+	opacity: 0;
+	visibility: hidden;
     background: #fff;
     z-index: 9999999999;
     overflow-y: scroll;
@@ -561,16 +562,22 @@ body{
 	left: 0;
 	transition: all 1s ease;
 }
+.single-blog-popup-wrapper.active {
+	width: 100%;
+	visibility: visible;
+	opacity: 1;
+}
 .single-blog-popup-wrapper .close-button {
 	display: inline-block;
     position: absolute;
     top: 30px;
     right: 30px;
 	padding: 5px;
+	z-index: 999999;
 	cursor: pointer;
 }
-.single-blog-popup-wrapper.active {
-	display: block;
+.single-blog-popup-wrapper .close-button img{
+	width: 15px;
 }
 .single-blog-popup-wrapper .single-blog-content {
 	color: #000;
@@ -580,8 +587,10 @@ body{
 	padding: 0 0 20px;
 }
 .single-blog-popup-wrapper .single-blog-content .title span {
-	padding-bottom: 15px;
+	padding-bottom: 10px;
+    display: block;
 }
+
 /*------------ Contact form ------------*/
 .csts-page-wrapper .contact-form .form-group{
 	margin-bottom: 30px;

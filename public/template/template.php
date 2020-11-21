@@ -1,13 +1,6 @@
 <?php
     require_once CSTS_DIR . 'includes/class-csts-settings.php';
     $settings = Csts_Settings::get_settings();
-
-    // if( !empty($settings['bg_image']['url']) ) {
-    //     $background_image = 'data-bg="'.$settings["bg_image"]["url"].'"';
-    // } else {
-    //     $background_image = '';
-    // }
-    
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +33,7 @@
     <!-- Single Blog popup wrapper -->
     <div class="single-blog-popup-wrapper">
         <div class="close-button">
-            <span class="fab fa-times"></span>
+            <img src="<?php echo CSTS_DIR_URI; ?>public/images/cancel.png" alt="">
         </div>
         <div class="container">
             <div class="row">
@@ -62,13 +55,17 @@
             <nav class="navbar navbar-expand-lg fixed-top">
                 <div class="container">
 
-                    <?php if( !empty( $settings['logo']['url'] ) ): ?>
+                    <?php if( !empty( $settings['logo']['url'] ) ) { ?>
 
-                        <a class="navbar-brand" href="#home">
+                        <a class="navbar-brand" href="#<?php echo str_replace(' ', '-', strtolower($settings["home_menu_title"])); ?>">
                             <img src="<?php echo $settings['logo']['url']; ?>" alt="">
                         </a>
 
-                    <?php endif; ?>
+                    <?php }else { ?>
+                        <a class="navbar-brand" href="#<?php echo str_replace(' ', '-', strtolower($settings["home_menu_title"])); ?>">
+                            <img src="<?php echo $settings['logo']['url']; ?>" alt="">
+                        </a>
+                    <?php } ?>
 
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                         <div class="menu-toggle">

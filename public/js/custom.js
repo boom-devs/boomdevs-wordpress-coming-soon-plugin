@@ -22,7 +22,6 @@
 	});
 
 	$(".close-button").click(function(){
-		alert();
 		$(".single-blog-popup-wrapper").removeClass('active');
 	});
 
