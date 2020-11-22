@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="<?php echo $settings['seo_description']; ?>">
     <meta name="keywords" content="<?php echo $settings['seo_keywords']; ?>">
+    <title><?php echo $settings['seo_title']; ?></title>
     <?php wp_head(); ?>
     <?php
         if( !empty($settings["bg_image"]["url"]) ) {
@@ -16,14 +17,18 @@
         } else {
             $background_image = '';
         }
+        if( !empty( $settings["menu_typography"]['color'] ) ) {
+            $menu_bar_border_color = $settings["menu_typography"]['color'];
+        } else {
+            $menu_bar_border_color = '';
+        }
         echo '<style>
                 .csts-page-wrapper .navbar-nav li a::after{
-                    background-color: '.$settings["menu_typography"]['color'].';
+                    background-color: '.$menu_bar_border_color.';
                 }
                 .csts-page-wrapper.page-wrapper {
                     '.$background_image.'
                 }
-
             </style>'
     ?>
     
@@ -40,14 +45,18 @@
                 <div class="col-12">
                     <div class="single-blog-content">
                         <div class="title">
-                            <span>12 Sep 20</span>
-                            <h1>Hello world</h1>
+                            <span></span>
+                            <h1></h1>
                         </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vel pariatur exercitationem temporibus aliquid dolorem saepe expedita! Incidunt harum, sit neque dignissimos voluptatem nesciunt commodi suscipit nam possimus, accusantium natus!</p>
+                        <p></p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <!-- Loading -->
+    <div class="loading">
+        <img src="<?php echo CSTS_DIR_URI; ?>public/images/preview.gif" alt="loading-img"> 
     </div>
     <!-- End Single Blog Popup wrapper -->
     <div class="csts-page-wrapper  page-wrapper">
@@ -63,7 +72,7 @@
 
                     <?php }else { ?>
                         <a class="navbar-brand" href="#<?php echo str_replace(' ', '-', strtolower($settings["home_menu_title"])); ?>">
-                            <img src="<?php echo $settings['logo']['url']; ?>" alt="">
+                            <img src="<?php echo CSTS_DIR_URI; ?>public/images/logo.png" alt="">
                         </a>
                     <?php } ?>
 
@@ -82,17 +91,17 @@
                     </button>
                     <div class="collapse navbar-collapse" id="main-nav">
                         <ul class="navbar-nav ml-auto">
-
+                            <!-- Home -->
                             <?php
-                                if( $settings['home_enable_disable'] == "1" ) {
+                                if( $settings['home_enable_disable'] == "1" && !empty($settings["home_menu_title"]) ) {
                                     echo '<li class="nav-item active">
                                         <a class="nav-link" href="#'.str_replace(' ', '-', strtolower($settings["home_menu_title"])).'"> '.$settings["home_menu_title"].'</a>
                                     </li>';
                                 }
                             ?>
-
+                            <!-- Service -->
                             <?php
-                                if( $settings['service_enable_disable'] == "1" ) {
+                                if( $settings['service_enable_disable'] == "1" && !empty( $settings["service_menu_title"] ) ) {
                                     echo '<li class="nav-item">
                                         <a class="nav-link" href="#'.str_replace(' ', '-', strtolower($settings["service_menu_title"])).'"> '.$settings["service_menu_title"].'</a>
                                     </li>';
@@ -101,7 +110,7 @@
 
                             <!-- Blog -->
                             <?php
-                                if( $settings['blog_enable_disable'] == "1" ) {
+                                if( $settings['blog_enable_disable'] == "1" && !empty( $settings["blog_menu_title"] ) ) {
                                     echo '<li class="nav-item ">
                                         <a class="nav-link" href="#'.str_replace(' ', '-', strtolower($settings["blog_menu_title"])).'"> '.$settings["blog_menu_title"].'</a>
                                     </li>';
@@ -110,7 +119,7 @@
 
                             <!-- Contact -->
                             <?php
-                                if( $settings['contact_enable_disable'] == "1" ) {
+                                if( $settings['contact_enable_disable'] == "1" && !empty( $settings["contact_menu_title"] ) ) {
                                     echo '<li class="nav-item">
                                         <a class="nav-link" href="#'.str_replace(' ', '-', strtolower($settings["contact_menu_title"])).'"> '.$settings["contact_menu_title"].'</a>
                                     </li>';
@@ -217,7 +226,7 @@
                                         <div class="post-thumb">
                                             <img src="'.$featured_img_url.'">
                                             <div class="overlay-btn">
-                                                <a href="#">'.__('Read More', 'csts').'</a>
+                                                <a data-id="'.get_the_id().'" href="#">'.__('Read More', 'csts').'</a>
                                             </div>
                                         </div>
                                         <div class="post-des">

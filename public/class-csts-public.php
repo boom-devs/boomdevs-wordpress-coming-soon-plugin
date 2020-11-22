@@ -120,6 +120,13 @@ class Csts_Public {
         wp_enqueue_script( $this->plugin_name . '-countdown', plugin_dir_url( __FILE__ ) . 'js/jquery.countdown.min.js', array( 'jquery' ), $this->version, true );
 
         // Enqueue custom js
-        wp_enqueue_script( $this->plugin_name . '-custom', plugin_dir_url( __FILE__ ) . 'js/custom.js', array( 'jquery' ), $this->version, true );
+		wp_enqueue_script( $this->plugin_name . '-custom', plugin_dir_url( __FILE__ ) . 'js/custom.js', array( 'jquery' ), $this->version, true );
+
+		// Enqueue localize script
+		wp_localize_script( 'csts-custom', 'csts_content', array( 
+			'ajaxurl' => admin_url( 'admin-ajax.php' ),
+			'nonce' => wp_create_nonce( "csts_single_content" ),
+			)
+		);
 	}
 }

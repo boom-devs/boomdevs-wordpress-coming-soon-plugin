@@ -50,7 +50,15 @@ defined( 'ABSPATH' ) || exit;
             $prefix = Csts_Settings::$plugin_name;
 
             // Create customize options
-            CSF::createCustomizeOptions( $prefix );
+            CSF::createCustomizeOptions( $prefix,array(
+                'database'        => 'option',
+                'transport'       => 'refresh',
+                'capability'      => 'manage_options',
+                'save_defaults'   => true,
+                'enqueue_webfont' => true,
+                'async_webfont'   => false,
+                'output_css'      => true,
+            ));
 
             CSF::createSection( $prefix, array(
                 'id'    => $prefix . '_settings',
@@ -101,7 +109,7 @@ defined( 'ABSPATH' ) || exit;
                         'title'         => __('Keywords', 'csts'),
                         'desc'          => __('Separate different keywords with trailing `,`', 'csts'),
                     ),
-                )
+                ),
             ));
 
             /**
@@ -141,16 +149,19 @@ defined( 'ABSPATH' ) || exit;
                         'id'            => 'home_menu_title',
                         'type'          => 'text',
                         'title'         => __('Menu title','csts'),
+                        'default'       => 'Home',
                     ),
                     array(
                         'id'            => 'home_title',
                         'type'          => 'text',
                         'title'         => __('Title','csts'),
+                        'default'       => 'Home',
                     ),
                     array(
                         'id'            => 'home_description',
                         'type'          => 'wp_editor',
                         'title'         => __('Description', 'csts'),
+                        'default'       => 'We Create WordPress Themes, Plugins and Provides All Kind of Web Solutions For Your Business Needs.',
                     ),
                     array(
                         'type'          => 'heading',
@@ -160,14 +171,16 @@ defined( 'ABSPATH' ) || exit;
                         'id'            => 'count_down_date',
                         'type'          => 'date',
                         'title'         => __('Date', 'csts'),
+                        'default'       => '11/20/2020',
                     ),
                     array(
                         'id'            => 'count_down_time',
                         'type'          => 'text',
                         'title'         => __('Time', 'csts'),
-                        'desc'          => __('Enter countdown time (h:m:s)(12:30:00)', 'csts')
+                        'desc'          => __('Enter countdown time (h:m:s)(12:30:00)', 'csts'),
+                        'default'       => $this->csts_get_time(),
                     ),
-                )
+                ),
             ));
 
             /**
@@ -183,22 +196,25 @@ defined( 'ABSPATH' ) || exit;
                         'id'            => 'service_enable_disable',
                         'type'          => 'switcher',
                         'title'         => __('Enable or Disable', 'csts'),
-                        'default'       => true,
+                        'default'       => false,
                     ),
                     array(
                         'id'            => 'service_menu_title',
                         'type'          => 'text',
                         'title'         => __('Menu title','csts'),
+                        'default'       => 'Service',
                     ),
                     array(
                         'id'            => 'service_title',
                         'type'          => 'text',
                         'title'         => __('Title','csts'),
+                        'default'       => 'Service',
                     ),
                     array(
                         'id'            => 'service_description',
                         'type'          => 'wp_editor',
                         'title'         => __('Description', 'csts'),
+                        'default'       => 'We Create WordPress Themes, Plugins, and provides all kinds of Web Solutions for your business needs.',
                     ),
                     array(
                         'id'        => 'service_box',
@@ -239,7 +255,7 @@ defined( 'ABSPATH' ) || exit;
                         'id'            => 'blog_enable_disable',
                         'type'          => 'switcher',
                         'title'         => __('Blog page enable or disable', 'csts'),
-                        'default'       => true,
+                        'default'       => false,
                     ),
                     array(
                         'id'            => 'blog_menu_title',
@@ -294,7 +310,7 @@ defined( 'ABSPATH' ) || exit;
                         'id'            => 'contact_enable_disable',
                         'type'          => 'switcher',
                         'title'         => __('Enable or disable', 'csts'),
-                        'default'       => true,
+                        'default'       => false,
                     ),
                     array(
                         'id'            => 'contact_menu_title',
@@ -360,12 +376,127 @@ defined( 'ABSPATH' ) || exit;
                 'fields'        => array(
                     array(
                         'type'                  => 'heading',
-                        'content'               => 'Title Typography',
+                        'content'               => __('Body Typography', 'csts'),
+                    ),
+                    array(
+                        'id'                    => 'body_typography',
+                        'type'                  => 'typography',
+                        'title'                 => __('Body typography', 'csts'),
+                        'default'               => array(
+                          'color'               => '#fff',
+                          'font-family'         => 'Poppins',
+                          'font-size'           => '16',
+                          'font-weight'         => '400',
+                          'unit'                => 'px',
+                          'type'                => 'google',
+                        ),
+                        'output'                => array( '.csts-page-wrapper'),
+                    ),
+                    array(
+                        'type'                  => 'heading',
+                        'content'               => __('Heading Tags Typography', 'csts'),
+                    ),
+                    array(
+                        'id'                    => 'heading_h1',
+                        'type'                  => 'typography',
+                        'title'                 => __('Heading h1 typography', 'csts'),
+                        'default'               => array(
+                          'color'               => '#fff',
+                          'font-family'         => 'Poppins',
+                          'font-size'           => '70',
+                          'font-weight'         => '800',
+                          'unit'                => 'px',
+                          'type'                => 'google',
+                        ),
+                        'output'                => array( '.csts-page-wrapper h1'),
+                    ),
+                    array(
+                        'id'                    => 'heading_h2',
+                        'type'                  => 'typography',
+                        'title'                 => __('Heading h2 typography', 'csts'),
+                        'default'               => array(
+                          'color'               => '#fff',
+                          'font-family'         => 'Poppins',
+                          'font-size'           => '64',
+                          'font-weight'         => '800',
+                          'unit'                => 'px',
+                          'type'                => 'google',
+                        ),
+                        'output'                => array( '.csts-page-wrapper h2'),
+                    ),
+                    array(
+                        'id'                    => 'heading_h3',
+                        'type'                  => 'typography',
+                        'title'                 => __('Heading h3 typography', 'csts'),
+                        'default'               => array(
+                            'color'             => '#222222',
+                            'font-family'       => 'Poppins',
+                            'font-size'         => '30',
+                            'font-weight'       => '500',
+                            'unit'              => 'px',
+                            'type'              => 'google',
+                        ),
+                        'output'                => array( '.csts-page-wrapper h3'),
+                    ),
+                    array(
+                        'id'                    => 'heading_h4',
+                        'type'                  => 'typography',
+                        'title'                 => __('Heading h4 typography', 'csts'),
+                        'default'               => array(
+                            'color'             => '#222222',
+                            'font-family'       => 'Poppins',
+                            'font-size'         => '20',
+                            'font-weight'       => '400',
+                            'unit'              => 'px',
+                            'type'              => 'google',
+                        ),
+                        'output'                => array( '.csts-page-wrapper h4'),
+                    ),
+                    array(
+                        'id'                    => 'heading_h5',
+                        'type'                  => 'typography',
+                        'title'                 => __('Heading h5 typography', 'csts'),
+                        'default'               => array(
+                            'color'             => '#222222',
+                            'font-family'       => 'Poppins',
+                            'font-size'         => '18',
+                            'font-weight'       => '400',
+                            'unit'              => 'px',
+                            'type'              => 'google',
+                        ),
+                        'output'                => array( '.csts-page-wrapper h5'),
+                    ),
+                    array(
+                        'id'                    => 'heading_h6',
+                        'type'                  => 'typography',
+                        'title'                 => __('Heading h6 typography', 'csts'),
+                        'default'               => array(
+                            'color'             => '#222222',
+                            'font-family'       => 'Poppins',
+                            'font-size'         => '16',
+                            'font-weight'       => '400',
+                            'unit'              => 'px',
+                            'type'              => 'google',
+                        ),
+                        'output'                => array( '.csts-page-wrapper h6'),
+                    ),
+
+                    array(
+                        'type'                  => 'heading',
+                        'content'               => 'Page Title Typography',
                     ),
                     array(
                         'id'                    => 'title_typography',
                         'type'                  => 'typography',
-                        'title'                 => __('Title typography', 'csts'),
+                        'title'                 => __('Page title typography', 'csts'),
+                        'default'               => array(
+                            'color'             => '#222222',
+                            'font-family'       => 'Poppins',
+                            'font-size'         => '64',
+                            'font-weight'       => '800',
+                            'unit'              => 'px',
+                            'type'              => 'google',
+                        ),
                         'output'                => array( '.csts-page-wrapper .s-title h2', '.csts-page-wrapper .coming-soon-content h2' ),
                     ),
                     array(
@@ -376,6 +507,15 @@ defined( 'ABSPATH' ) || exit;
                         'id'                    => 'content_typography',
                         'type'                  => 'typography',
                         'title'                 => __('Content typography', 'csts'),
+                        'default'               => array(
+                            'color'             => '#fff',
+                            'font-family'       => 'Poppins',
+                            'font-size'         => '16',
+                            'line-height'       => '13',
+                            'font-weight'       => '400',
+                            'unit'              => 'px',
+                            'type'              => 'google',
+                        ),
                         'output'                => array('.csts-page-wrapper .s-title p', '.csts-page-wrapper .coming-soon-content p', ),
                     ),
                     array(
@@ -399,22 +539,31 @@ defined( 'ABSPATH' ) || exit;
                         'title'                 => __('Background color', 'csts'),
                         'output'                => array('.csts-page-wrapper.page-wrapper'),
                         'output_mode'           => 'background',
+                        'default'               => '#4082f9',
                     ),
                     array(
                         'type'                  => 'heading',
-                        'content'               => 'Button Typography',
+                        'content'               => __('Button Typography', 'csts'),
                     ),
                     array(
                         'id'                    => 'button_typography',
                         'type'                  => 'typography',
                         'title'                 => __('Button typography', 'csts'),
-                        'output'                => array('.csts-page-wrapper .newsletter .btn', '.csts-page-wrapper .blog-post .post-thumb .overlay-btn a'),
+                        'default'               => array(
+                            'color'             => '#387CF7',
+                            'font-family'       => 'Poppins',
+                            'font-size'         => '16',
+                            'font-weight'       => '600',
+                            'unit'              => 'px',
+                            'type'              => 'google',
+                        ),
+                        'output'                => array('.csts-page-wrapper .newsletter .btn', '.csts-page-wrapper .f-s-btn'),
                     ),
                     array(
                         'id'                    => 'button_bg_color',
                         'type'                  => 'color',
                         'title'                 => __('Button background color', 'csts'),
-                        'output'                => array('.csts-page-wrapper .newsletter .btn', '.csts-page-wrapper .blog-post .post-thumb .overlay-btn a'),
+                        'output'                => array('.csts-page-wrapper .newsletter .btn'),
                         'output_mode'           => 'background-color',
                     ),
                     array(
@@ -422,7 +571,8 @@ defined( 'ABSPATH' ) || exit;
                         'type'                  => 'color',
                         'title'                 => __('Input background color', 'csts'),
                         'output_mode'           => 'background-color',
-                        'output'                => array('.csts-page-wrapper .newsletter .form-control'),
+                        'default'               => '#fff',
+                        'output'                => array('.csts-page-wrapper .newsletter .btn', '.csts-page-wrapper .f-s-btn'),
                     ),
                     array(
                         'type'                  => 'heading',
@@ -432,6 +582,14 @@ defined( 'ABSPATH' ) || exit;
                         'id'                    => 'menu_typography',
                         'type'                  => 'typography',
                         'title'                 => __('Menu typography', 'csts'),
+                        'default'               => array(
+                            'color'             => '#fff',
+                            'font-family'       => 'Poppins',
+                            'font-size'         => '16',
+                            'font-weight'       => '400',
+                            'unit'              => 'px',
+                            'type'              => 'google',
+                        ),
                         'output'                => array('.csts-page-wrapper .navbar-nav li a'),
                     ),
                     array(
@@ -442,23 +600,40 @@ defined( 'ABSPATH' ) || exit;
                         'id'                    => 'countdown_count_typography',
                         'type'                  => 'typography',
                         'title'                 => __('Countdown count typography', 'csts'),
+                        'default'               => array(
+                            'color'             => '#fff',
+                            'font-family'       => 'Poppins',
+                            'font-size'         => '140',
+                            'font-weight'       => '800',
+                            'unit'              => 'px',
+                            'type'              => 'google',
+                        ),
                         'output'                => array('.csts-page-wrapper .countdown-box .number'),
                     ),
                     array(
                         'id'                    => 'countdown_title_typography',
                         'type'                  => 'typography',
                         'title'                 => __('Countdown title typography', 'csts'),
+                        'default'               => array(
+                            'color'             => '#fff',
+                            'font-family'       => 'Poppins',
+                            'font-size'         => '16',
+                            'font-weight'       => '400',
+                            'unit'              => 'px',
+                            'type'              => 'google',
+                        ),
                         'output'                => array('.csts-page-wrapper .countdown-box span'),
                     ),
                     array(
                         'type'                  => 'heading',
-                        'content'               => 'Service Page Typography',
+                        'content'               => __('Service Page Typography', 'csts'),
                     ),
                     array(
                         'id'                    => 'service_item_background_color',
                         'type'                  => 'color',
                         'title'                 => __('Background color', 'csts'),
                         'output_mode'           => 'background-color',
+                        'default'               => '#fff',
                         'output'                => array('.csts-page-wrapper .service-item::before')
                     ),
                     array(
@@ -466,12 +641,21 @@ defined( 'ABSPATH' ) || exit;
                         'type'                  => 'color',
                         'title'                 => __('Background hover color', 'csts'),
                         'output_mode'           => 'background',
+                        'default'               => '#588ff3',
                         'output'                => array('.csts-page-wrapper .service-item::after'),
                     ),
                     array(
                         'id'                    => 'service_item_icon_typography',
                         'type'                  => 'typography',
                         'title'                 => __('Service item icon typography', 'csts'),
+                        'default'               => array(
+                            'color'             => '#3c7ff8',
+                            'font-family'       => 'Font Awesome 5 Free',
+                            'font-size'         => '60',
+                            'font-weight'       => '900',
+                            'unit'              => 'px',
+                            'type'              => 'google',
+                        ),
                         'output'                => array('.csts-page-wrapper .service-item .item-icon i'),
                     ),
                     array(
@@ -479,12 +663,21 @@ defined( 'ABSPATH' ) || exit;
                         'type'                  => 'color',
                         'title'                 => __('Icon hover color', 'csts'),
                         'output_mode'           => 'color',
+                        'default'               => '#fff',
                         'output'                => '.csts-page-wrapper .service-item:hover i',
                     ),
                     array(
                         'id'                    => 'service_item_title_typography',
                         'type'                  => 'typography',
                         'title'                 => __('Service item title typography', 'csts'),
+                        'default'               => array(
+                            'color'             => '#222222',
+                            'font-family'       => 'Poppins',
+                            'font-size'         => '20',
+                            'font-weight'       => '400',
+                            'unit'              => 'px',
+                            'type'              => 'google',
+                        ),
                         'output'                => '.csts-page-wrapper .service-item .item-title',
                     ),
                     array(
@@ -492,12 +685,21 @@ defined( 'ABSPATH' ) || exit;
                         'type'                  => 'color',
                         'title'                 => __('Title hover color', 'csts'),
                         'output_mode'           => 'color',
+                        'default'               => '#fff',
                         'output'                => array('.csts-page-wrapper .service-item:hover .item-title'),
                     ),
                     array(
                         'id'                    => 'service_item_content_typography',
                         'type'                  => 'typography',
                         'title'                 => __('Service item content typography', 'csts'),
+                        'default'               => array(
+                            'color'             => '#777777',
+                            'font-family'       => 'Poppins',
+                            'font-size'         => '14',
+                            'font-weight'       => '400',
+                            'unit'              => 'px',
+                            'type'              => 'google',
+                        ),
                         'output'                => array('.csts-page-wrapper .service-item p'),
                     ),
                     array(
@@ -505,7 +707,110 @@ defined( 'ABSPATH' ) || exit;
                         'type'                  => 'color',
                         'title'                 => __('Content hover color', 'csts'),
                         'output_mode'           => 'color',
+                        'default'               => '#fff',
                         'output'                => array('.csts-page-wrapper .service-item:hover p'),
+                    ),
+                    array(
+                        'type'                  => 'heading',
+                        'content'               => __('Blog Typography', 'csts'),
+                    ),
+                    array(
+                        'id'                    => 'blog_meta_typography',
+                        'type'                  => 'typography',
+                        'title'                 => __('Meta typography', 'csts'),
+                        'default'               => array(
+                            'color'             => '#8A8A8A',
+                            'font-family'       => 'Poppins',
+                            'font-size'         => '15',
+                            'font-weight'       => '400',
+                            'unit'              => 'px',
+                            'type'              => 'google',
+                        ),
+                        'output'                => array('.csts-page-wrapper .blog-post .post-des .post-meta .meta-category'),
+                    ),
+                    array(
+                        'id'                    => 'blog_title_typography',
+                        'type'                  => 'typography',
+                        'title'                 => __('Title typography', 'csts'),
+                        'default'               => array(
+                            'color'             => '#222',
+                            'font-family'       => 'Poppins',
+                            'font-size'         => '16',
+                            'font-weight'       => '500',
+                            'unit'              => 'px',
+                            'type'              => 'google',
+                        ),
+                        'output'                => array('.csts-page-wrapper .blog-post .post-des .post-meta .post-title'),
+                    ),
+                    array(
+                        'id'                    => 'blog_overly_btn_typography',
+                        'type'                  => 'typography',
+                        'title'                 => __('Button typography', 'csts'),
+                        'default'               => array(
+                            'color'             => '#222',
+                            'font-family'       => 'Poppins',
+                            'font-size'         => '14',
+                            'font-weight'       => '500',
+                            'unit'              => 'px',
+                            'type'              => 'google',
+                        ),
+                        'output'                => array('.csts-page-wrapper .blog-post .post-thumb .overlay-btn a'),
+                    ),
+                    array(
+                        'id'                    => 'blog_overly_btn_bg_color',
+                        'type'                  => 'color',
+                        'title'                 => __('Button background color', 'csts'),
+                        'output_mode'           => 'background-color',
+                        'output'                => array('.csts-page-wrapper .blog-post .post-thumb .overlay-btn a'),
+                    ),
+                    array(
+                        'id'                    => 'blog_bg_color',
+                        'type'                  => 'color',
+                        'title'                 => __('Blog background color', 'csts'),
+                        'output_mode'           => 'background-color',
+                        'output'                => array('.csts-page-wrapper .blog-post'),
+                    ),
+                    array(
+                        'id'                    => 'blog_hover_bg_color',
+                        'type'                  => 'color',
+                        'title'                 => __('Blog hover background color', 'csts'),
+                        'output_mode'           => 'background',
+                        'output'                => array('.csts-page-wrapper .blog-post .post-thumb:after'),
+                    ),
+
+                    array(
+                        'type'                  => 'heading',
+                        'content'               => __('Single Blog Typography', 'csts'),
+                    ),
+                    array(
+                        'id'                    => 'single_blog_date_typography',
+                        'type'                  => 'typography',
+                        'title'                 => __('Date typography', 'csts'),
+                        'default'               => array(
+                            'color'             => '#949494',
+                            'font-family'       => 'Poppins',
+                            'font-size'         => '13',
+                            'line-height'       => '20',
+                            'font-weight'       => '400',
+                            'unit'              => 'px',
+                            'type'              => 'google',
+                        ),
+                        'output'                => array('.single-blog-popup-wrapper .single-blog-content .title span'),
+                    ),
+                    array(
+                        'id'                    => 'single_blog_title_typography',
+                        'type'                  => 'typography',
+                        'title'                 => __('Single blog title typography', 'csts'),
+                        'default'               => array(
+                            'color'             => '#000',
+                            'font-family'       => 'Poppins',
+                            'font-size'         => '30',
+                            'line-height'       => '20',
+                            'font-weight'       => '600',
+                            'unit'              => 'px',
+                            'type'              => 'google',
+                        ),
+                        'output'                => array('.single-blog-popup-wrapper .single-blog-content .title h1'),
                     ),
                     array(
                         'type'                  => 'heading',
@@ -515,11 +820,25 @@ defined( 'ABSPATH' ) || exit;
                         'id'                    => 'footer_typography',
                         'type'                  => 'typography',
                         'title'                 => __('Footer typography', 'csts'),
+                        'default'               => array(
+                            'color'             => '#fff',
+                            'font-family'       => 'Poppins',
+                            'font-size'         => '14',
+                            'line-height'       => '20',
+                            'font-weight'       => '400',
+                            'unit'              => 'px',
+                            'type'              => 'google',
+                        ),
                         'output'                => array('.csts-page-wrapper .social-profile li a', '.csts-page-wrapper .copyright'),
                     ),
                 )
             ));
         }
+    }
+
+    // Get plugin installed time
+    public function csts_get_time() {
+        return date('m/d/Y h:i:s a', time());
     }
 
      /**

@@ -33,5 +33,32 @@
 		});
 	});
 
-	
+	/*=================== Load blog content in popup box ===================*/
+	$(".overlay-btn a").click(function () {
+		var id = $(this).data('id');
+		$.ajax({
+		  type: 'POST',
+		  url: csts_content.ajaxurl,
+		  data: {
+			  'action' : 'ajax_request', 
+			  'nonce': 'csts_content.nonce',
+			  'id': id
+			},
+		  dataType: 'json',
+
+		  beforeSend: function() {
+			$(".loading").fadeIn('fast');
+			$(".single-blog-content").fadeOut('fast');
+		  },
+
+		  success: function(data) {
+			$(".loading").fadeOut('slow');
+			$(".single-blog-content").fadeIn('fast');
+			$(".single-blog-content .title span").html(new Date(data['post'].post_date).toLocaleString());
+			$(".single-blog-content .title h1").html(data['post'].post_title);
+			$(".single-blog-content p").html(data['post'].post_content);
+		  }
+		});
+	});
+
 })(jQuery);

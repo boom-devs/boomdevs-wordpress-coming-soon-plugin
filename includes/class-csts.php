@@ -140,6 +140,11 @@ class Csts {
 		require_once CSTS_DIR . 'admin/class-csts-admin.php';
 
 		/**
+		 * Plugin functions
+		 */
+		require_once CSTS_DIR . 'functions.php';
+
+		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
@@ -152,7 +157,6 @@ class Csts {
 		$this->loader = new Csts_Loader();
 
 	}
-
 
     /**
      * Register plugin settings.
@@ -177,17 +181,19 @@ class Csts {
 		$LoggedInUserID = $wp_get_current_user->ID;
 		$UserData = get_userdata( $LoggedInUserID );
 
-		if( !is_user_logged_in() || $UserData->roles[0] = "administrator") {
-			// require_once CSTS_DIR . 'public/template/template.php';
-
-			// If plugin editor setting on
-			$settings = Csts_Settings::get_settings();
-			if( $settings['enable_plugin_edit'] == true ) {
-				require_once CSTS_DIR . 'public/template/template.php';
-				exit();
+		if( !is_user_logged_in() ) {
+			require_once CSTS_DIR . 'public/template/template.php';
+			exit();
+		} else {
+			if( $UserData->roles[0] = "administrator" ) {
+				// If plugin editor setting on
+				$settings = Csts_Settings::get_settings();
+				if( $settings['enable_plugin_edit'] == true ) {
+					require_once CSTS_DIR . 'public/template/template.php';
+					exit();
+				}
 			}
 		}
-
 	}
 
 	public function load_template() {
@@ -197,6 +203,7 @@ class Csts {
 			return false;
 		}
 
+		// Load template
 		$this->get_template();
 		
 	}
