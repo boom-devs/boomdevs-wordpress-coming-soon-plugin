@@ -343,6 +343,7 @@ defined( 'ABSPATH' ) || exit;
                         'id'            => 'copyright_left_text',
                         'type'          => 'text',
                         'title'         => __('Copyright text', 'csts'),
+                        'default'       => '© 2020 Taspristudio.  All rights reserved'
                     ),
                     array(
                         'id'        => 'footer_social_icons',
