@@ -171,14 +171,14 @@ defined( 'ABSPATH' ) || exit;
                         'id'            => 'count_down_date',
                         'type'          => 'date',
                         'title'         => __('Date', 'csts'),
-                        'default'       => '11/20/2020',
+                        'default'       => $this->csts_get_date_time('y'),
                     ),
                     array(
                         'id'            => 'count_down_time',
                         'type'          => 'text',
                         'title'         => __('Time', 'csts'),
                         'desc'          => __('Enter countdown time (h:m:s)(12:30:00)', 'csts'),
-                        'default'       => $this->csts_get_time(),
+                        'default'       => $this->csts_get_date_time('t')
                     ),
                 ),
             ));
@@ -490,7 +490,7 @@ defined( 'ABSPATH' ) || exit;
                         'type'                  => 'typography',
                         'title'                 => __('Page title typography', 'csts'),
                         'default'               => array(
-                            'color'             => '#222222',
+                            'color'             => '#fff',
                             'font-family'       => 'Poppins',
                             'font-size'         => '64',
                             'font-weight'       => '800',
@@ -511,7 +511,6 @@ defined( 'ABSPATH' ) || exit;
                             'color'             => '#fff',
                             'font-family'       => 'Poppins',
                             'font-size'         => '16',
-                            'line-height'       => '13',
                             'font-weight'       => '400',
                             'unit'              => 'px',
                             'type'              => 'google',
@@ -837,8 +836,14 @@ defined( 'ABSPATH' ) || exit;
     }
 
     // Get plugin installed time
-    public function csts_get_time() {
-        return date('m/d/Y h:i:s a', time());
+    public function csts_get_date_time($date_time) {
+        if($date_time == 'y') {
+            return current_datetime()->format('m/d/Y');
+        } elseif($date_time == 't') {
+            return current_datetime()->format('h:m:s');
+        }else {
+
+        }
     }
 
      /**
