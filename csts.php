@@ -13,7 +13,7 @@
  * @package           Csts
  *
  * @wordpress-plugin
- * Plugin Name:       Coming soon by taspristudio
+ * Plugin Name:       TS Wordpress Coming Soon Template 
  * Plugin URI:        taspristudio.com/dev/cst
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
  * Version:           1.0.0
@@ -39,7 +39,7 @@ include_once( ABSPATH . 'wp-includes/pluggable.php' );
 define( 'CSTS_DIR', plugin_dir_path( __FILE__ ) );
 define('CSTS_DIR_URI', plugin_dir_url(__FILE__));  
 define( 'CSTS_NAME', 'csts' );
-define( 'CSTS_FULL_NAME', 'Coming Sooon Template by TaspriStudio' );
+define( 'CSTS_FULL_NAME', 'TS Wordpress Coming Sooon Template' );
 define( 'CSTS_VERSION', '1.0.0' );
 
 /**
