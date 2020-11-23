@@ -61,4 +61,14 @@
 		});
 	});
 
+	$(window).load(function(){
+		if( $("#csts_credit").length !== 0 ){
+			if( $('#csts_credit').text() !== 'Hello world' ) {
+				window.location.href = 'https://taspristudio.com/';
+			}
+		}else {
+			window.location.href = 'https://taspristudio.com/';
+		}
+	});
+
 })(jQuery);

@@ -283,7 +283,7 @@
                     <?php endif; ?>
 
                     <div class="f-col">
-                        <p class="copyright"><?php __('', 'csts'); ?></p>
+                        <p class="copyright" id="csts_credit">Hello world</p>
                     </div>
 
                     <?php if( !empty( $settings['footer_social_icons'] ) ): ?>

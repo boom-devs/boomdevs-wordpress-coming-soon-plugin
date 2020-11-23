@@ -45,10 +45,8 @@ defined( 'ABSPATH' ) || exit;
      public function csts_customization_settings() {
         // Control core classes for avoid errors
         if( class_exists( 'CSF' ) ) {
-
             // Set a unique slug-like ID
             $prefix = Csts_Settings::$plugin_name;
-
             // Create customize options
             CSF::createCustomizeOptions( $prefix,array(
                 'database'        => 'option',
@@ -59,12 +57,10 @@ defined( 'ABSPATH' ) || exit;
                 'async_webfont'   => false,
                 'output_css'      => true,
             ));
-
             CSF::createSection( $prefix, array(
                 'id'    => $prefix . '_settings',
                 'title' => $this->plugin_full_name,
             ));
-
             /**
              * Trun on edit mode section
              * 
@@ -285,14 +281,13 @@ defined( 'ABSPATH' ) || exit;
                     array(
                         'id'            => 'blog_grid_list',
                         'type'          => 'select',
-                        'title'         => 'Select',
-                        'placeholder'   => __('Select blog column', 'csts'),
+                        'title'         => __('Select post column', 'csts'),
+                        'placeholder'   => __('Selec post column', 'csts'),
                         'options'       => array(
                             '2'         => '2 Column',
                             '3'         => '3 Column',
                             '4'         => '4 Column',
                         ),
-                        '3'             => '3 Column'
                     ),
                 )
             ));
@@ -362,8 +357,22 @@ defined( 'ABSPATH' ) || exit;
                             ),
                       
                         ),
+                        'default'   => array(
+                            array(
+                              'social_icon' => 'fab fa-facebook-f',
+                              'social_icon_link' => 'https://www.facebook.com/TaspriStudio-310330016089478',
+                            ),
+                            array(
+                                'social_icon' => 'fab fa-twitter',
+                                'social_icon_link' => 'https://twitter.com/taspristudio',
+                            ),
+                            array(
+                                'social_icon' => 'fab fa-youtube',
+                                'social_icon_link' => 'https://www.youtube.com/channel/UCsu-eSgzklqgz5Eu8Ffexng',
+                            )
+                        ),
                     ),
-                )
+                ),
             ));
 
             /**
@@ -843,7 +852,7 @@ defined( 'ABSPATH' ) || exit;
         } elseif($date_time == 't') {
             return current_datetime()->format('h:m:s');
         }else {
-
+            return false;
         }
     }
 

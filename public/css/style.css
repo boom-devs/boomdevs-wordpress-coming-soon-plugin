@@ -675,6 +675,9 @@ body{
 	bottom: 0;
     position: fixed;
 }
+.csts-page-wrapper .footer p a{
+	color: #000;
+}
 
 .csts-page-wrapper .footer .f-col:nth-child(2){
 	flex-grow: 1;
