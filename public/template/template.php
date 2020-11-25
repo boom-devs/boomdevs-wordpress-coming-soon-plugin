@@ -23,15 +23,14 @@
             $menu_bar_border_color = '';
         }
         echo '<style>
-                .csts-page-wrapper .navbar-nav li a::after{
-                    background-color: '.$menu_bar_border_color.';
-                }
-                .csts-page-wrapper.page-wrapper {
-                    '.$background_image.'
-                }
-            </style>'
+            .csts-page-wrapper .navbar-nav li a::after{
+                background-color: '.$menu_bar_border_color.';
+            }
+            .csts-page-wrapper.page-wrapper {
+                '.$background_image.'
+            }
+        </style>';
     ?>
-    
 </head>
 
 <body data-spy="click" data-target=".navbar-nav">
@@ -283,7 +282,7 @@
                     <?php endif; ?>
 
                     <div class="f-col">
-                        <p class="copyright" id="csts_credit">Hello world</p>
+                        <p class="copyright" id="csts_credit">Made with love 💓 by TaspriStudio</p>
                     </div>
 
                     <?php if( !empty( $settings['footer_social_icons'] ) ): ?>

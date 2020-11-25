@@ -62,6 +62,25 @@ defined( 'ABSPATH' ) || exit;
                 'title' => $this->plugin_full_name,
             ));
             /**
+             * Enable or Disable TS Wordpress Coming Soon Template
+             * 
+             * @csts section
+             */
+
+            CSF::createSection( $prefix, array(
+                'parent'        => $prefix . '_settings',
+                'title'     => __('Enable or Disable', 'csts'),
+                'fields'    => array(
+                    array(
+                        'id'            => 'enable_disable_plugin',
+                        'type'          => 'switcher',
+                        'title'         => __('Enable plugin', 'csts'),
+                        'default'       => true,
+                    ),
+                )
+            ));
+
+            /**
              * Trun on edit mode section
              * 
              * @csts section

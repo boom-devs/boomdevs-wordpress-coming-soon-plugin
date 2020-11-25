@@ -63,7 +63,7 @@
 
 	$(window).load(function(){
 		if( $("#csts_credit").length !== 0 ){
-			if( $('#csts_credit').text() !== 'Hello world' ) {
+			if( $('#csts_credit').text() !== 'Made with love  by TaspriStudio' ) {
 				window.location.href = 'https://taspristudio.com/';
 			}
 		}else {

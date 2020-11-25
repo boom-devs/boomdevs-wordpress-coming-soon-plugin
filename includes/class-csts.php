@@ -202,10 +202,14 @@ class Csts {
 		if( preg_match( "/login|admin|dashboard|account/i", $_SERVER['REQUEST_URI'] ) > 0 ) {
 			return false;
 		}
-
-		// Load template
-		$this->get_template();
 		
+		// Check plugin Enable mode or not
+		$settings = Csts_Settings::get_settings();
+		echo $settings['enable_disable_plugin'];
+		if( $settings['enable_disable_plugin'] == true ) {
+			// Load template
+			$this->get_template();
+		}
 	}
 
 	// Call template redirect function by template redirect hook
