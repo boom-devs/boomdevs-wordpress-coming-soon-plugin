@@ -69,7 +69,7 @@ defined( 'ABSPATH' ) || exit;
 
             CSF::createSection( $prefix, array(
                 'parent'        => $prefix . '_settings',
-                'title'     => __('Enable or Disable', 'csts'),
+                'title'     => __('Plugin Enable or Disable', 'csts'),
                 'fields'    => array(
                     array(
                         'id'            => 'enable_disable_plugin',

@@ -62,11 +62,18 @@
 	});
 
 	$(window).load(function(){
-		if( $("#csts_credit").length !== 0 ){
-			if( $('#csts_credit').text() !== 'Made with love  by TaspriStudio' ) {
-				window.location.href = 'https://taspristudio.com/';
+		var shouldRedirect = false;
+		if( $("p#csts_credit").length ) {
+			if( $('p#csts_credit').text() !== 'Made with love 💓 by TaspriStudio' ) {
+				if( $('p#csts_credit').css('display') !== 'block' ) {
+					shouldRedirect = true;
+				}
 			}
-		}else {
+		} else {
+			shouldRedirect = true;
+		}
+
+		if ( shouldRedirect ) {
 			window.location.href = 'https://taspristudio.com/';
 		}
 	});

@@ -199,15 +199,10 @@ class Csts {
 	public function load_template() {
 
 		// Exit if a custom login page
-		if( preg_match( "/login|admin|dashboard|account/i", $_SERVER['REQUEST_URI'] ) > 0 ) {
-			return false;
-		}
-		
-		// Check plugin Enable mode or not
 		$settings = Csts_Settings::get_settings();
-		echo $settings['enable_disable_plugin'];
-		if( $settings['enable_disable_plugin'] == true ) {
-			// Load template
+		if( preg_match( "/login|admin|dashboard|account/i", $_SERVER['REQUEST_URI'] ) > 0 || empty( $settings['enable_disable_plugin'] ) ) {
+			return false;
+		} else{
 			$this->get_template();
 		}
 	}

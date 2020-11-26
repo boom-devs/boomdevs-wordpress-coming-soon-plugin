@@ -136,7 +136,6 @@
             <div class="countdown-area toggle-section show" id="<?php echo str_replace(' ', '-', strtolower($settings["home_menu_title"])); ?>">
                 <div class="container">
                     <div class="row align-items-center">
-
                         <?php
 
                             $string = str_replace(' ', '-', $settings['count_down_date']); // Replaces all spaces with hyphens.
@@ -152,7 +151,6 @@
                                     </div>';
                             }
                         ?>
-                        
                         <div class="col">
                             <div class="coming-soon-content">
                                 <h2><?php echo $settings['home_title']; ?></h2>
@@ -196,7 +194,6 @@
 
             <!-- Blog section -->
             <div class="blog toggle-section" id="<?php echo str_replace(' ', '-', strtolower($settings["blog_menu_title"])); ?>">
-                
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
@@ -205,9 +202,7 @@
                                 <p><?php echo $settings["blog_description"]; ?></p>
                             </div>
                         </div>
-
-                        <?php
-                            $query = new WP_Query( 
+                        <?php $query = new WP_Query( 
                                 array( 
                                     'post_type'         => 'post',
                                     'post_status'       => 'publish',
@@ -272,34 +267,24 @@
         <footer class="footer fixed-bottom">
             <div class="container">
                 <div class="row no-gutters">
-
                     <?php if( !empty( $settings['copyright_left_text'] ) ): ?>
-
                         <div class="f-col">
                             <p class="copyright"><?php echo $settings['copyright_left_text']; ?></p>
                         </div>
-
                     <?php endif; ?>
-
                     <div class="f-col">
                         <p class="copyright" id="csts_credit">Made with love 💓 by TaspriStudio</p>
                     </div>
-
                     <?php if( !empty( $settings['footer_social_icons'] ) ): ?>
                         <div class="f-col ml-auto">
                             <ul class="social-profile">
-
-                                <?php foreach( $settings['footer_social_icons'] as $item ):
-                                    ?>
-
+                                <?php foreach( $settings['footer_social_icons'] as $item ): ?>
                                     <li>
                                         <a href="<?php echo $item['social_icon_link']; ?>">
                                             <i class="<?php echo $item['social_icon']; ?>"></i>
                                         </a>
                                     </li>
-
                                 <?php endforeach; ?>
-
                             </ul>
                         </div>
                     <?php endif; ?>
@@ -307,7 +292,6 @@
             </div>
         </footer>
     </div>
-
     <!-- Include footer -->
     <?php wp_footer(); ?>
 </body>
