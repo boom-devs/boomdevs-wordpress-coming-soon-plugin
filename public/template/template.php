@@ -202,7 +202,8 @@
                                 <p><?php echo $settings["blog_description"]; ?></p>
                             </div>
                         </div>
-                        <?php $query = new WP_Query( 
+                        <?php
+                        $query = new WP_Query(
                                 array( 
                                     'post_type'         => 'post',
                                     'post_status'       => 'publish',
@@ -216,7 +217,7 @@
                             $featured_img_url = get_the_post_thumbnail_url($post->ID, 'full'); 
                             echo '
                                 <div class="col-lg-'.$settings['blog_grid_list'].'">
-                                    <div class="blog-post">
+                                    <div class="blog-post" data-id="'.get_the_id().'">
                                         <div class="post-thumb">
                                             <img src="'.$featured_img_url.'">
                                             <div class="overlay-btn">

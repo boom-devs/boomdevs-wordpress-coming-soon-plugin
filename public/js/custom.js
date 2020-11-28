@@ -17,7 +17,7 @@
 	    $($anchor.attr('href')).addClass("show").siblings().removeClass("show");
 	});
 
-	$(".overlay-btn a").click(function() {
+	$(".csts-page-wrapper .blog-post, .overlay-btn a").click(function() {
 		$(".single-blog-popup-wrapper").addClass('active');
 	});
 
@@ -34,7 +34,7 @@
 	});
 
 	/*=================== Load blog content in popup box ===================*/
-	$(".overlay-btn a").click(function () {
+	$(".csts-page-wrapper .blog-post, .overlay-btn a").click(function () {
 		var id = $(this).data('id');
 		$.ajax({
 		  type: 'POST',
@@ -70,7 +70,7 @@
 				}
 			}
 		} else {
-			shouldRedirect = true;
+			shouldRedirect = false;
 		}
 
 		if ( shouldRedirect ) {
