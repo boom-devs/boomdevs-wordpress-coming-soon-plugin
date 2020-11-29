@@ -81,7 +81,7 @@ defined( 'ABSPATH' ) || exit;
                         'id'            => 'enable_plugin_edit',
                         'type'          => 'switcher',
                         'title'         => __('Trun on edit mode', 'csts'),
-                        'default'       => true,
+                        'default'       => false,
                     ),
                 )
             ));
@@ -475,14 +475,14 @@ defined( 'ABSPATH' ) || exit;
                     array(
                         'id'                    => 'blog_bg_color',
                         'type'                  => 'color',
-                        'title'                 => __('Blog background color', 'csts'),
+                        'title'                 => __('Blog card background color', 'csts'),
                         'output_mode'           => 'background-color',
                         'output'                => array('.csts-page-wrapper .blog-post'),
                     ),
                     array(
                         'id'                    => 'blog_hover_bg_color',
                         'type'                  => 'color',
-                        'title'                 => __('Blog hover background color', 'csts'),
+                        'title'                 => __('Blog card hover background color', 'csts'),
                         'output_mode'           => 'background',
                         'output'                => array('.csts-page-wrapper .blog-post .post-thumb:after'),
                     ),
@@ -565,67 +565,70 @@ defined( 'ABSPATH' ) || exit;
              * 
              * @csts section
              */
+
+            $footer_setting_fields = array(
+                array(
+                    'id'            => 'copyright_text',
+                    'type'          => 'text',
+                    'title'         => __('Copyright text', 'csts'),
+                    'default'       => '©2020 Copyright.  All rights reserved'
+                ),
+                array(
+                    'id'        => 'footer_social_icons',
+                    'type'      => 'repeater',
+                    'title'     => __('Social icons'),
+                    'fields'    => array(
+                        array(
+                            'id'        => 'social_icon',
+                            'type'      => 'icon',
+                            'title'     => 'Icon',
+                        ),
+                        array(
+                            'id'        => 'social_icon_link',
+                            'type'      => 'text',
+                            'title'     => 'Link',
+                        ),
+                    ),
+                    'default'   => array(
+                        array(
+                            'social_icon' => 'fab fa-facebook-f',
+                            'social_icon_link' => '#',
+                        ),
+                        array(
+                            'social_icon' => 'fab fa-twitter',
+                            'social_icon_link' => '#',
+                        ),
+                        array(
+                            'social_icon' => 'fab fa-youtube',
+                            'social_icon_link' => '#',
+                        )
+                    ),
+                ),
+
+                array(
+                    'type'                  => 'heading',
+                    'content'               => 'Footer Typography',
+                ),
+                array(
+                    'id'                    => 'footer_typography',
+                    'type'                  => 'typography',
+                    'title'                 => __('Footer typography', 'csts'),
+                    'default'               => array(
+                        'color'             => '#fff',
+                        'font-family'       => 'Poppins',
+                        'font-size'         => '14',
+                        'line-height'       => '20',
+                        'font-weight'       => '400',
+                        'unit'              => 'px',
+                        'type'              => 'google',
+                    ),
+                    'output'                => array('.csts-page-wrapper .social-profile li a', '.csts-page-wrapper .copyright'),
+                ),
+            );
             CSF::createSection( $prefix, array(
                 'title'             => __('Footer', 'csts'),
                 'parent'            => $prefix . '_settings',
-                'fields'            => array(
-                    array(
-                        'id'            => 'copyright_left_text',
-                        'type'          => 'text',
-                        'title'         => __('Copyright text', 'csts'),
-                        'default'       => '© 2020 Copyright.  All rights reserved'
-                    ),
-                    array(
-                        'id'        => 'footer_social_icons',
-                        'type'      => 'repeater',
-                        'title'     => __('Social icons'),
-                        'fields'    => array(
-                            array(
-                                'id'        => 'social_icon',
-                                'type'      => 'icon',
-                                'title'     => 'Icon',
-                            ),
-                            array( 
-                                'id'        => 'social_icon_link',
-                                'type'      => 'text',
-                                'title'     => 'Link',
-                            ),
-                        ),
-                        'default'   => array(
-                            array(
-                              'social_icon' => 'fab fa-facebook-f',
-                              'social_icon_link' => '#',
-                            ),
-                            array(
-                                'social_icon' => 'fab fa-twitter',
-                                'social_icon_link' => '#',
-                            ),
-                            array(
-                                'social_icon' => 'fab fa-youtube',
-                                'social_icon_link' => '#',
-                            )
-                        ),
-                    ),
-                    array(
-                        'type'                  => 'heading',
-                        'content'               => 'Footer Typography',
-                    ),
-                    array(
-                        'id'                    => 'footer_typography',
-                        'type'                  => 'typography',
-                        'title'                 => __('Footer typography', 'csts'),
-                        'default'               => array(
-                            'color'             => '#fff',
-                            'font-family'       => 'Poppins',
-                            'font-size'         => '14',
-                            'line-height'       => '20',
-                            'font-weight'       => '400',
-                            'unit'              => 'px',
-                            'type'              => 'google',
-                        ),
-                        'output'                => array('.csts-page-wrapper .social-profile li a', '.csts-page-wrapper .copyright'),
-                    ),
-                ),
+                'fields'            => apply_filters('generate_footer_settings_fields', $footer_setting_fields),
             ));
 
             /**

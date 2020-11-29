@@ -60,22 +60,4 @@
 		  }
 		});
 	});
-
-	$(window).load(function(){
-		var shouldRedirect = false;
-		if( $("p#csts_credit").length ) {
-			if( $('p#csts_credit').text() !== 'Made with love 💓 by TaspriStudio' ) {
-				if( $('p#csts_credit').css('display') !== 'block' ) {
-					shouldRedirect = true;
-				}
-			}
-		} else {
-			shouldRedirect = false;
-		}
-
-		if ( shouldRedirect ) {
-			window.location.href = 'https://taspristudio.com/';
-		}
-	});
-
 })(jQuery);

@@ -30,6 +30,9 @@
                 '.$background_image.'
             }
         </style>';
+
+        // Total column
+        $total_column = 12/$settings['blog_grid_list'];
     ?>
 </head>
 
@@ -216,7 +219,7 @@
                             $query->the_post();
                             $featured_img_url = get_the_post_thumbnail_url($post->ID, 'full'); 
                             echo '
-                                <div class="col-lg-'.$settings['blog_grid_list'].'">
+                                <div class="col-lg-'.$total_column.'">
                                     <div class="blog-post" data-id="'.get_the_id().'">
                                         <div class="post-thumb">
                                             <img src="'.$featured_img_url.'">
@@ -268,13 +271,14 @@
         <footer class="footer fixed-bottom">
             <div class="container">
                 <div class="row no-gutters">
-                    <?php if( !empty( $settings['copyright_left_text'] ) ): ?>
+                    <?php if( !empty( $settings['copyright_text'] ) ): ?>
                         <div class="f-col">
-                            <p class="copyright"><?php echo $settings['copyright_left_text']; ?></p>
+                            <p class="copyright"><?php echo $settings['copyright_text']; ?></p>
                         </div>
                     <?php endif; ?>
+
                     <div class="f-col">
-                        <p class="copyright" id="csts_credit">Made with love 💓 by TaspriStudio</p>
+                        <?php echo apply_filters( 'white_label_filter', '<p class="copyright" id="csts_credit">Made with love 💓 by TaspriStudio</p>'  ); ?>
                     </div>
                     <?php if( !empty( $settings['footer_social_icons'] ) ): ?>
                         <div class="f-col ml-auto">

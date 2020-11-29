@@ -91,7 +91,6 @@ class Csts {
 		$this->define_admin_hooks();
 		$this->register_settings();
 		$this->define_public_hooks();
-
 	}
 
 	/**
@@ -196,7 +195,12 @@ class Csts {
 		}
 	}
 
-	public function load_template() {
+    /**
+     * Load tempalte
+     *
+     * @return false
+     */
+    public function load_template() {
 
 		// Exit if a custom login page
 		$settings = Csts_Settings::get_settings();
@@ -210,7 +214,6 @@ class Csts {
 	// Call template redirect function by template redirect hook
 	public function call_redirect_template_hook_function() {
 		add_action('template_redirect', array($this, 'load_template'));
-		// add_action( 'wp_enqueue_scripts', array( $this , "clean_unnecessary_styles" ), 999 );
 	}
 
 	/**

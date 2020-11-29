@@ -20,38 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c47f14c-58f3-455f-81ef-e33462f2f2ec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csts.php" beforeDir="false" afterPath="$PROJECT_DIR$/csts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/class-csts-settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/class-csts-settings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/responsive.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/responsive.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/blog1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/blog2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/blog3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/blog4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/coming-soon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/fevicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/flaticon1521559238-svg.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/flaticon1521640920-svg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/flaticon1521640920-svg.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/flaticon1521641627-svg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/flaticon1521641627-svg.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/flaticon1521642215-svg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/flaticon1521642215-svg.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/footer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/icon2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/line2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/oval.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/oval2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/oval3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/oval4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/painting.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/polygon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/rec.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/star.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/triangle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/class-csts.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/class-csts.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/custom.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/template/template.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/template.php" afterDir="false" />
     </list>
@@ -72,6 +44,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -99,6 +72,7 @@
       <workItem from="1604826717443" duration="1023000" />
       <workItem from="1605330006775" duration="32000" />
       <workItem from="1606571998285" duration="8427000" />
+      <workItem from="1606651168126" duration="9253000" />
     </task>
     <servers />
   </component>
@@ -115,6 +89,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2094" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606576287082">
