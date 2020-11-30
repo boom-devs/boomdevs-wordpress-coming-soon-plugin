@@ -25,14 +25,6 @@ function csts_ajax_handle_request(){
     exit;
 }
 
-// Added credit
-function csts_credit( $example ) {
-    $settings = Csts_Settings::get_settings();
-    // Maybe modify $example in some way.
-    return '<p class="copyright">'.$settings["credit_text"].'</p>';
-}
-add_filter( 'white_label_filter', 'csts_credit' );
-
 /**
  * Check credit
  */

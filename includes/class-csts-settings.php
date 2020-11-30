@@ -646,14 +646,6 @@ defined( 'ABSPATH' ) || exit;
                         'content'               => __('Background Settings', 'csts'),
                     ),
                     array(
-                        'id'                    => 'bg_color',
-                        'type'                  => 'color',
-                        'title'                 => __('Background color', 'csts'),
-                        'output'                => array('.csts-page-wrapper.page-wrapper'),
-                        'output_mode'           => 'background',
-                        'default'               => '#4082f9',
-                    ),
-                    array(
                         'id'                    => 'bg_image',
                         'type'                  => 'media',
                         'title'                 =>  __('Background image', 'csts'),
