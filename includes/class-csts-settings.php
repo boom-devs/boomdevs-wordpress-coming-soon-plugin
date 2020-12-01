@@ -189,11 +189,11 @@ defined( 'ABSPATH' ) || exit;
                     array(
                         'id'                    => 'countdown_count_typography',
                         'type'                  => 'typography',
+                        'font_size'             => false,
                         'title'                 => __('Countdown count typography', 'csts'),
                         'default'               => array(
                             'color'             => '#fff',
                             'font-family'       => 'Poppins',
-                            'font-size'         => '140',
                             'font-weight'       => '800',
                             'unit'              => 'px',
                             'type'              => 'google',
@@ -203,11 +203,11 @@ defined( 'ABSPATH' ) || exit;
                     array(
                         'id'                    => 'countdown_title_typography',
                         'type'                  => 'typography',
+                        'font_size'             => false,
                         'title'                 => __('Countdown title typography', 'csts'),
                         'default'               => array(
                             'color'             => '#fff',
                             'font-family'       => 'Poppins',
-                            'font-size'         => '16',
                             'font-weight'       => '400',
                             'unit'              => 'px',
                             'type'              => 'google',
@@ -296,6 +296,7 @@ defined( 'ABSPATH' ) || exit;
                     array(
                         'id'                    => 'service_item_icon_typography',
                         'type'                  => 'typography',
+                        'font_size'             => false,
                         'title'                 => __('Card icon typography', 'csts'),
                         'default'               => array(
                             'color'             => '#3c7ff8',
@@ -318,6 +319,7 @@ defined( 'ABSPATH' ) || exit;
                     array(
                         'id'                    => 'service_item_title_typography',
                         'type'                  => 'typography',
+                        'font_size'             => false,
                         'title'                 => __('Card title typography', 'csts'),
                         'default'               => array(
                             'color'             => '#222222',
@@ -340,6 +342,7 @@ defined( 'ABSPATH' ) || exit;
                     array(
                         'id'                    => 'service_item_content_typography',
                         'type'                  => 'typography',
+                        'font_size'             => false,
                         'title'                 => __('Card content typography', 'csts'),
                         'default'               => array(
                             'color'             => '#777777',
@@ -426,6 +429,7 @@ defined( 'ABSPATH' ) || exit;
                     array(
                         'id'                    => 'blog_meta_typography',
                         'type'                  => 'typography',
+                        'font_size'             => false,
                         'title'                 => __('Meta typography', 'csts'),
                         'default'               => array(
                             'color'             => '#8A8A8A',
@@ -440,6 +444,7 @@ defined( 'ABSPATH' ) || exit;
                     array(
                         'id'                    => 'blog_title_typography',
                         'type'                  => 'typography',
+                        'font_size'             => false,
                         'title'                 => __('Title typography', 'csts'),
                         'default'               => array(
                             'color'             => '#222',
@@ -454,6 +459,7 @@ defined( 'ABSPATH' ) || exit;
                     array(
                         'id'                    => 'blog_overly_btn_typography',
                         'type'                  => 'typography',
+                        'font_size'             => false,
                         'title'                 => __('Button typography', 'csts'),
                         'default'               => array(
                             'color'             => '#222',
@@ -494,6 +500,7 @@ defined( 'ABSPATH' ) || exit;
                     array(
                         'id'                    => 'single_blog_date_typography',
                         'type'                  => 'typography',
+                        'font_size'             => false,
                         'title'                 => __('Date typography', 'csts'),
                         'default'               => array(
                             'color'             => '#949494',
@@ -509,6 +516,7 @@ defined( 'ABSPATH' ) || exit;
                     array(
                         'id'                    => 'single_blog_title_typography',
                         'type'                  => 'typography',
+                        'font_size'             => false,
                         'title'                 => __('Single blog title typography', 'csts'),
                         'default'               => array(
                             'color'             => '#000',
@@ -612,6 +620,7 @@ defined( 'ABSPATH' ) || exit;
                 array(
                     'id'                    => 'footer_typography',
                     'type'                  => 'typography',
+                    'font_size'             => false,
                     'title'                 => __('Footer typography', 'csts'),
                     'default'               => array(
                         'color'             => '#fff',
@@ -669,6 +678,7 @@ defined( 'ABSPATH' ) || exit;
                     array(
                         'id'                    => 'body_typography',
                         'type'                  => 'typography',
+                        'font_size'             => false,
                         'title'                 => __('Body typography', 'csts'),
                         'default'               => array(
                           'color'               => '#fff',
@@ -687,6 +697,7 @@ defined( 'ABSPATH' ) || exit;
                     array(
                         'id'                    => 'heading_h1',
                         'type'                  => 'typography',
+                        'font_size'             => false,
                         'title'                 => __('Heading h1 typography', 'csts'),
                         'default'               => array(
                           'color'               => '#fff',
@@ -701,6 +712,7 @@ defined( 'ABSPATH' ) || exit;
                     array(
                         'id'                    => 'heading_h2',
                         'type'                  => 'typography',
+                        'font_size'             => false,
                         'title'                 => __('Heading h2 typography', 'csts'),
                         'default'               => array(
                           'color'               => '#fff',
@@ -715,6 +727,7 @@ defined( 'ABSPATH' ) || exit;
                     array(
                         'id'                    => 'heading_h3',
                         'type'                  => 'typography',
+                        'font_size'             => false,
                         'title'                 => __('Heading h3 typography', 'csts'),
                         'default'               => array(
                             'color'             => '#222222',
@@ -729,6 +742,7 @@ defined( 'ABSPATH' ) || exit;
                     array(
                         'id'                    => 'heading_h4',
                         'type'                  => 'typography',
+                        'font_size'             => false,
                         'title'                 => __('Heading h4 typography', 'csts'),
                         'default'               => array(
                             'color'             => '#222222',
@@ -743,6 +757,7 @@ defined( 'ABSPATH' ) || exit;
                     array(
                         'id'                    => 'heading_h5',
                         'type'                  => 'typography',
+                        'font_size'             => false,
                         'title'                 => __('Heading h5 typography', 'csts'),
                         'default'               => array(
                             'color'             => '#222222',
@@ -757,6 +772,7 @@ defined( 'ABSPATH' ) || exit;
                     array(
                         'id'                    => 'heading_h6',
                         'type'                  => 'typography',
+                        'font_size'             => false,
                         'title'                 => __('Heading h6 typography', 'csts'),
                         'default'               => array(
                             'color'             => '#222222',
@@ -776,11 +792,11 @@ defined( 'ABSPATH' ) || exit;
                     array(
                         'id'                    => 'title_typography',
                         'type'                  => 'typography',
+                        'font_size'             => false,
                         'title'                 => __('Page title typography', 'csts'),
                         'default'               => array(
                             'color'             => '#fff',
                             'font-family'       => 'Poppins',
-                            'font-size'         => '64',
                             'font-weight'       => '800',
                             'unit'              => 'px',
                             'type'              => 'google',
@@ -794,11 +810,11 @@ defined( 'ABSPATH' ) || exit;
                     array(
                         'id'                    => 'content_typography',
                         'type'                  => 'typography',
+                        'font_size'             => false,
                         'title'                 => __('Content typography', 'csts'),
                         'default'               => array(
                             'color'             => '#fff',
                             'font-family'       => 'Poppins',
-                            'font-size'         => '16',
                             'font-weight'       => '400',
                             'unit'              => 'px',
                             'type'              => 'google',
@@ -813,11 +829,11 @@ defined( 'ABSPATH' ) || exit;
                     array(
                         'id'                    => 'button_typography',
                         'type'                  => 'typography',
+                        'font_size'             => false,
                         'title'                 => __('Button typography', 'csts'),
                         'default'               => array(
                             'color'             => '#387CF7',
                             'font-family'       => 'Poppins',
-                            'font-size'         => '16',
                             'font-weight'       => '600',
                             'unit'              => 'px',
                             'type'              => 'google',
@@ -846,6 +862,7 @@ defined( 'ABSPATH' ) || exit;
                     array(
                         'id'                    => 'menu_typography',
                         'type'                  => 'typography',
+                        'font_size'             => false,
                         'title'                 => __('Menu typography', 'csts'),
                         'default'               => array(
                             'color'             => '#fff',
