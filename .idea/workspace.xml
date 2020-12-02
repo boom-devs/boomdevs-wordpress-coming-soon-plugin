@@ -22,8 +22,6 @@
     <list default="true" id="2c47f14c-58f3-455f-81ef-e33462f2f2ec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/class-csts-settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/class-csts-settings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/template/template.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/template.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +70,7 @@
       <workItem from="1606571998285" duration="8427000" />
       <workItem from="1606651168126" duration="9253000" />
       <workItem from="1606831671318" duration="805000" />
-      <workItem from="1606892037128" duration="7399000" />
+      <workItem from="1606892037128" duration="8890000" />
     </task>
     <servers />
   </component>
