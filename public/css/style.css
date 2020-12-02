@@ -53,6 +53,59 @@ body{
     padding-left: 25px;
     padding-right: 25px;
 }
+.csts-page-wrapper form {
+	width: 100%;
+	margin-top: 50px;
+}
+.csts-page-wrapper form p {
+	width: 100%;
+	margin: 0;
+}
+.csts-page-wrapper form label {
+	width: 100%;
+}
+.csts-page-wrapper form span {
+	width: 100%;
+}
+.csts-page-wrapper form input,
+.csts-page-wrapper form textarea {
+	background-color: transparent;
+	font-size: 16px;
+	font-weight: 400;
+	color: #fff;
+	border-top: 0;
+	border-right: 0;
+	border-bottom: 2px solid #5EA0FF;
+	border-left: 0;
+	border-radius: 0;
+	width: 100%;
+	background-clip: padding-box;
+	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+	padding: .7em 0;
+}
+.csts-page-wrapper form input[type="submit"]{
+	border-radius: 3rem;
+	font-size: 16px;
+	margin-top: 20px;
+	font-weight: 600;
+	color: #387CF7;
+	background-color: #fff;
+	border: none;
+	position: relative;
+	height: auto;
+	padding: 0.9em 2.8em;
+	text-decoration: none;
+	text-transform: capitalize;
+	width: auto;
+}
+.csts-page-wrapper form input:focus,
+.csts-page-wrapper form textarea:focus{
+	outline: none;
+}
+.csts-page-wrapper form input::-webkit-input-placeholder,
+.csts-page-wrapper form input::-moz-placeholder {
+	color: #fff;
+}
 
 @media (min-width: 1500px){
 	.csts-page-wrapper .container {

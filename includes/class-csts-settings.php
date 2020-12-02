@@ -129,6 +129,50 @@ defined( 'ABSPATH' ) || exit;
                         'title'         => __('Logo', 'csts'),
                         'desc'          => __('Please upload your logo this size (width: 100px)', 'csts')
                     ),
+                    array(
+                        'id'                    => 'header_background_color',
+                        'type'                  => 'background',
+                        'background_gradient'   => true,
+                        'background_color'      => true,
+                        'background_position'   => false,
+                        'background_image'      => false,
+                        'background_attachment' => false,
+                        'background_size'       => false,
+                        'background_repeat'     => false,
+                        'title'                 => __('Header background color', 'csts'),
+                        'default'                         => array(
+                            'background-color'              => '#4082f9',
+                            'background-gradient-color'     => '#1e67f0',
+                            'background-gradient-direction' => 'to bottom',
+                        )
+                    ),
+                    array(
+                        'id'            => 'hamburger_button',
+                        'type'          => 'color',
+                        'title'         => __('Hamburger button color', 'csts'),
+                        'output_mode'   => 'background-color',
+                        'default'       => '#fff',
+                        'output'        => array('.csts-page-wrapper .menu-toggle span'),
+                    ),
+                    array(
+                        'type'                  => 'heading',
+                        'content'               => 'Menu typography',
+                    ),
+                    array(
+                        'id'                    => 'menu_typography',
+                        'type'                  => 'typography',
+                        'font_size'             => false,
+                        'title'                 => __('Menu typography', 'csts'),
+                        'default'               => array(
+                            'color'             => '#fff',
+                            'font-family'       => 'Poppins',
+                            'font-size'         => '16',
+                            'font-weight'       => '400',
+                            'unit'              => 'px',
+                            'type'              => 'google',
+                        ),
+                        'output'                => array('.csts-page-wrapper .navbar-nav li a'),
+                    ),
                 )
             ));
 
@@ -431,14 +475,6 @@ defined( 'ABSPATH' ) || exit;
                         'type'                  => 'typography',
                         'font_size'             => false,
                         'title'                 => __('Meta typography', 'csts'),
-                        'default'               => array(
-                            'color'             => '#8A8A8A',
-                            'font-family'       => 'Poppins',
-                            'font-size'         => '15',
-                            'font-weight'       => '400',
-                            'unit'              => 'px',
-                            'type'              => 'google',
-                        ),
                         'output'                => array('.csts-page-wrapper .blog-post .post-des .post-meta .meta-category'),
                     ),
                     array(
@@ -446,14 +482,6 @@ defined( 'ABSPATH' ) || exit;
                         'type'                  => 'typography',
                         'font_size'             => false,
                         'title'                 => __('Title typography', 'csts'),
-                        'default'               => array(
-                            'color'             => '#222',
-                            'font-family'       => 'Poppins',
-                            'font-size'         => '16',
-                            'font-weight'       => '500',
-                            'unit'              => 'px',
-                            'type'              => 'google',
-                        ),
                         'output'                => array('.csts-page-wrapper .blog-post .post-des .post-meta .post-title'),
                     ),
                     array(
@@ -461,14 +489,6 @@ defined( 'ABSPATH' ) || exit;
                         'type'                  => 'typography',
                         'font_size'             => false,
                         'title'                 => __('Button typography', 'csts'),
-                        'default'               => array(
-                            'color'             => '#222',
-                            'font-family'       => 'Poppins',
-                            'font-size'         => '14',
-                            'font-weight'       => '500',
-                            'unit'              => 'px',
-                            'type'              => 'google',
-                        ),
                         'output'                => array('.csts-page-wrapper .blog-post .post-thumb .overlay-btn a'),
                     ),
                     array(
@@ -480,16 +500,28 @@ defined( 'ABSPATH' ) || exit;
                     ),
                     array(
                         'id'                    => 'blog_bg_color',
-                        'type'                  => 'color',
+                        'type'                  => 'background',
+                        'background_gradient'   => true,
+                        'background_color'      => true,
+                        'background_position'   => false,
+                        'background_image'      => false,
+                        'background_attachment' => false,
+                        'background_size'       => false,
+                        'background_repeat'     => false,
                         'title'                 => __('Blog card background color', 'csts'),
-                        'output_mode'           => 'background-color',
                         'output'                => array('.csts-page-wrapper .blog-post'),
                     ),
                     array(
                         'id'                    => 'blog_hover_bg_color',
-                        'type'                  => 'color',
+                        'type'                  => 'background',
+                        'background_gradient'   => true,
+                        'background_color'      => true,
+                        'background_position'   => false,
+                        'background_image'      => false,
+                        'background_attachment' => false,
+                        'background_size'       => false,
+                        'background_repeat'     => false,
                         'title'                 => __('Blog card hover background color', 'csts'),
-                        'output_mode'           => 'background',
                         'output'                => array('.csts-page-wrapper .blog-post .post-thumb:after'),
                     ),
 
@@ -502,15 +534,6 @@ defined( 'ABSPATH' ) || exit;
                         'type'                  => 'typography',
                         'font_size'             => false,
                         'title'                 => __('Date typography', 'csts'),
-                        'default'               => array(
-                            'color'             => '#949494',
-                            'font-family'       => 'Poppins',
-                            'font-size'         => '13',
-                            'line-height'       => '20',
-                            'font-weight'       => '400',
-                            'unit'              => 'px',
-                            'type'              => 'google',
-                        ),
                         'output'                => array('.single-blog-popup-wrapper .single-blog-content .title span'),
                     ),
                     array(
@@ -518,15 +541,6 @@ defined( 'ABSPATH' ) || exit;
                         'type'                  => 'typography',
                         'font_size'             => false,
                         'title'                 => __('Single blog title typography', 'csts'),
-                        'default'               => array(
-                            'color'             => '#000',
-                            'font-family'       => 'Poppins',
-                            'font-size'         => '30',
-                            'line-height'       => '20',
-                            'font-weight'       => '600',
-                            'unit'              => 'px',
-                            'type'              => 'google',
-                        ),
                         'output'                => array('.single-blog-popup-wrapper .single-blog-content .title h1'),
                     ),
                 )
@@ -622,15 +636,6 @@ defined( 'ABSPATH' ) || exit;
                     'type'                  => 'typography',
                     'font_size'             => false,
                     'title'                 => __('Footer typography', 'csts'),
-                    'default'               => array(
-                        'color'             => '#fff',
-                        'font-family'       => 'Poppins',
-                        'font-size'         => '14',
-                        'line-height'       => '20',
-                        'font-weight'       => '400',
-                        'unit'              => 'px',
-                        'type'              => 'google',
-                    ),
                     'output'                => array('.csts-page-wrapper .social-profile li a', '.csts-page-wrapper .copyright'),
                 ),
             );
@@ -639,6 +644,17 @@ defined( 'ABSPATH' ) || exit;
                 'parent'            => $prefix . '_settings',
                 'fields'            => apply_filters('generate_footer_settings_fields', $footer_setting_fields),
             ));
+
+            CSF::createSection($prefix, array(
+                'title'             => __('Backup', 'csts'),
+                'parent'            => $prefix . '_settings',
+                'fields'            => array(
+                    array(
+                        'type' => 'backup',
+                    )
+                ),
+            ));
+
 
             /**
              * Settings
@@ -655,6 +671,19 @@ defined( 'ABSPATH' ) || exit;
                         'content'               => __('Background Settings', 'csts'),
                     ),
                     array(
+                        'id'                    => 'page_bg_color',
+                        'type'                  => 'background',
+                        'background_gradient'   => true,
+                        'background_color'      => true,
+                        'background_position'   => false,
+                        'background_image'      => false,
+                        'background_attachment' => false,
+                        'background_size'       => false,
+                        'background_repeat'     => false,
+                        'title'                 => __('Background color', 'csts'),
+                        'output'                => '.csts-page-wrapper.page-wrapper',
+                    ),
+                    array(
                         'id'                    => 'bg_image',
                         'type'                  => 'media',
                         'title'                 =>  __('Background image', 'csts'),
@@ -662,6 +691,7 @@ defined( 'ABSPATH' ) || exit;
                     array(
                         'id'                    => 'bg_image_style',
                         'type'                  => 'background',
+                        'background_color'      => false,
                         'title'                 => __('Background image style', 'csts'),
                         'output'                => '.csts-page-wrapper.page-wrapper',
                     ),
@@ -680,14 +710,6 @@ defined( 'ABSPATH' ) || exit;
                         'type'                  => 'typography',
                         'font_size'             => false,
                         'title'                 => __('Body typography', 'csts'),
-                        'default'               => array(
-                          'color'               => '#fff',
-                          'font-family'         => 'Poppins',
-                          'font-size'           => '16',
-                          'font-weight'         => '400',
-                          'unit'                => 'px',
-                          'type'                => 'google',
-                        ),
                         'output'                => array( '.csts-page-wrapper'),
                     ),
                     array(
@@ -699,14 +721,6 @@ defined( 'ABSPATH' ) || exit;
                         'type'                  => 'typography',
                         'font_size'             => false,
                         'title'                 => __('Heading h1 typography', 'csts'),
-                        'default'               => array(
-                          'color'               => '#fff',
-                          'font-family'         => 'Poppins',
-                          'font-size'           => '70',
-                          'font-weight'         => '800',
-                          'unit'                => 'px',
-                          'type'                => 'google',
-                        ),
                         'output'                => array( '.csts-page-wrapper h1'),
                     ),
                     array(
@@ -714,14 +728,6 @@ defined( 'ABSPATH' ) || exit;
                         'type'                  => 'typography',
                         'font_size'             => false,
                         'title'                 => __('Heading h2 typography', 'csts'),
-                        'default'               => array(
-                          'color'               => '#fff',
-                          'font-family'         => 'Poppins',
-                          'font-size'           => '64',
-                          'font-weight'         => '800',
-                          'unit'                => 'px',
-                          'type'                => 'google',
-                        ),
                         'output'                => array( '.csts-page-wrapper h2'),
                     ),
                     array(
@@ -729,14 +735,6 @@ defined( 'ABSPATH' ) || exit;
                         'type'                  => 'typography',
                         'font_size'             => false,
                         'title'                 => __('Heading h3 typography', 'csts'),
-                        'default'               => array(
-                            'color'             => '#222222',
-                            'font-family'       => 'Poppins',
-                            'font-size'         => '30',
-                            'font-weight'       => '500',
-                            'unit'              => 'px',
-                            'type'              => 'google',
-                        ),
                         'output'                => array( '.csts-page-wrapper h3'),
                     ),
                     array(
@@ -744,14 +742,6 @@ defined( 'ABSPATH' ) || exit;
                         'type'                  => 'typography',
                         'font_size'             => false,
                         'title'                 => __('Heading h4 typography', 'csts'),
-                        'default'               => array(
-                            'color'             => '#222222',
-                            'font-family'       => 'Poppins',
-                            'font-size'         => '20',
-                            'font-weight'       => '400',
-                            'unit'              => 'px',
-                            'type'              => 'google',
-                        ),
                         'output'                => array( '.csts-page-wrapper h4'),
                     ),
                     array(
@@ -759,14 +749,6 @@ defined( 'ABSPATH' ) || exit;
                         'type'                  => 'typography',
                         'font_size'             => false,
                         'title'                 => __('Heading h5 typography', 'csts'),
-                        'default'               => array(
-                            'color'             => '#222222',
-                            'font-family'       => 'Poppins',
-                            'font-size'         => '18',
-                            'font-weight'       => '400',
-                            'unit'              => 'px',
-                            'type'              => 'google',
-                        ),
                         'output'                => array( '.csts-page-wrapper h5'),
                     ),
                     array(
@@ -774,14 +756,6 @@ defined( 'ABSPATH' ) || exit;
                         'type'                  => 'typography',
                         'font_size'             => false,
                         'title'                 => __('Heading h6 typography', 'csts'),
-                        'default'               => array(
-                            'color'             => '#222222',
-                            'font-family'       => 'Poppins',
-                            'font-size'         => '16',
-                            'font-weight'       => '400',
-                            'unit'              => 'px',
-                            'type'              => 'google',
-                        ),
                         'output'                => array( '.csts-page-wrapper h6'),
                     ),
 
@@ -794,13 +768,6 @@ defined( 'ABSPATH' ) || exit;
                         'type'                  => 'typography',
                         'font_size'             => false,
                         'title'                 => __('Page title typography', 'csts'),
-                        'default'               => array(
-                            'color'             => '#fff',
-                            'font-family'       => 'Poppins',
-                            'font-weight'       => '800',
-                            'unit'              => 'px',
-                            'type'              => 'google',
-                        ),
                         'output'                => array( '.csts-page-wrapper .s-title h2', '.csts-page-wrapper .coming-soon-content h2' ),
                     ),
                     array(
@@ -812,13 +779,6 @@ defined( 'ABSPATH' ) || exit;
                         'type'                  => 'typography',
                         'font_size'             => false,
                         'title'                 => __('Content typography', 'csts'),
-                        'default'               => array(
-                            'color'             => '#fff',
-                            'font-family'       => 'Poppins',
-                            'font-weight'       => '400',
-                            'unit'              => 'px',
-                            'type'              => 'google',
-                        ),
                         'output'                => array('.csts-page-wrapper .s-title p', '.csts-page-wrapper .coming-soon-content p', ),
                     ),
 
@@ -831,13 +791,6 @@ defined( 'ABSPATH' ) || exit;
                         'type'                  => 'typography',
                         'font_size'             => false,
                         'title'                 => __('Button typography', 'csts'),
-                        'default'               => array(
-                            'color'             => '#387CF7',
-                            'font-family'       => 'Poppins',
-                            'font-weight'       => '600',
-                            'unit'              => 'px',
-                            'type'              => 'google',
-                        ),
                         'output'                => array('.csts-page-wrapper .newsletter .btn', '.csts-page-wrapper .f-s-btn'),
                     ),
                     array(
@@ -846,33 +799,6 @@ defined( 'ABSPATH' ) || exit;
                         'title'                 => __('Button background color', 'csts'),
                         'output'                => array('.csts-page-wrapper .newsletter .btn'),
                         'output_mode'           => 'background-color',
-                    ),
-                    array(
-                        'id'                    => 'input_bg_color',
-                        'type'                  => 'color',
-                        'title'                 => __('Input background color', 'csts'),
-                        'output_mode'           => 'background-color',
-                        'default'               => '#fff',
-                        'output'                => array('.csts-page-wrapper .newsletter .btn', '.csts-page-wrapper .f-s-btn'),
-                    ),
-                    array(
-                        'type'                  => 'heading',
-                        'content'               => 'Menu typography',
-                    ),
-                    array(
-                        'id'                    => 'menu_typography',
-                        'type'                  => 'typography',
-                        'font_size'             => false,
-                        'title'                 => __('Menu typography', 'csts'),
-                        'default'               => array(
-                            'color'             => '#fff',
-                            'font-family'       => 'Poppins',
-                            'font-size'         => '16',
-                            'font-weight'       => '400',
-                            'unit'              => 'px',
-                            'type'              => 'google',
-                        ),
-                        'output'                => array('.csts-page-wrapper .navbar-nav li a'),
                     ),
                 )
             ));

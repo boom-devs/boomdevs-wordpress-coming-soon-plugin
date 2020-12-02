@@ -29,6 +29,15 @@
             .csts-page-wrapper.page-wrapper {
                 '.$background_image.'
             }
+            @media screen and (max-width: 991.98px) {
+                .csts-page-wrapper nav.navbar {
+                    background: linear-gradient(
+                    '.$settings["header_background_color"]["background-gradient-direction"].', 
+                    '.$settings["header_background_color"]["background-color"].' 0%,
+                    '.$settings["header_background_color"]["background-gradient-color"].' 100%);
+                }
+            }
+            
         </style>';
 
         // Total column
