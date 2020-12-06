@@ -41,7 +41,7 @@
         </style>';
 
         // Total column
-        $total_column = 12/$settings['blog_grid_list'];
+        // $total_column = 12/$settings['blog_grid_list'];
     ?>
 </head>
 
@@ -219,6 +219,7 @@
                                 array( 
                                     'post_type'         => 'post',
                                     'post_status'       => 'publish',
+                                    'posts_per_page'    => 4,
                                     'cat'               => $settings['blog_category']
                                 ) 
                             ); ?>
@@ -227,8 +228,9 @@
                         while ( $query->have_posts() ) {
                             $query->the_post();
                             $featured_img_url = get_the_post_thumbnail_url($post->ID, 'full'); 
+                            // $total_column
                             echo '
-                                <div class="col-lg-'.$total_column.'">
+                                <div class="col-lg-3">
                                     <div class="blog-post" data-id="'.get_the_id().'">
                                         <div class="post-thumb">
                                             <img src="'.$featured_img_url.'">
@@ -240,9 +242,8 @@
                                             <div class="post-meta">
                                                 <span class="meta-category">';
                                                 $i = 1;
-                                                $total_category = count(get_categories());
-
-                                                foreach ( get_categories() as $key => $category ) {
+                                                $total_category = count(get_the_terms( get_the_id(), 'category' ));
+                                                foreach ( get_the_terms( get_the_id(), 'category' ) as $key => $category ) {
                                                     $separator = ', ';
                                                     if( $total_category == $i ) {
                                                        $separator = ''; 

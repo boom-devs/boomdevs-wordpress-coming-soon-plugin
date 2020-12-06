@@ -427,18 +427,18 @@ defined( 'ABSPATH' ) || exit;
                         ),
                         'default'       => '1',
                     ),
-                    array(
-                        'id'            => 'blog_grid_list',
-                        'type'          => 'select',
-                        'title'         => __('Select post column', 'csts'),
-                        'placeholder'   => __('Selec post column', 'csts'),
-                        'options'       => array(
-                            '2'         => '2 Column',
-                            '3'         => '3 Column',
-                            '4'         => '4 Column',
-                        ),
-                        'default'       => '3',
-                    ),
+                    // array(
+                    //     'id'            => 'blog_grid_list',
+                    //     'type'          => 'select',
+                    //     'title'         => __('Select post column', 'csts'),
+                    //     'placeholder'   => __('Selec post column', 'csts'),
+                    //     'options'       => array(
+                    //         '2'         => '2 Column',
+                    //         '3'         => '3 Column',
+                    //         '4'         => '4 Column',
+                    //     ),
+                    //     'default'       => '3',
+                    // ),
 
                     array(
                         'type'                  => 'heading',
@@ -454,7 +454,7 @@ defined( 'ABSPATH' ) || exit;
                         'id'                    => 'blog_title_typography',
                         'type'                  => 'typography',
                         'title'                 => __('Title typography', 'csts'),
-                        'output'                => array('.csts-page-wrapper .blog-post .post-des .post-meta .post-title'),
+                        'output'                => array('.csts-page-wrapper .blog-post .post-title, .csts-page-wrapper .blog-post .post-title a'),
                     ),
                     array(
                         'id'                    => 'blog_overly_btn_typography',
@@ -604,7 +604,7 @@ defined( 'ABSPATH' ) || exit;
                     'id'                    => 'footer_typography',
                     'type'                  => 'typography',
                     'title'                 => __('Footer typography', 'csts'),
-                    'output'                => array('.csts-page-wrapper .social-profile li a', '.csts-page-wrapper .copyright'),
+                    'output'                => array('.csts-page-wrapper .social-profile li a i', '.csts-page-wrapper .copyright'),
                 ),
             );
             CSF::createSection( $prefix, array(

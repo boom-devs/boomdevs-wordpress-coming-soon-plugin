@@ -260,8 +260,8 @@ class Csts {
 
 		$plugin_public = new Csts_Public( $this->get_plugin_name(), $this->get_version() );
 
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles', 999 );
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts', 999 );
+		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles', 30 );
+		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts', 99 );
 
 	}
 
