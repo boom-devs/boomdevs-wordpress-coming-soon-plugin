@@ -60,7 +60,6 @@ body{
     padding-right: 25px;
 }
 .csts-page-wrapper form, 
-.csts-page-wrapper form span,
 .csts-page-wrapper form label {
 	width: 100%;
 	max-width: 100%;
@@ -90,6 +89,7 @@ body{
 .csts-page-wrapper form input:focus,
 .csts-page-wrapper form textarea:focus {
 	border-color: #fff;
+	outline: none;
 }
 .csts-page-wrapper form input {
 	margin-bottom: 20px !important;
@@ -119,7 +119,9 @@ body{
 	text-decoration: none;
 	text-transform: capitalize;
 	width: auto;
-}
+}.csts-page-wrapper form input[type="submit"]:hover {
+	color: ;
+ }
 .csts-page-wrapper form input:focus,
 .csts-page-wrapper form textarea:focus{
 	outline: none;

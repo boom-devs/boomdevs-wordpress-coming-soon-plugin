@@ -460,7 +460,7 @@ defined( 'ABSPATH' ) || exit;
                         'id'                    => 'blog_overly_btn_typography',
                         'type'                  => 'typography',
                         'title'                 => __('Button typography', 'csts'),
-                        'output'                => array('.csts-page-wrapper .blog-post .post-thumb .overlay-btn a'),
+                        'output'                => array('.csts-page-wrapper .blog-post .post-thumb .overlay-btn a,'),
                     ),
                     array(
                         'id'                    => 'blog_overly_btn_bg_color',
@@ -748,13 +748,14 @@ defined( 'ABSPATH' ) || exit;
                         'id'                    => 'button_typography',
                         'type'                  => 'typography',
                         'title'                 => __('Button typography', 'csts'),
-                        'output'                => array('.csts-page-wrapper .newsletter .btn', '.csts-page-wrapper .f-s-btn'),
+                        'output'                => array('.csts-page-wrapper .newsletter .btn', '.csts-page-wrapper .f-s-btn, .csts-page-wrapper form input[type="submit"], 
+                                                            .csts-page-wrapper form input[type="submit"]:hover'),
                     ),
                     array(
                         'id'                    => 'button_bg_color',
                         'type'                  => 'color',
                         'title'                 => __('Button background color', 'csts'),
-                        'output'                => array('.csts-page-wrapper .newsletter .btn'),
+                        'output'                => array('.csts-page-wrapper .newsletter .btn, .csts-page-wrapper form input[type="submit"]'),
                         'output_mode'           => 'background-color',
                     ),
                 )
