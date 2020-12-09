@@ -119,8 +119,9 @@ body{
 	text-decoration: none;
 	text-transform: capitalize;
 	width: auto;
-}.csts-page-wrapper form input[type="submit"]:hover {
-	color: ;
+}
+.csts-page-wrapper form input[type="submit"]:hover {
+	color: #000;
  }
 .csts-page-wrapper form input:focus,
 .csts-page-wrapper form textarea:focus{
@@ -780,7 +781,6 @@ body{
 .csts-page-wrapper .circle-1{
 	width: 85%;
     height: 100%;
-    background-image: url(../images/oval4.png);
     background-size: cover !important;
     background-repeat: no-repeat !important;
     background-position: center bottom !important;
@@ -790,7 +790,6 @@ body{
 .csts-page-wrapper .circle-2{
     width: 80%;
     height: 80%;
-    background-image: url(../images/oval4.png);
     background-size: cover !important;
     background-position: center top !important;
     bottom: -26%;
@@ -812,7 +811,6 @@ body{
 .csts-page-wrapper .circle-o-3{
 	width: 85px;
 	height: 85px;
-	background-image: url(../images/oval.png);
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -833,21 +831,6 @@ body{
 .csts-page-wrapper .circle-o-3 {
     top: 58%;
     left: 42%;
-}
-
-.csts-page-wrapper .line-1,
-.csts-page-wrapper .line-2,
-.csts-page-wrapper .line-3,
-.csts-page-wrapper .line-4{
-	width: 95px;
-	height: 80px;
-	background-image: url(../images/line2.png);
-	background-repeat: no-repeat;
-	-webkit-background-size: contain;
-	background-size: contain;
-	background-position: center;
-	z-index: 3;
-	position: absolute;
 }
 
 .csts-page-wrapper .line-1{
@@ -879,7 +862,6 @@ body{
 .csts-page-wrapper .star-3{
 	width: 85px;
 	height: 85px;
-	background-image: url(../images/star.png);
 	background-repeat: no-repeat;
 	-webkit-background-size: contain;
 	background-size: contain;
@@ -913,7 +895,6 @@ body{
 .csts-page-wrapper .triangle-4{
 	width: 60px;
 	height: 60px;
-	background-image: url(../images/triangle.png);
 	background-repeat: no-repeat;
 	-webkit-background-size: contain;
 	background-size: contain;
@@ -942,20 +923,6 @@ body{
 .csts-page-wrapper .triangle-4{
 	top: 52%;
 	right: 1%;
-}
-
-.csts-page-wrapper .polygon-1,
-.csts-page-wrapper .polygon-2,
-.csts-page-wrapper .polygon-3{
-	width: 90px;
-	height: 90px;
-	background-image: url(../images/polygon.png);
-	background-repeat: no-repeat;
-	-webkit-background-size: contain;
-	background-size: contain;
-	background-position: center;
-	z-index: 3;
-	position: absolute;
 }
 
 .csts-page-wrapper .polygon-1{

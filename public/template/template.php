@@ -22,12 +22,7 @@
         } else {
             $menu_bar_border_color = '';
         }
-        var_dump($settings['blog_overly_btn_typography']);
         echo '<style>
-            
-            
-            
-
             .csts-page-wrapper .navbar-nav li a::after{
                 background-color: '.$menu_bar_border_color.';
             }
@@ -42,7 +37,6 @@
                     '.$settings["header_background_color"]["background-gradient-color"].' 100%);
                 }
             }
-            
         </style>';
 
         // Total column
