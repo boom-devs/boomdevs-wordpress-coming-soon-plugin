@@ -6,7 +6,7 @@
  * A class definition that includes attributes and functions used across both the
  * public-facing side of the site and the admin area.
  *
- * @link       taspristudio.com
+ * @link       https://taspristudio.com/product/ts-wordpress-coming-soon
  * @since      1.0.0
  *
  * @package    Csts
@@ -25,7 +25,7 @@
  * @since      1.0.0
  * @package    Csts
  * @subpackage Csts/includes
- * @author     taspristudio <admin@tasrpistiudio.com>
+ * @author     TaspriStudio <contact@tasrpistiudio.com>
  */
 class Csts {
 
@@ -77,7 +77,7 @@ class Csts {
 		if ( defined( 'CSTS_FULL_NAME' ) ) {
             $this->plugin_full_name = CSTS_FULL_NAME;
         } else {
-            $this->plugin_full_name = 'TS Coming Sooon Template';
+            $this->plugin_full_name = 'TS Coming WordPress Soon';
         }
 
         if ( defined( 'CSTS_NAME' ) ) {
@@ -88,8 +88,9 @@ class Csts {
 
 		$this->load_dependencies();
 		$this->set_locale();
+        $this->register_settings();
 		$this->define_admin_hooks();
-		$this->register_settings();
+		$this->register_ajax_hooks();
 		$this->define_public_hooks();
 	}
 
@@ -118,15 +119,15 @@ class Csts {
 		require_once CSTS_DIR . 'includes/class-csts-loader.php';
 
 		/**
-         * Codestar library
-         */
-        require_once CSTS_DIR . 'libs/codestar-framework/codestar-framework.php';
-
-		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
 		require_once CSTS_DIR . 'includes/class-csts-i18n.php';
+
+        /**
+         * Codestar library
+         */
+        require_once CSTS_DIR . 'libs/codestar-framework/codestar-framework.php';
 
 		/**
          * The class responsible for loading all the admin settings of the plugin.
@@ -138,10 +139,10 @@ class Csts {
 		 */
 		require_once CSTS_DIR . 'admin/class-csts-admin.php';
 
-		/**
-		 * Plugin functions
-		 */
-		require_once CSTS_DIR . 'functions.php';
+        /**
+         * The class responsible for defining all ajax hooks.
+         */
+        require_once CSTS_DIR . 'includes/class-csts-ajax.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
@@ -149,71 +150,8 @@ class Csts {
 		 */
 		require_once CSTS_DIR . 'public/class-csts-public.php';
 
-
-		$this->call_redirect_template_hook_function();
-
-
 		$this->loader = new Csts_Loader();
 
-	}
-
-    /**
-     * Register plugin settings.
-     *
-     * @access   private
-     */
-    private function register_settings() {
-        $plugin_settings = new Csts_Settings( $this->plugin_full_name );
-        $plugin_settings->csts_customization_settings();
-    }
-
-
-	/**
-	 * Register plugin template
-	 * 
-	 * @access public
-	 */
-	public function get_template() {
-
-		// Check if user is logged in or user role.
-		$wp_get_current_user =  wp_get_current_user();
-		$LoggedInUserID = $wp_get_current_user->ID;
-		$UserData = get_userdata( $LoggedInUserID );
-
-		if( !is_user_logged_in() ) {
-			require_once CSTS_DIR . 'public/template/template.php';
-			exit();
-		} else {
-			if( $UserData->roles[0] = "administrator" ) {
-				// If plugin editor setting on
-				$settings = Csts_Settings::get_settings();
-				if( $settings['enable_plugin_edit'] == true ) {
-					require_once CSTS_DIR . 'public/template/template.php';
-					exit();
-				}
-			}
-		}
-	}
-
-    /**
-     * Load tempalte
-     *
-     * @return false
-     */
-    public function load_template() {
-
-		// Exit if a custom login page
-		$settings = Csts_Settings::get_settings();
-		if( preg_match( "/login|admin|dashboard|account/i", $_SERVER['REQUEST_URI'] ) > 0 || empty( $settings['enable_disable_plugin'] ) ) {
-			return false;
-		} else{
-			$this->get_template();
-		}
-	}
-
-	// Call template redirect function by template redirect hook
-	public function call_redirect_template_hook_function() {
-		add_action('template_redirect', array($this, 'load_template'));
 	}
 
 	/**
@@ -233,6 +171,16 @@ class Csts {
 
 	}
 
+    /**
+     * Register plugin settings.
+     *
+     * @access   private
+     */
+    private function register_settings() {
+        $plugin_settings = new Csts_Settings( $this->plugin_full_name );
+        $plugin_settings->csts_customization_settings();
+    }
+
 	/**
 	 * Register all of the hooks related to the admin area functionality
 	 * of the plugin.
@@ -249,6 +197,19 @@ class Csts {
 
 	}
 
+    /**
+     * Register plugin ajax hooks.
+     *
+     * @since    1.0.0
+     * @access   private
+     */
+    private function register_ajax_hooks() {
+        $plugin_ajax = new Csts_Ajax();
+
+        $this->loader->add_action('wp_ajax_nopriv_get_post', $plugin_ajax, 'get_post');
+        $this->loader->add_action('wp_ajax_get_post', $plugin_ajax, 'get_post');
+    }
+
 	/**
 	 * Register all of the hooks related to the public-facing functionality
 	 * of the plugin.
@@ -262,6 +223,9 @@ class Csts {
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles', 30 );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts', 99 );
+
+		$this->loader->add_action('template_redirect', $plugin_public, 'load_template' );
+		$this->loader->add_action( 'wp_footer', $plugin_public, 'insert_footer_credit_checker_script' );
 
 	}
 

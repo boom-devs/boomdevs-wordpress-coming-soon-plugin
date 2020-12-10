@@ -38,9 +38,6 @@
                 }
             }
         </style>';
-
-        // Total column
-        // $total_column = 12/$settings['blog_grid_list'];
     ?>
 </head>
 
@@ -73,13 +70,10 @@
         <header class="header">
             <nav class="navbar navbar-expand-lg fixed-top">
                 <div class="container">
-
                     <?php if( !empty( $settings['logo']['url'] ) ) { ?>
-
                         <a class="navbar-brand" href="#<?php echo str_replace(' ', '-', strtolower($settings["home_menu_title"])); ?>">
                             <img src="<?php echo $settings['logo']['url']; ?>" alt="">
                         </a>
-
                     <?php }else { ?>
                         <a class="navbar-brand" href="#<?php echo str_replace(' ', '-', strtolower($settings["home_menu_title"])); ?>">
                             <img src="<?php echo CSTS_DIR_URI; ?>public/images/logo.png" alt="">
@@ -103,12 +97,11 @@
                         <ul class="navbar-nav ml-auto">
                             <!-- Home -->
                             <?php
-                                if( $settings['home_enable_disable'] == "1" && !empty($settings["home_menu_title"]) ) {
-                                    echo '<li class="nav-item active">
-                                        <a class="nav-link" href="#'.str_replace(' ', '-', strtolower($settings["home_menu_title"])).'"> '.$settings["home_menu_title"].'</a>
-                                    </li>';
-                                }
+                            echo '<li class="nav-item active">
+                                    <a class="nav-link" href="#'.str_replace(' ', '-', strtolower($settings["home_menu_title"])).'"> '.$settings["home_menu_title"].'</a>
+                                </li>';
                             ?>
+
                             <!-- Service -->
                             <?php
                                 if( $settings['service_enable_disable'] == "1" && !empty( $settings["service_menu_title"] ) ) {

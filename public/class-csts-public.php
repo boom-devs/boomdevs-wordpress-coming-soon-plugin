@@ -3,7 +3,7 @@
 /**
  * The public-facing functionality of the plugin.
  *
- * @link       taspristudio.com
+ * @link       https://taspristudio.com/product/ts-wordpress-coming-soon
  * @since      1.0.0
  *
  * @package    Csts
@@ -18,7 +18,7 @@
  *
  * @package    Csts
  * @subpackage Csts/public
- * @author     taspristudio <admin@tasrpistiudio.com>
+ * @author     TaspriStudio <contact@tasrpistiudio.com>
  */
 class Csts_Public {
 
@@ -73,6 +73,13 @@ class Csts_Public {
 		 * class.
 		 */
 
+		// Default font
+        wp_enqueue_style(
+            $this->plugin_name . '-poppins',
+            'https://fonts.googleapis.com/css?family=Poppins:100,200,300,300i,400,400i,500,600,700,800,900',
+            array(), $this->version, 'all'
+        );
+
         // Enqueue Bootstrap
 		wp_enqueue_style( $this->plugin_name . '-bootstrap', plugin_dir_url( __FILE__ ) . 'css/bootstrap.min.css', array(), $this->version, 'all' );
 
@@ -80,10 +87,10 @@ class Csts_Public {
 		wp_enqueue_style( $this->plugin_name . '-fa5', 'https://use.fontawesome.com/releases/v5.13.0/css/all.css', array(), '5.13.0', 'all' );
 
         // Enqueue default css
-        wp_enqueue_style( $this->plugin_name . '-style', plugin_dir_url( __FILE__ ) . 'css/style.css', array(), $this->version, 'all' );
+        wp_enqueue_style( $this->plugin_name . '-style', plugin_dir_url( __FILE__ ) . 'css/style.min.css', array(), $this->version, 'all' );
 
         // Enqueue Responsive
-		wp_enqueue_style( $this->plugin_name . '-responsive', plugin_dir_url( __FILE__ ) . 'css/responsive.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name . '-responsive', plugin_dir_url( __FILE__ ) . 'css/responsive.min.css', array(), $this->version, 'all' );
 	}
 	
 	/**
@@ -120,13 +127,70 @@ class Csts_Public {
         wp_enqueue_script( $this->plugin_name . '-countdown', plugin_dir_url( __FILE__ ) . 'js/jquery.countdown.min.js', array( 'jquery' ), $this->version, true );
 
         // Enqueue custom js
-		wp_enqueue_script( $this->plugin_name . '-custom', plugin_dir_url( __FILE__ ) . 'js/custom.js', array( 'jquery' ), $this->version, true );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/csts-public.min.js', array( 'jquery' ), $this->version, true );
 
-		// Enqueue localize script
-		wp_localize_script( 'csts-custom', 'csts_content', array( 
-			'ajaxurl' => admin_url( 'admin-ajax.php' ),
-			'nonce' => wp_create_nonce( "csts_single_content" ),
-			)
-		);
-	}
+        // Localize script
+        wp_localize_script( $this->plugin_name, 'csts_content', array(
+                'ajaxurl' => admin_url( 'admin-ajax.php' ),
+                'action' => 'get_post',
+                'nonce' => wp_create_nonce( "csts_single_content" ),
+            )
+        );
+
+    }
+
+    /**
+     * Load template.
+     *
+     * @since 1.0.0
+     */
+    public function load_template() {
+        $settings = Csts_Settings::get_settings();
+
+        // Don't load template if user is in login page or plugin is disabled
+        if( preg_match( "/login|admin|dashboard|account/i", $_SERVER['REQUEST_URI'] ) > 0 || !$settings['enable_disable_plugin'] ) {
+            return false;
+        } else{
+            $is_admin = current_user_can('manage_options');
+
+            // Load if user is logged in or admin is editing
+            if( !is_user_logged_in() || ( $is_admin && $settings['enable_plugin_edit'] ) ) {
+                require_once CSTS_DIR . 'public/template/template.php';
+                exit();
+            }
+
+            return true;
+        }
+    }
+
+    /**
+     * Insert credit checker script in footer.
+     *
+     * @since 1.0.0
+     */
+	public function insert_footer_credit_checker_script() {
+	    $settings = Csts_Settings::get_settings();
+        $is_admin = current_user_can('manage_options');
+
+	    if ($settings['enable_disable_plugin'] && !$is_admin) {
+            echo '<script type="text/javascript">
+                jQuery(window).load(function(){
+                    var creditEl = jQuery("p#csts_credit");
+                    var shouldRedirect = false;
+                    
+                    if( creditEl.length ) {
+                        if( creditEl.text() !== "Made with love 💓 by TaspriStudio" || creditEl.css("display") !== "block" ) {
+                            shouldRedirect = true;
+                        }
+                    } else {
+                        shouldRedirect = true;
+                    }
+
+                    if ( shouldRedirect ) {
+                        window.location.href = "https://taspristudio.com/product/ts-wordpress-coming-soon/";
+                    }
+                });
+            </script>';
+        }
+    }
 }

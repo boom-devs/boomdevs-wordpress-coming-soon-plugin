@@ -5,7 +5,7 @@
  *
  * This file is used to markup the public-facing aspects of the plugin.
  *
- * @link       taspristudio.com
+ * @link       https://taspristudio.com/product/ts-wordpress-coming-soon
  * @since      1.0.0
  *
  * @package    Csts

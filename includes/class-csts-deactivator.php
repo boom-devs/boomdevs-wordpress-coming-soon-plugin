@@ -3,7 +3,7 @@
 /**
  * Fired during plugin deactivation
  *
- * @link       taspristudio.com
+ * @link       https://taspristudio.com/product/ts-wordpress-coming-soon
  * @since      1.0.0
  *
  * @package    Csts
@@ -18,7 +18,7 @@
  * @since      1.0.0
  * @package    Csts
  * @subpackage Csts/includes
- * @author     taspristudio <admin@tasrpistiudio.com>
+ * @author     TaspriStudio <contact@tasrpistiudio.com>
  */
 class Csts_Deactivator {
 

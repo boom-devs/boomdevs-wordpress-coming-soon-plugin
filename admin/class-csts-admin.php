@@ -3,7 +3,7 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * @link       taspristudio.com
+ * @link       https://taspristudio.com/product/ts-wordpress-coming-soon
  * @since      1.0.0
  *
  * @package    Csts
@@ -18,7 +18,7 @@
  *
  * @package    Csts
  * @subpackage Csts/admin
- * @author     taspristudio <admin@tasrpistiudio.com>
+ * @author     TaspriStudio <contact@tasrpistiudio.com>
  */
 class Csts_Admin {
 

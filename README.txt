@@ -1,6 +1,6 @@
 === Plugin Name ===
 Contributors: (this should be a list of wordpress.org userid's)
-Donate link: taspristudio.com
+Donate link: https://taspristudio.com/product/ts-wordpress-coming-soon
 Tags: comments, spam
 Requires at least: 3.0.1
 Tested up to: 3.4
