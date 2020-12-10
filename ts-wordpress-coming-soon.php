@@ -13,7 +13,7 @@
  * @package           Csts
  *
  * @wordpress-plugin
- * Plugin Name:       TS WordPress Coming Soon
+ * Plugin Name:       Coming Soon by TaspriStudio
  * Plugin URI:        https://taspristudio.com/product/ts-wordpress-coming-soon-plugin
  * Description:       The best WordPress coming soon plugin that offers unlimited customizations, email marketing software integrations, additional pages, with some sexy designs.
  * Version:           1.0.0
@@ -39,7 +39,7 @@ include_once( ABSPATH . 'wp-includes/pluggable.php' );
 define( 'CSTS_DIR', plugin_dir_path( __FILE__ ) );
 define('CSTS_DIR_URI', plugin_dir_url(__FILE__));  
 define( 'CSTS_NAME', 'csts' );
-define( 'CSTS_FULL_NAME', 'TS WordPress Coming Soon' );
+define( 'CSTS_FULL_NAME', 'Coming Soon by TaspriStudio' );
 define( 'CSTS_VERSION', '1.0.0' );
 
 /**
