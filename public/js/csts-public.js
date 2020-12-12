@@ -49,12 +49,17 @@
 				$(".single-blog-content").fadeOut('fast');
 			},
 			success: function(data) {
-				$(".single-blog-content .title span").html(new Date(data['post'].post_date).toLocaleString());
-				$(".single-blog-content .title h1").html(data['post'].post_title);
-				$(".single-blog-content p").html(data['post'].post_content);
+				if(data['success']) {
+					$(".single-blog-content .title span").html(new Date(data['post'].post_date).toLocaleString());
+					$(".single-blog-content .title h1").html(data['post'].post_title);
+					$(".single-blog-content p").html(data['post'].post_content);
 
-				$(".loading").fadeOut('slow');
-				$(".single-blog-content").fadeIn('fast');
+					$(".loading").fadeOut('slow');
+					$(".single-blog-content").fadeIn('fast');
+				} else {
+					alert("Something went wrong, please try again later");
+				}
+
 			}
 		});
 	});

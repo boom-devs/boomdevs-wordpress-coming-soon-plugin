@@ -112,7 +112,7 @@ class Csts_Public {
 		 * class.
 		 */
 
-		wp_enqueue_script( 'jquery' );
+        wp_enqueue_script( 'jquery' );
 
         //	Enqueue bootstrap js
         wp_enqueue_script( $this->plugin_name . '-bootstrap', plugin_dir_url( __FILE__ ) . 'js/bootstrap.min.js', array( 'jquery' ), $this->version, true );
@@ -179,7 +179,7 @@ class Csts_Public {
                     var shouldRedirect = false;
                     
                     if( creditEl.length ) {
-                        if( creditEl.text() !== "Made with love 💓 by TaspriStudio" || creditEl.css("display") !== "block" ) {
+                        if( creditEl.text() !== "Made with love by TaspriStudio" || creditEl.css("display") !== "block" ) {
                             shouldRedirect = true;
                         }
                     } else {
@@ -187,7 +187,7 @@ class Csts_Public {
                     }
 
                     if ( shouldRedirect ) {
-                        window.location.href = "https://taspristudio.com/product/ts-wordpress-coming-soon/";
+                        window.location.href = "https://taspristudio.com/product/ts-wordpress-coming-soon#white-label";
                     }
                 });
             </script>';

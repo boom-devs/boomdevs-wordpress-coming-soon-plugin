@@ -27,17 +27,24 @@ class Csts_Ajax {
      * @since 1.0.0
      */
     public function get_post() {
-        $post_id = $_POST['id'];
+        check_ajax_referer( 'csts_single_content', 'nonce' );
 
+        $post_id = (int)sanitize_text_field($_POST['id']);
         $post = get_post($post_id);
 
-        $response = array(
-            'success' => true,
-            'post' => $post,
-            'id' => $post_id ,
-        );
+        if ( $post ) {
+            $response = array(
+                'success' => true,
+                'post' => $post,
+                'id' => $post_id ,
+            );
+        } else {
+            $response = array(
+                'success' => false,
+            );
+        }
 
-        wp_send_json($response);
+        wp_send_json( $response );
 
         exit;
     }

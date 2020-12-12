@@ -131,10 +131,10 @@
 
 	.csts-page-wrapper .copyright{
 		font-size: 14px;
+		text-align: center;
 	}
-
-	.csts-page-wrapper .social-profile li a{
-		margin: 0 15px;
+	.csts-page-wrapper .social-profile {
+		text-align: center;
 	}
 
 	.csts-page-wrapper .countdown-area .row .col{
