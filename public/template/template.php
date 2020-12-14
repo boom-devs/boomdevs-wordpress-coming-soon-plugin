@@ -168,8 +168,8 @@
                         ?>
                         <div class="col">
                             <div class="coming-soon-content">
-                                <h2><?php echo esc_html($settings['home_title']); ?></h2>
-                                <p><?php echo do_shortcode(wp_kses_post($settings['home_description'])); ?></p>
+                                <h2><?php echo wp_kses_post($settings['home_title']); ?></h2>
+                                <p><?php echo do_shortcode($settings['home_description']); ?></p>
                             </div>
                         </div>
                     </div>
@@ -182,7 +182,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="s-title">
-                                <h2><?php echo esc_html($settings['service_title']); ?></h2>
+                                <h2><?php echo wp_kses_post($settings['service_title']); ?></h2>
                                 <p><?php echo wp_kses_post($settings['service_description']); ?></p>
                             </div>
                         </div>
@@ -213,7 +213,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="s-title">
-                                <h2><?php echo esc_html($settings["blog_title"]); ?></h2>
+                                <h2><?php echo wp_kses_post($settings["blog_title"]); ?></h2>
                                 <p><?php echo wp_kses_post($settings["blog_description"]); ?></p>
                             </div>
                         </div>
@@ -272,7 +272,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="s-title">
-                                <h2><?php echo esc_html($settings["contact_title"]); ?></h2>
+                                <h2><?php echo wp_kses_post($settings["contact_title"]); ?></h2>
                                 <p><?php echo do_shortcode(wp_kses_post($settings["contact_description"])); ?></p>
                             </div>
                         </div>
