@@ -289,8 +289,11 @@ body{
 	font-weight: 400;
 	color: #fff;
 	padding: 26px;
+	margin: 0 !important;
 }
-
+.csts-page-wrapper .newsletter .form-control:focus {
+	outline: none;
+}
 .csts-page-wrapper .newsletter .form-control::-webkit-input-placeholder,
 .csts-page-wrapper .contact-form .form-control::-webkit-input-placeholder{
 	color: #fff;

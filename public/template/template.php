@@ -28,13 +28,16 @@
                 background-color: %1$s;
             }
             .csts-page-wrapper.page-wrapper {%2$s}
-            @media screen and (max-width: 991.98px) {
-                .csts-page-wrapper nav.navbar {
-                    background: linear-gradient(%3$s,%4$s 0%,%5$s 100%);
-                }
-            }
-        </style>', $menu_bar_border_color,$background_image,$settings["header_background_color"]["background-gradient-direction"],$settings["header_background_color"]["background-color"],$settings["header_background_color"]["background-gradient-color"]
+        </style>', $menu_bar_border_color,$background_image
         );
+    echo '<style>
+        @media screen and (max-width: 991.98px) {
+            .csts-page-wrapper nav.navbar {
+                background: linear-gradient('.$settings["header_background_color"]["background-gradient-direction"].', '.$settings["header_background_color"]["background-color"].' 0, '.$settings["header_background_color"]["background-gradient-color"].' 100%);
+                padding-top: 10px;
+            }
+        }
+    </style>';
     ?>
 </head>
 

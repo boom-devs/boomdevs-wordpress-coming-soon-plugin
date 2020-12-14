@@ -204,11 +204,7 @@
 		padding-bottom: 5px;
 	}
 }
-@media screen and (max-width: 876px){
-	.csts-page-wrapper .newsletter .form-control {
-		padding: 23px;
-	}
-}
+
 @media screen and (max-width: 767.98px){
 	.csts-page-wrapper .f-col{
 		-webkit-box-flex: 0;
