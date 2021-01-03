@@ -179,7 +179,7 @@ class Csts_Public {
                     var shouldRedirect = false;
                     
                     if( creditEl.length ) {
-                        if( creditEl.text() !== "Made with love by TaspriStudio" || creditEl.css("display") !== "block" ) {
+                        if( creditEl.text() !== "Made with love by BoomDevs" || creditEl.css("display") !== "block" ) {
                             shouldRedirect = true;
                         }
                     } else {
@@ -187,7 +187,7 @@ class Csts_Public {
                     }
 
                     if ( shouldRedirect ) {
-                        window.location.href = "https://taspristudio.com/product/ts-wordpress-coming-soon#white-label";
+                        window.location.href = "https://boomdevs.com/product/boomdevs-wordpress-coming-soon#white-label";
                     }
                 });
             </script>';

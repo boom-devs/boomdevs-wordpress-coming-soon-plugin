@@ -294,7 +294,7 @@
                     <?php endif; ?>
 
                     <div class="col-md-4 col-lg-4">
-                        <?php echo wp_kses_post(apply_filters( 'white_label_filter', '<p class="copyright" id="csts_credit">Made with love by TaspriStudio</p>'  )); ?>
+                        <?php echo wp_kses_post(apply_filters( 'white_label_filter', '<p class="copyright" id="csts_credit">Made with love by BoomDevs</p>'  )); ?>
                     </div>
                     <?php if( !empty( $settings['footer_social_icons'] ) ): ?>
                         <div class="col-md-4 col-lg-4 ms-auto">
