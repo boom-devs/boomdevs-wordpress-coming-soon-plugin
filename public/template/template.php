@@ -18,17 +18,20 @@
             $background_image = '';
         }
         if( !empty( $settings["menu_typography"]['color'] ) ) {
-            $menu_bar_border_color = $settings["menu_typography"]['color'];
+            $menu_bar_border_color = 'background-color:'.$settings["menu_typography"]['color'].';';
         } else {
             $menu_bar_border_color = '';
         }
-
+        if( !empty( $settings["blog_meta_typography"]['text-align'] ) ) {
+            $blog_meta_text_alignment = 'text-align:'.$settings["blog_meta_typography"]['text-align'].';';
+        } else {
+            $blog_meta_text_alignment = 'text-align:left;';
+        }
         echo sprintf('<style>
-            .csts-page-wrapper .navbar-nav li a::after{
-                background-color: %1$s;
-            }
+            .csts-page-wrapper .navbar-nav li a:after{%1$s}
             .csts-page-wrapper.page-wrapper {%2$s}
-        </style>', $menu_bar_border_color,$background_image
+            .csts-page-wrapper .blog-post .post-meta {%3$s}
+        </style>', $menu_bar_border_color,$background_image,$blog_meta_text_alignment
         );
     echo '<style>
         @media screen and (max-width: 991.98px) {
@@ -233,7 +236,7 @@
                         
                         while ( $query->have_posts() ) {
                             $query->the_post();
-                            $featured_img_url = get_the_post_thumbnail_url($post->ID, 'full');
+                            $featured_img_url = get_the_post_thumbnail_url($query->post->ID, 'full');
 
                             echo '
                                 <div class="col-lg-3">

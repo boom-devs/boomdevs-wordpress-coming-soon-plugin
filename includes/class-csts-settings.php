@@ -260,7 +260,14 @@ defined( 'ABSPATH' ) || exit;
                         'id'            => 'logo',
                         'type'          => 'media',
                         'title'         => __('Logo', 'csts'),
-                        'desc'          => __('Recommended width: 100px', 'csts')
+//                        'desc'          => __('Recommended width: 100px', 'csts')
+                    ),
+                    array(
+                        'id'        => 'logo_width',
+                        'type'      => 'number',
+                        'unit'      => 'px',
+                        'title'         => __('Logo width', 'csts'),
+                        'output'        => '.navbar-brand img',
                     ),
                     array(
                         'id'                    => 'menu_typography',

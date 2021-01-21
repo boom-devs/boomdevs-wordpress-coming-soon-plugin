@@ -492,7 +492,10 @@ body{
 .csts-page-wrapper .blog-post .post-meta{
 	margin: 10px 0;
 }
-
+.csts-page-wrapper .blog-post .post-meta span {
+	display: inline-block;
+	width: auto;
+}
 .csts-page-wrapper .blog-post .post-meta span a{
 	display: block;
 	-webkit-transition: .15s ease-in-out;
@@ -675,6 +678,7 @@ body{
 .single-blog-popup-wrapper .single-blog-content .title span {
 	padding-bottom: 10px;
 	display: block;
+	color: #333333;
 }
 .loading {
 	width: 100%;
