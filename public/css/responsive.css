@@ -126,7 +126,7 @@
 	}
 
 	.csts-page-wrapper .toggle-section.show{
-		display: block;
+		display: flex;
 	}
 
 	.csts-page-wrapper .copyright{

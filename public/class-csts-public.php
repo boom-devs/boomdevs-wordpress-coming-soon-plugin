@@ -87,7 +87,7 @@ class Csts_Public {
 		wp_enqueue_style( $this->plugin_name . '-fa5', 'https://use.fontawesome.com/releases/v5.13.0/css/all.css', array(), '5.13.0', 'all' );
 
         // Enqueue default css
-        wp_enqueue_style( $this->plugin_name . '-style', plugin_dir_url( __FILE__ ) . 'css/style.min.css', array(), $this->version, 'all' );
+        wp_enqueue_style( $this->plugin_name . '-style', plugin_dir_url( __FILE__ ) . 'css/style.css', array(), $this->version, 'all' );
 
         // Enqueue Responsive
 		wp_enqueue_style( $this->plugin_name . '-responsive', plugin_dir_url( __FILE__ ) . 'css/responsive.min.css', array(), $this->version, 'all' );
@@ -119,9 +119,6 @@ class Csts_Public {
 
         // Enqueue proper js
         wp_enqueue_script( $this->plugin_name . '-popper', plugin_dir_url( __FILE__ ) . 'js/popper.min.js', array( 'jquery' ), $this->version, true );
-
-        // Enqueue parallax js
-        wp_enqueue_script( $this->plugin_name . '-parallax', plugin_dir_url( __FILE__ ) . 'js/parallax.js', array( 'jquery' ), $this->version, true );
 
         // Enqueue countdown js
         wp_enqueue_script( $this->plugin_name . '-countdown', plugin_dir_url( __FILE__ ) . 'js/jquery.countdown.min.js', array( 'jquery' ), $this->version, true );
