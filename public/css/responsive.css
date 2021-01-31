@@ -120,21 +120,6 @@
 		padding-bottom: 60px;
 	}
 
-	.csts-page-wrapper .toggle-section{
-		position: relative;
-		top: 0;
-		left: 0;
-		display: none;
-		-webkit-transform: translate(0);
-		transform: translate(0);
-	}
-
-	.csts-page-wrapper .toggle-section.show{
-		display: flex;
-		min-height: auto;
-		height: 100%;
-	}
-
 	.csts-page-wrapper .copyright{
 		font-size: 14px;
 		text-align: center;

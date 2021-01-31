@@ -152,7 +152,6 @@
             </nav>
         </header>
         <!-- header -->
-
         <div class="main-content">
             <!-- Home section -->
             <div class="countdown-area toggle-section show" id="<?php echo esc_html(str_replace(' ', '-', strtolower($settings["home_menu_title"]))); ?>">
@@ -233,7 +232,6 @@
                                     array( 
                                         'post_type'         => 'post',
                                         'post_status'       => 'publish',
-                                        'posts_per_page'    => 4,
                                         'cat'               => $settings['blog_category']
                                     ) 
                                 ); ?>
@@ -294,7 +292,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Footer section -->
         <footer class="footer">
             <div class="container">
