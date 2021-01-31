@@ -283,7 +283,7 @@
                 <div class="section-inner-wrapper">
                     <div class="container">
                         <div class="row">
-                            <div class="col-8">
+                            <div class="col-lg-8">
                                 <div class="s-title">
                                     <h2><?php echo wp_kses_post($settings["contact_title"]); ?></h2>
                                     <p><?php echo do_shortcode(wp_kses_post($settings["contact_description"])); ?></p>
@@ -293,38 +293,39 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Footer section -->
-            <footer class="footer">
-                <div class="container">
-                    <div class="row">
-                        <?php if( !empty( $settings['copyright_text'] ) ): ?>
-                            <div class="col-md-4 col-lg-4">
-                                <p class="copyright"><?php echo esc_html($settings['copyright_text']); ?></p>
-                            </div>
-                        <?php endif; ?>
-
-                        <div class="col-md-4 col-lg-4">
-                            <?php echo wp_kses_post(apply_filters( 'white_label_filter', '<p class="copyright" id="csts_credit">Made with love by BoomDevs</p>'  )); ?>
-                        </div>
-                        <?php if( !empty( $settings['footer_social_icons'] ) ): ?>
-                            <div class="col-md-4 col-lg-4 ms-auto">
-                                <ul class="social-profile">
-                                    <?php foreach( $settings['footer_social_icons'] as $item ): ?>
-                                        <li>
-                                            <a href="<?php echo esc_url($item['social_icon_link']); ?>">
-                                                <i class="<?php echo esc_html($item['social_icon']); ?>"></i>
-                                            </a>
-                                        </li>
-                                    <?php endforeach; ?>
-                                </ul>
-                            </div>
-                        <?php endif; ?>
-                    </div>
-                </div>
-            </footer>
         </div>
+
+        <!-- Footer section -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <?php if( !empty( $settings['copyright_text'] ) ): ?>
+                        <div class="col-md-4 col-lg-4">
+                            <p class="copyright"><?php echo esc_html($settings['copyright_text']); ?></p>
+                        </div>
+                    <?php endif; ?>
+
+                    <div class="col-md-4 col-lg-4">
+                        <?php echo wp_kses_post(apply_filters( 'white_label_filter', '<p class="copyright" id="csts_credit">Made with love by BoomDevs</p>'  )); ?>
+                    </div>
+                    <?php if( !empty( $settings['footer_social_icons'] ) ): ?>
+                        <div class="col-md-4 col-lg-4 ms-auto">
+                            <ul class="social-profile">
+                                <?php foreach( $settings['footer_social_icons'] as $item ): ?>
+                                    <li>
+                                        <a href="<?php echo esc_url($item['social_icon_link']); ?>">
+                                            <i class="<?php echo esc_html($item['social_icon']); ?>"></i>
+                                        </a>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </footer>
     </div>
+
     <!-- Include footer -->
     <?php wp_footer(); ?>
 </body>

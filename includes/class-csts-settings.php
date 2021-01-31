@@ -260,7 +260,6 @@ defined( 'ABSPATH' ) || exit;
                         'id'            => 'logo',
                         'type'          => 'media',
                         'title'         => __('Logo', 'csts'),
-//                        'desc'          => __('Recommended width: 100px', 'csts')
                     ),
                     array(
                         'id'        => 'logo_width',

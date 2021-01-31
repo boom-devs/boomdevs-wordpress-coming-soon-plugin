@@ -106,6 +106,10 @@
 		height: auto;
 	}
 
+	.section-inner-wrapper {
+		padding: 80px 0 100px;
+	}
+
 	.csts-page-wrapper .px-wrapper{
 		display: none;
 	}
@@ -127,6 +131,8 @@
 
 	.csts-page-wrapper .toggle-section.show{
 		display: flex;
+		min-height: auto;
+		height: 100%;
 	}
 
 	.csts-page-wrapper .copyright{
@@ -202,6 +208,12 @@
 	.csts-page-wrapper .navbar-nav{
 		padding-top: 10px;
 		padding-bottom: 5px;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.csts-page-wrapper .menu-toggle{
+		display: block;
 	}
 }
 

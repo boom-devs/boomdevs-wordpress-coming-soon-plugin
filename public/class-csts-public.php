@@ -90,7 +90,7 @@ class Csts_Public {
         wp_enqueue_style( $this->plugin_name . '-style', plugin_dir_url( __FILE__ ) . 'css/style.css', array(), $this->version, 'all' );
 
         // Enqueue Responsive
-		wp_enqueue_style( $this->plugin_name . '-responsive', plugin_dir_url( __FILE__ ) . 'css/responsive.min.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name . '-responsive', plugin_dir_url( __FILE__ ) . 'css/responsive.css', array(), $this->version, 'all' );
 	}
 	
 	/**

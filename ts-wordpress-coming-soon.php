@@ -8,17 +8,17 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              https://taspristudio.com/product/ts-wordpress-coming-soon
+ * @link              https://boomdevs.com/product/boomdevs-wordpress-coming-soon-plugin/
  * @since             1.0.0
  * @package           Csts
  *
  * @wordpress-plugin
- * Plugin Name:       Coming Soon by TaspriStudio
- * Plugin URI:        https://taspristudio.com/product/ts-wordpress-coming-soon-plugin
+ * Plugin Name:       Coming Soon by BoomDeves
+ * Plugin URI:        https://boomdevs.com/product/boomdevs-wordpress-coming-soon-plugin/
  * Description:       The best WordPress coming soon plugin that offers unlimited customizations, email marketing software integrations, additional pages, with some sexy designs.
  * Version:           1.0.0
- * Author:            TaspriStudio
- * Author URI:        https://taspristudio.com
+ * Author:            BoomDevs
+ * Author URI:        https://boomdevs.com
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       csts
@@ -39,7 +39,7 @@ include_once( ABSPATH . 'wp-includes/pluggable.php' );
 define( 'CSTS_DIR', plugin_dir_path( __FILE__ ) );
 define('CSTS_DIR_URI', plugin_dir_url(__FILE__));  
 define( 'CSTS_NAME', 'csts' );
-define( 'CSTS_FULL_NAME', 'Coming Soon by TaspriStudio' );
+define( 'CSTS_FULL_NAME', 'Coming Soon by BoomDevs' );
 define( 'CSTS_VERSION', '1.0.0' );
 
 /**
