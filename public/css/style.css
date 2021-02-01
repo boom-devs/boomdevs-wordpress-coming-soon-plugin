@@ -763,7 +763,7 @@ body{
 .csts-page-wrapper .toggle-section.show{
 	visibility: visible;
 	opacity: 1;
-	min-height: calc(100vh - 80px);
+	min-height: calc(100vh - 39px);
 	height: 100%;
     display: flex;
 }
