@@ -349,7 +349,7 @@ body{
 	background-color: #fff;
 	border: none;
 	position: relative;
-	height: auto;
+	height: 100%;
 	padding: 0.9em 2.8em;
 	text-decoration: none;
 	text-transform: capitalize;
