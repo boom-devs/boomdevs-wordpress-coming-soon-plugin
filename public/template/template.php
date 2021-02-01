@@ -197,7 +197,7 @@
                             <?php 
                             if( !empty( $settings['service_box'] ) ):
                                 foreach( $settings['service_box'] as $item ): ?>
-                                <div class="col-lg-3 col-sm-6">
+                                <div class="col-lg-3 col-sm-6 mb-5">
                                     <div class="service-item">
                                         <div class="item-icon">
                                         <?php

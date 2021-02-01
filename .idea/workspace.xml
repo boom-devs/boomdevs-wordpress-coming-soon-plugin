@@ -19,10 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c47f14c-58f3-455f-81ef-e33462f2f2ec" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts-wordpress-coming-soon.php" beforeDir="false" afterPath="$PROJECT_DIR$/ts-wordpress-coming-soon.php" afterDir="false" />
-    </list>
+    <list default="true" id="2c47f14c-58f3-455f-81ef-e33462f2f2ec" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,7 +50,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../pharma/wp-content/themes/pharma" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -98,7 +95,7 @@
       <workItem from="1612082186660" duration="937000" />
       <workItem from="1612087911395" duration="3068000" />
       <workItem from="1612093546060" duration="1463000" />
-      <workItem from="1612154282496" duration="1499000" />
+      <workItem from="1612154282496" duration="2067000" />
     </task>
     <servers />
   </component>
