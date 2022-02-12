@@ -9,7 +9,7 @@
  * that starts the plugin.
  *
  * @link              https://boomdevs.com/product/boomdevs-wordpress-coming-soon-plugin/
- * @since             1.0.0
+ * @since             1.1.1
  * @package           Csts
  *
  * @wordpress-plugin

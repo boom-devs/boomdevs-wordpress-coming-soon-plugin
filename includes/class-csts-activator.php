@@ -3,7 +3,7 @@
 /**
  * Fired during plugin activation
  *
- * @link       https://taspristudio.com/product/ts-wordpress-coming-soon
+ * @link       https://BoomDeves.com/product/ts-wordpress-coming-soon
  * @since      1.0.0
  *
  * @package    Csts
@@ -18,19 +18,19 @@
  * @since      1.0.0
  * @package    Csts
  * @subpackage Csts/includes
- * @author     TaspriStudio <contact@tasrpistiudio.com>
+ * @author     BoomDeves <contact@tasrpistiudio.com>
  */
 class Csts_Activator {
 
-	/**
-	 * Short Description. (use period)
-	 *
-	 * Long Description.
-	 *
-	 * @since    1.0.0
-	 */
-	public static function activate() {
+    /**
+     * Short Description. (use period)
+     *
+     * Long Description.
+     *
+     * @since    1.0.0
+     */
+    public static function activate() {
 
-	}
+    }
 
 }

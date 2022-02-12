@@ -6,7 +6,7 @@
  * Loads and defines the internationalization files for this plugin
  * so that it is ready for translation.
  *
- * @link       https://taspristudio.com/product/ts-wordpress-coming-soon
+ * @link       https://BoomDeves.com/product/ts-wordpress-coming-soon
  * @since      1.0.0
  *
  * @package    Csts
@@ -22,26 +22,23 @@
  * @since      1.0.0
  * @package    Csts
  * @subpackage Csts/includes
- * @author     TaspriStudio <contact@tasrpistiudio.com>
+ * @author     BoomDeves <contact@tasrpistiudio.com>
  */
 class Csts_i18n {
 
+    /**
+     * Load the plugin text domain for translation.
+     *
+     * @since    1.0.0
+     */
+    public function load_plugin_textdomain() {
 
-	/**
-	 * Load the plugin text domain for translation.
-	 *
-	 * @since    1.0.0
-	 */
-	public function load_plugin_textdomain() {
+        load_plugin_textdomain(
+            'csts',
+            false,
+            dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
+        );
 
-		load_plugin_textdomain(
-			'csts',
-			false,
-			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
-		);
-
-	}
-
-
+    }
 
 }

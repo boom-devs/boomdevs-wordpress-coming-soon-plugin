@@ -3,7 +3,7 @@
 /**
  * The file that defines the plugin ajax class's
  *
- * @link       https://taspristudio.com/product/ts-wordpress-coming-soon
+ * @link       https://BoomDeves.com/product/ts-wordpress-coming-soon
  * @since      1.0.0
  *
  * @package    Csts
@@ -18,7 +18,7 @@
  * @since      1.0.0
  * @package    Csts
  * @subpackage Csts/includes
- * @author     TaspriStudio <contact@tasrpistiudio.com>
+ * @author     BoomDeves <contact@tasrpistiudio.com>
  */
 class Csts_Ajax {
     /**
@@ -29,14 +29,14 @@ class Csts_Ajax {
     public function get_post() {
         check_ajax_referer( 'csts_single_content', 'nonce' );
 
-        $post_id = (int)sanitize_text_field($_POST['id']);
-        $post = get_post($post_id);
+        $post_id = (int) sanitize_text_field( $_POST['id'] );
+        $post    = get_post( $post_id );
 
         if ( $post ) {
             $response = array(
                 'success' => true,
-                'post' => $post,
-                'id' => $post_id ,
+                'post'    => $post,
+                'id'      => $post_id,
             );
         } else {
             $response = array(
@@ -48,4 +48,5 @@ class Csts_Ajax {
 
         exit;
     }
+
 }
