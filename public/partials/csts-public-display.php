@@ -5,7 +5,7 @@
      *
      * This file is used to markup the public-facing aspects of the plugin.
      *
-     * @link       https://BoomDeves.com/product/ts-wordpress-coming-soon
+     * @link       https://boomdeves.com/product/ts-wordpress-coming-soon
      * @since      1.0.0
      *
      * @package    Csts

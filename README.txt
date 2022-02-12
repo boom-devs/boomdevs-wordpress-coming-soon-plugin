@@ -13,7 +13,7 @@ The best free WordPress coming soon plugin with unlimited customizations, additi
 
 **Coming Soon by BoomDeves** plugin offers unlimited customizations, Email Marketing Software Integrations, additional service page, blog page, contact page with some sexy designs.
 
-Made with ❣️ By [BoomDeves](https://BoomDeves.com/)
+Made with ❣️ By [BoomDeves](https://boomdeves.com/)
 
 == Installation ==
 

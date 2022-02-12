@@ -3,7 +3,7 @@
 /**
  * The file that defines the plugin ajax class's
  *
- * @link       https://BoomDeves.com/product/ts-wordpress-coming-soon
+ * @link       https://boomdeves.com/product/ts-wordpress-coming-soon
  * @since      1.0.0
  *
  * @package    Csts

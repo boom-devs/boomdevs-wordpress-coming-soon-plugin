@@ -6,7 +6,7 @@
  * A class definition that includes attributes and functions used across both the
  * public-facing side of the site and the admin area.
  *
- * @link       https://BoomDeves.com/product/ts-wordpress-coming-soon
+ * @link       https://boomdeves.com/product/ts-wordpress-coming-soon
  * @since      1.0.0
  *
  * @package    Csts
