@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              https://boomdevs.com/product/boomdevs-wordpress-coming-soon-plugin/
- * @since             1.1.1
+ * @since             1.0.0
  * @package           Csts
  *
  * @wordpress-plugin
  * Plugin Name:       Coming Soon by BoomDeves
  * Plugin URI:        https://boomdevs.com/product/boomdevs-wordpress-coming-soon-plugin/
  * Description:       The best WordPress coming soon plugin that offers unlimited customizations, email marketing software integrations, additional pages, with some sexy designs.
- * Version:           1.1.1
+ * Version:           1.0.0
  * Author:            BoomDevs
  * Author URI:        https://boomdevs.com
  * License:           GPL-2.0+
@@ -40,7 +40,7 @@ define( 'CSTS_DIR', plugin_dir_path( __FILE__ ) );
 define('CSTS_DIR_URI', plugin_dir_url(__FILE__));  
 define( 'CSTS_NAME', 'csts' );
 define( 'CSTS_FULL_NAME', 'Coming Soon by BoomDevs' );
-define( 'CSTS_VERSION', '1.1.1' );
+define( 'CSTS_VERSION', '1.0.0' );
 
 /**
  * The code that runs during plugin activation.
