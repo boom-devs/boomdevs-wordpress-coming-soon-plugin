@@ -13,7 +13,7 @@
  * @package           Csts
  *
  * @wordpress-plugin
- * Plugin Name:       Coming Soon by BoomDeves
+ * Plugin Name:       Coming Soon by BoomDevs
  * Plugin URI:        https://boomdevs.com/product/boomdevs-wordpress-coming-soon-plugin/
  * Description:       The best WordPress coming soon plugin that offers unlimited customizations, email marketing software integrations, additional pages, with some sexy designs.
  * Version:           1.0.0
