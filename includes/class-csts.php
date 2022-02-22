@@ -6,7 +6,7 @@
  * A class definition that includes attributes and functions used across both the
  * public-facing side of the site and the admin area.
  *
- * @link       https://boomdeves.com/product/ts-wordpress-coming-soon
+ * @link       https://boomdeves.com/product/csts-coming-soon
  * @since      1.0.0
  *
  * @package    Csts
@@ -25,7 +25,7 @@
  * @since      1.0.0
  * @package    Csts
  * @subpackage Csts/includes
- * @author     BoomDeves <contact@tasrpistiudio.com>
+ * @author     BoomDeves <contact@boomdevs.com>
  */
 class Csts {
 
@@ -77,7 +77,7 @@ class Csts {
         if ( defined( 'CSTS_FULL_NAME' ) ) {
             $this->plugin_full_name = CSTS_FULL_NAME;
         } else {
-            $this->plugin_full_name = 'TS Coming WordPress Soon';
+            $this->plugin_full_name = 'Coming Soon By BoomDevs';
         }
 
         if ( defined( 'CSTS_NAME' ) ) {

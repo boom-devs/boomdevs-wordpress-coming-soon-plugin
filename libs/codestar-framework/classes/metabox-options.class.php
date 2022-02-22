@@ -30,6 +30,7 @@ if ( ! class_exists( 'CSF_Metabox' ) ) {
       'enqueue_webfont'    => true,
       'async_webfont'      => false,
       'output_css'         => true,
+      'nav'                => 'normal',
       'theme'              => 'dark',
       'class'              => '',
       'defaults'           => array(),
@@ -46,13 +47,13 @@ if ( ! class_exists( 'CSF_Metabox' ) ) {
       $this->page_templates = ( is_array( $this->args['page_templates'] ) ) ? $this->args['page_templates'] : array_filter( (array) $this->args['page_templates'] );
       $this->pre_fields     = $this->pre_fields( $this->sections );
 
-      add_action( 'add_meta_boxes', array( &$this, 'add_meta_box' ) );
-      add_action( 'save_post', array( &$this, 'save_meta_box' ) );
-      add_action( 'edit_attachment', array( &$this, 'save_meta_box' ) );
+      add_action( 'add_meta_boxes', array( $this, 'add_meta_box' ) );
+      add_action( 'save_post', array( $this, 'save_meta_box' ) );
+      add_action( 'edit_attachment', array( $this, 'save_meta_box' ) );
 
       if ( ! empty( $this->page_templates ) || ! empty( $this->post_formats ) || ! empty( $this->args['class'] ) ) {
         foreach ( $this->post_type as $post_type ) {
-          add_filter( 'postbox_classes_'. $post_type .'_'. $this->unique, array( &$this, 'add_metabox_classes' ) );
+          add_filter( 'postbox_classes_'. $post_type .'_'. $this->unique, array( $this, 'add_metabox_classes' ) );
         }
       }
 
@@ -140,7 +141,7 @@ if ( ! class_exists( 'CSF_Metabox' ) ) {
     public function add_meta_box( $post_type ) {
 
       if ( ! in_array( $post_type, $this->args['exclude_post_types'] ) ) {
-        add_meta_box( $this->unique, $this->args['title'], array( &$this, 'add_meta_box_content' ), $this->post_type, $this->args['context'], $this->args['priority'], $this->args );
+        add_meta_box( $this->unique, $this->args['title'], array( $this, 'add_meta_box_content' ), $this->post_type, $this->args['context'], $this->args['priority'], $this->args );
       }
 
     }
@@ -186,11 +187,13 @@ if ( ! class_exists( 'CSF_Metabox' ) ) {
 
       global $post;
 
-      $has_nav  = ( count( $this->sections ) > 1 && $this->args['context'] !== 'side' ) ? true : false;
-      $show_all = ( ! $has_nav ) ? ' csf-show-all' : '';
-      $errors   = ( is_object ( $post ) ) ? get_post_meta( $post->ID, '_csf_errors_'. $this->unique, true ) : array();
-      $errors   = ( ! empty( $errors ) ) ? $errors : array();
-      $theme    = ( $this->args['theme'] ) ? ' csf-theme-'. $this->args['theme'] : '';
+      $has_nav   = ( count( $this->sections ) > 1 && $this->args['context'] !== 'side' ) ? true : false;
+      $show_all  = ( ! $has_nav ) ? ' csf-show-all' : '';
+      $post_type = ( is_object ( $post ) ) ? $post->post_type : '';
+      $errors    = ( is_object ( $post ) ) ? get_post_meta( $post->ID, '_csf_errors_'. $this->unique, true ) : array();
+      $errors    = ( ! empty( $errors ) ) ? $errors : array();
+      $theme     = ( $this->args['theme'] ) ? ' csf-theme-'. $this->args['theme'] : '';
+      $nav_type  = ( $this->args['nav'] === 'inline' ) ? 'inline' : 'normal';
 
       if ( is_object ( $post ) && ! empty( $errors ) ) {
         delete_post_meta( $post->ID, '_csf_errors_'. $this->unique );
@@ -204,13 +207,17 @@ if ( ! class_exists( 'CSF_Metabox' ) ) {
 
           if ( $has_nav ) {
 
-            echo '<div class="csf-nav csf-nav-metabox">';
+            echo '<div class="csf-nav csf-nav-'. esc_attr( $nav_type ) .' csf-nav-metabox">';
 
               echo '<ul>';
 
               $tab_key = 0;
 
               foreach ( $this->sections as $section ) {
+
+                if ( ! empty( $section['post_type'] ) && ! in_array( $post_type, array_filter( (array) $section['post_type'] ) ) ) {
+                  continue;
+                }
 
                 $tab_error = ( ! empty( $errors['sections'][$tab_key] ) ) ? '<i class="csf-label-error csf-error">!</i>' : '';
                 $tab_icon  = ( ! empty( $section['icon'] ) ) ? '<i class="csf-tab-icon '. esc_attr( $section['icon'] ) .'"></i>' : '';
@@ -235,6 +242,10 @@ if ( ! class_exists( 'CSF_Metabox' ) ) {
 
             foreach ( $this->sections as $section ) {
 
+              if ( ! empty( $section['post_type'] ) && ! in_array( $post_type, array_filter( (array) $section['post_type'] ) ) ) {
+                continue;
+              }
+
               $section_onload = ( ! $has_nav ) ? ' csf-onload' : '';
               $section_class  = ( ! empty( $section['class'] ) ) ? ' '. $section['class'] : '';
               $section_title  = ( ! empty( $section['title'] ) ) ? $section['title'] : '';
@@ -243,6 +254,7 @@ if ( ! class_exists( 'CSF_Metabox' ) ) {
               echo '<div class="csf-section hidden'. esc_attr( $section_onload . $section_class ) .'">';
 
               echo ( $section_title || $section_icon ) ? '<div class="csf-section-title"><h3>'. $section_icon . $section_title .'</h3></div>' : '';
+              echo ( ! empty( $section['description'] ) ) ? '<div class="csf-field csf-section-description">'. $section['description'] .'</div>' : '';
 
               if ( ! empty( $section['fields'] ) ) {
 
@@ -288,7 +300,7 @@ if ( ! class_exists( 'CSF_Metabox' ) ) {
 
           echo '</div>';
 
-          echo ( $has_nav ) ? '<div class="csf-nav-background"></div>' : '';
+          echo ( $has_nav && $nav_type === 'normal' ) ? '<div class="csf-nav-background"></div>' : '';
 
           echo '<div class="clear"></div>';
 

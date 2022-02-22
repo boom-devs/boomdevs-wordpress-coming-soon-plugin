@@ -65,7 +65,7 @@ if ( ! class_exists( 'CSF_Field_border' ) ) {
 
       echo $this->field_before();
 
-      echo '<div class="csf--inputs">';
+      echo '<div class="csf--inputs" data-depend-id="'. esc_attr( $this->field['id'] ) .'">';
 
       if ( ! empty( $args['all'] ) ) {
 
@@ -73,7 +73,7 @@ if ( ! class_exists( 'CSF_Field_border' ) ) {
 
         echo '<div class="csf--input">';
         echo ( ! empty( $args['all_icon'] ) ) ? '<span class="csf--label csf--icon">'. $args['all_icon'] .'</span>' : '';
-        echo '<input type="number" name="'. esc_attr( $this->field_name( '[all]' ) ) .'" value="'. esc_attr( $value['all'] ) .'"'. $placeholder .' class="csf-input-number csf--is-unit" />';
+        echo '<input type="number" name="'. esc_attr( $this->field_name( '[all]' ) ) .'" value="'. esc_attr( $value['all'] ) .'"'. $placeholder .' class="csf-input-number csf--is-unit" step="any" />';
         echo ( ! empty( $args['unit'] ) ) ? '<span class="csf--label csf--unit">'. esc_attr( $args['unit'] ) .'</span>' : '';
         echo '</div>';
 
@@ -95,7 +95,7 @@ if ( ! class_exists( 'CSF_Field_border' ) ) {
 
           echo '<div class="csf--input">';
           echo ( ! empty( $args[$property.'_icon'] ) ) ? '<span class="csf--label csf--icon">'. $args[$property.'_icon'] .'</span>' : '';
-          echo '<input type="number" name="'. esc_attr( $this->field_name( '['. $property .']' ) ) .'" value="'. esc_attr( $value[$property] ) .'"'. $placeholder .' class="csf-input-number csf--is-unit" />';
+          echo '<input type="number" name="'. esc_attr( $this->field_name( '['. $property .']' ) ) .'" value="'. esc_attr( $value[$property] ) .'"'. $placeholder .' class="csf-input-number csf--is-unit" step="any" />';
           echo ( ! empty( $args['unit'] ) ) ? '<span class="csf--label csf--unit">'. esc_attr( $args['unit'] ) .'</span>' : '';
           echo '</div>';
 

@@ -3,7 +3,7 @@
 /**
  * Register all actions and filters for the plugin
  *
- * @link       https://boomdeves.com/product/ts-wordpress-coming-soon
+ * @link       https://boomdeves.com/product/csts-coming-soon
  * @since      1.0.0
  *
  * @package    Csts
@@ -19,7 +19,7 @@
  *
  * @package    Csts
  * @subpackage Csts/includes
- * @author     BoomDeves <contact@tasrpistiudio.com>
+ * @author     BoomDeves <contact@boomdevs.com>
  */
 class Csts_Loader {
 

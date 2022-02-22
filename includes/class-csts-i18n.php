@@ -6,7 +6,7 @@
  * Loads and defines the internationalization files for this plugin
  * so that it is ready for translation.
  *
- * @link       https://boomdeves.com/product/ts-wordpress-coming-soon
+ * @link       https://boomdeves.com/product/csts-coming-soon
  * @since      1.0.0
  *
  * @package    Csts
@@ -22,7 +22,7 @@
  * @since      1.0.0
  * @package    Csts
  * @subpackage Csts/includes
- * @author     BoomDeves <contact@tasrpistiudio.com>
+ * @author     BoomDeves <contact@boomdevs.com>
  */
 class Csts_i18n {
 

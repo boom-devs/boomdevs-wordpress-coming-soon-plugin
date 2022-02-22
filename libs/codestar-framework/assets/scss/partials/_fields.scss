@@ -252,8 +252,8 @@
   }
 
   .csf--icon + input{
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
   }
 
   .csf--unit{
@@ -262,8 +262,8 @@
   }
 
   .csf--is-unit{
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
   }
 }
 
@@ -282,7 +282,7 @@
     float: left;
     cursor: pointer;
     padding: 7px 14px;
-    min-width: 40px;
+    min-width: 16px;
     text-align: center;
     color: #555;
     border: 1px solid #cccccc;
@@ -612,13 +612,39 @@
 }
 
 /**
- * 03. 13. Field: gallery
+ * 03. 13. Field: datetime
  */
-.csf-field-gallery{
+.csf-field-datetime{
 
   input{
-    display: none;
+    margin: 0;
   }
+
+  .csf--to{
+    margin-left: 7px;
+  }
+}
+
+.csf-flatpickr{
+
+  select,
+  input{
+    min-height: auto;
+
+    &:focus{
+      box-shadow: none;
+    }
+  }
+
+  &.open{
+    z-index: 9999999 !important;
+  }
+}
+
+/**
+ * 03. 14. Field: gallery
+ */
+.csf-field-gallery{
 
   ul{
     margin: 0;
@@ -650,7 +676,7 @@
 }
 
 /**
- * 03. 14. Field: group
+ * 03. 15. Field: group
  */
 .csf-field-group{
 
@@ -776,26 +802,30 @@
 }
 
 /**
- * 03. 15. Field: icon
+ * 03. 16. Field: icon
  */
 .csf-field-icon{
-
-  input{
-    display: none;
-  }
 
   .button{
     margin-right: 5px;
   }
 
+  .csf-icon-select{
+    display: flex;
+  }
+
+  .csf-icon-preview:not(.hidden){
+    display: flex;
+  }
+
   .csf-icon-preview{
 
     i{
-      display: inline-block;
-      font-size: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 30px;
-      height: 28px;
-      line-height: 28px;
+      font-size: 14px;
       margin-right: 5px;
       text-align: center;
       vertical-align: top;
@@ -809,7 +839,7 @@
 }
 
 /**
- * 03. 16. Field: image_select
+ * 03. 17. Field: image_select
  */
 .csf-field-image_select{
 
@@ -874,7 +904,7 @@
 }
 
 /**
- * 03. 17. Field: link_color
+ * 03. 18. Field: link_color
  */
 .csf-field-link_color{
 
@@ -891,7 +921,7 @@
 }
 
 /**
- * 03. 18. Field: map
+ * 03. 19. Field: map
  */
 .csf-field-map{
 
@@ -951,7 +981,7 @@
 
 
 /**
- * 03. 19. Field: media
+ * 03. 20. Field: media
  */
 .csf-field-media{
 
@@ -975,36 +1005,11 @@
 
   .csf--preview{
     position: relative;
-
-    .fa-times{
-      position: absolute;
-      z-index: 1;
-      right: 4px;
-      top: 4px;
-      font-size: 14px;
-      width: 22px;
-      height: 22px;
-      line-height: 22px;
-      text-align: center;
-      text-decoration: none;
-      color: #fff;
-      background-color: #dd3333;
-      opacity: 0.8;
-      transition: all .2s;
-
-      &:hover{
-        opacity: 1;
-      }
-
-      &:focus{
-        box-shadow: none;
-      }
-    }
   }
 }
 
 /**
- * 03. 20. Field: palette
+ * 03. 21. Field: palette
  */
 .csf-field-palette{
 
@@ -1063,7 +1068,7 @@
 }
 
 /**
- * 03. 21. Field: repeater
+ * 03. 22. Field: repeater
  */
 .csf-field-repeater{
 
@@ -1157,7 +1162,7 @@
 }
 
 /**
- * 03. 22. Field: select
+ * 03. 23. Field: select
  */
 .csf-field-select{
 
@@ -1173,10 +1178,14 @@
     max-width: 100%;
     margin: 0;
   }
+
+  .csf-hide-select{
+    display: none !important;
+  }
 }
 
 /**
- * 03. 23. Field: slider
+ * 03. 24. Field: slider
  */
 .csf-field-slider{
 
@@ -1217,8 +1226,8 @@
   }
 
   .csf--is-unit{
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
   }
 
   .ui-slider{
@@ -1256,7 +1265,7 @@
 }
 
 /**
- * 03. 24. Field: sortable
+ * 03. 25. Field: sortable
  */
 .csf-field-sortable{
 
@@ -1337,7 +1346,7 @@
 }
 
 /**
- * 03. 25. Field: sorter
+ * 03. 26. Field: sorter
  */
 .csf-field-sorter{
 
@@ -1414,7 +1423,7 @@
 }
 
 /**
- * 03. 26. Field: spinner
+ * 03. 27. Field: spinner
  */
 .csf-field-spinner{
 
@@ -1422,49 +1431,96 @@
     display: flex;
   }
 
+  .ui-widget{
+    font-family: inherit;
+  }
+
   .ui-spinner{
     display: flex;
-  }
+    align-items: stretch;
+    overflow: unset;
+    border: none;
+    background: none;
+    border-radius: 0;
 
-  .ui-button-text-only{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    min-width: 20px;
-    padding: 0 4px;
-    color: #555;
-    border: 1px solid #7e8993;
-    background-color: #f5f5f5;
-  }
-
-  .ui-button{
-    cursor: pointer;
-
-    &:hover{
-      background-color: #e7e7e7;
+    .ui-button{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      min-width: 20px;
+      padding: 0 4px;
+      margin: 0;
+      color: #555;
+      background-color: #f5f5f5;
+      border: 1px solid #7e8993;
     }
 
-    &:active{
-      background-color: #ddd;
+    .ui-spinner-button{
+      position: relative;
+      cursor: pointer;
+      height: auto;
+
+      &:hover{
+        background-color: #e7e7e7;
+      }
+
+      &:active{
+        background-color: #ddd;
+      }
+
+      &:before{
+        font-family: "Font Awesome 5 Pro", "Font Awesome 5 Free", "FontAwesome";
+        font-weight: 900;
+        font-size: 14px;
+        line-height: 14px;
+      }
     }
 
-    &:before{
-      font-family: "Font Awesome 5 Pro", "Font Awesome 5 Free", "FontAwesome";
-      font-weight: 900;
-      font-size: 14px;
-      line-height: 14px;
+   .ui-spinner-down{
+      border-right: 0;
+      border-radius: 4px 0 0 4px;
+
+      &:before{
+        content: "\f0d9";
+      }
+    }
+
+    .ui-spinner-up{
+      border-left: 0;
+      border-radius: 0 4px 4px 0;
+
+      &:before{
+        content: "\f0da";
+      }
+    }
+
+    .csf--unit{
+      border-left: 0;
+      user-select: none;
+    }
+
+    .ui-button-text,
+    .ui-button-icon,
+    .ui-button-icon-space{
+      display: none;
+    }
+
+    input{
+      font-family: inherit;
+      font-size: inherit;
+      position: relative;
+      z-index: 1;
+      width: 50px;
+      text-align: center;
+      margin: 0;
+      padding: 0 8px;
+      border-radius: 0;
     }
   }
 
   .ui-spinner-down{
     order: 1;
-    border-right: 0;
-    border-radius: 4px 0 0 4px;
-
-    &:before{
-      content: "\f0d9";
-    }
   }
 
   .ui-spinner-input{
@@ -1473,37 +1529,15 @@
 
   .csf--unit{
     order: 3;
-    border-left: 0;
-    user-select: none;
   }
 
   .ui-spinner-up{
     order: 4;
-    border-left: 0;
-    border-radius: 0 4px 4px 0;
-
-    &:before{
-      content: "\f0da";
-    }
-  }
-
-  input{
-    position: relative;
-    z-index: 1;
-    width: 50px;
-    text-align: center;
-    margin: 0;
-    padding: 0 8px;
-    border-radius: 0;
-  }
-
-  .ui-button-text{
-    display: none;
   }
 }
 
 /**
- * 03. 27. Field: switcher
+ * 03. 28. Field: switcher
  */
 .csf-field-switcher{
 
@@ -1582,14 +1616,10 @@
     font-weight: 400;
     color: #999;
   }
-
-  input{
-    display: none;
-  }
 }
 
 /**
- * 03. 28. Field: tabbed
+ * 03. 29. Field: tabbed
  */
 .csf-field-tabbed{
 
@@ -1641,7 +1671,7 @@
 }
 
 /**
- * 03. 29. Field: text
+ * 03. 30. Field: text
  */
 .csf-field-text{
 
@@ -1653,7 +1683,7 @@
 }
 
 /**
- * 03. 30. Field: textarea
+ * 03. 31. Field: textarea
  */
 .csf-field-textarea{
 
@@ -1670,14 +1700,15 @@
 }
 
 /**
- * 03. 31. Field: typography
+ * 03. 32. Field: typography
  */
 .csf-field-typography{
 
   textarea,
   select{
-    min-width: 100%;
     margin: 0;
+    min-width: 100%;
+    max-width: 100%;
   }
 
   .csf--title{
@@ -1697,6 +1728,7 @@
 
   .csf--block{
     flex: 1;
+    max-width: 100%;
     padding-right: 6px;
     padding-bottom: 6px;
   }
@@ -1767,7 +1799,7 @@
 }
 
 /**
- * 03. 32. Field: upload
+ * 03. 33. Field: upload
  */
 .csf-field-upload{
 
@@ -1784,10 +1816,14 @@
   .button{
     margin-left: 5px;
   }
+
+  .csf--preview{
+    position: relative;
+  }
 }
 
 /**
- * 03. 33. Field: wp_editor
+ * 03. 34. Field: wp_editor
  */
 .csf-field-wp_editor{
 
@@ -1844,7 +1880,7 @@
 }
 
 /**
- * 03. 34. Field: heading
+ * 03. 35. Field: heading
  */
 .csf-field-heading{
   font-size: 1.5em;
@@ -1854,7 +1890,7 @@
 }
 
 /**
- * 03. 35. Field: subheading
+ * 03. 36. Field: subheading
  */
 .csf-field-subheading{
   font-size: 14px;
@@ -1866,7 +1902,7 @@
 }
 
 /**
- * 03. 36. Field: submessage
+ * 03. 37. Field: submessage
  */
 .csf-field-submessage{
   padding: 0 !important;
@@ -1915,7 +1951,7 @@
 }
 
 /**
- * 03. 37. Field: notice
+ * 03. 38. Field: notice
  */
 .csf-field-notice{
   background-color: #f7f7f7;
@@ -1950,7 +1986,7 @@
 }
 
 /**
- * 03. 38. Field: number
+ * 03. 39. Field: number
  */
 .csf-field-number{
 
@@ -1985,13 +2021,9 @@
 }
 
 /**
- * 03. 39. Field: link
+ * 03. 40. Field: link
  */
 .csf-field-link{
-
-  input{
-    display: none;
-  }
 
   .csf--result{
     display: inline-block;
@@ -2003,6 +2035,7 @@
     border: 1px solid #e5e5e5;
     background-color: #f5f5f5;
     border-radius: 2px;
+    world-break: break-word;
   }
 
   .csf--wrap{
@@ -2031,7 +2064,7 @@
 }
 
 /**
- * 03. 40. others
+ * 03. 41. others
  */
 .csf-help{
   cursor: help;
@@ -2047,21 +2080,67 @@
   }
 }
 
+.csf--preview{
+  max-width: 100%;
+}
+
 .csf-image-preview{
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   position: relative;
-  padding: 4px;
-  min-width: 44px;
-  min-height: 22px;
+  padding: 6px;
+  max-width: 120px;
+  max-height: 120px;
+  min-width: 40px;
+  min-height: 40px;
   margin-bottom: 10px;
+  text-align: center;
+  border-radius: 2px;
   border: 1px solid #ccc;
   background-color: #f9f9f9;
   box-shadow: 0 1px 0 rgba(0,0,0,0.08);
 
+  i{
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    right: 4px;
+    top: 4px;
+    font-size: 14px;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #dd3333;
+    opacity: 0.75;
+    border-radius: 2px;
+    transition: all .2s;
+
+    &:hover{
+      opacity: 1;
+    }
+
+    &:focus{
+      box-shadow: none;
+    }
+  }
+
+  span{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
+
   img{
-    max-height: 90px;
-    display: inline-block;
-    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
   }
 }
 

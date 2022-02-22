@@ -71,18 +71,18 @@
     <!-- End Single Blog Popup wrapper -->
     <div class="csts-page-wrapper  page-wrapper">
         <header class="header">
-            <nav class="navbar navbar-expand-lg">
+            <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container">
                     <?php if( !empty( $settings['logo']['url'] ) ) { ?>
-                        <a class="navbar-brand" href="#<?php echo esc_html(str_replace(' ', '-', strtolower($settings["home_menu_title"]))); ?>">
+                        <a class="navbar-brand" href="<?php echo site_url(); ?>">
                             <img src="<?php echo $settings['logo']['url']; ?>" alt="">
                         </a>
                     <?php }else { ?>
-                        <a class="navbar-brand" href="#<?php echo str_replace(' ', '-', strtolower($settings["home_menu_title"])); ?>">
+                        <a class="navbar-brand" href="<?php echo site_url(); ?>">
                             <img src="<?php echo esc_url(CSTS_DIR_URI . 'public/images/logo.png'); ?>" alt="logo">
                         </a>
                     <?php } ?>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                         <div class="menu-toggle">
                             <div class="hamburger">
                                 <span></span>
@@ -96,7 +96,7 @@
                         </div>
                     </button>
                     <div class="collapse navbar-collapse" id="main-nav">
-                        <ul class="navbar-nav ml-auto">
+                        <ul class="navbar-nav ms-auto">
                             <!-- Home -->
                             <?php
                                 echo '<li class="nav-item active">';

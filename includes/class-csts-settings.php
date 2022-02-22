@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
  * @since      1.0.0
  * @package    Csts
  * @subpackage Csts/includes
- * @author     BoomDeves <contact@tasrpistiudio.com>
+ * @author     BoomDeves <contact@boomdevs.com>
  */
 
 class Csts_Settings {
@@ -237,7 +237,7 @@ class Csts_Settings {
                         'type'   => 'typography',
                         'title'  => __( 'Button typography', 'csts' ),
                         'output' => array( '.csts-page-wrapper .newsletter .btn', '.csts-page-wrapper .f-s-btn, .csts-page-wrapper form input[type="submit"],
-                                                            .csts-page-wrapper form input[type="submit"]:hover', ),
+                                                            .csts-page-wrapper form input[type="submit"]:hover' ),
                     ),
                     array(
                         'id'          => 'button_bg_color',
@@ -669,7 +669,7 @@ class Csts_Settings {
                     'id'      => 'copyright_text',
                     'type'    => 'text',
                     'title'   => __( 'Copyright text', 'csts' ),
-                    'default' => '©2020 Copyright.  All rights reserved',
+                    'default' => '©2022 Copyright.  All rights reserved',
                 ),
                 array(
                     'id'      => 'footer_social_icons',

@@ -99,7 +99,6 @@
   position: relative;
   z-index: 10;
   float: left;
-  width: 225px;
 
   ul{
     clear: left;
@@ -115,7 +114,7 @@
         display: block;
         padding: 14px 12px;
         text-decoration: none;
-        transition-property: color;
+        transition-property: color, background;
         transition-duration: 0.2s;
         transition-timing-function: ease;
 
@@ -177,6 +176,26 @@
   }
 }
 
+.csf-nav-normal{
+  width: 225px;
+
+  + .csf-content{
+    margin-left: 225px;
+  }
+}
+
+.csf-nav-inline{
+  width: 100%;
+
+  ul{
+
+    li{
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+}
+
 .csf-nav-background{
   position: absolute;
   top: 0;
@@ -198,7 +217,6 @@
  */
 .csf-content{
   position: relative;
-  margin-left: 225px;
   background-color: #fff;
 }
 
@@ -359,8 +377,6 @@
 .csf-sections-reset{
   float: left;
   width: 100%;
-  position: relative;
-  z-index: 1000000;
   text-align: right;
   border-top: 1px solid #eee;
 
