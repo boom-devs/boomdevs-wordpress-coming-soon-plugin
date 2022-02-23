@@ -210,7 +210,8 @@ class Csts_Settings {
                     ),
                     array(
                         'type'    => 'heading',
-                        'content' => 'Page title typography',
+                        'content' => __( 'Page title typography', 'csts' ),
+
                     ),
                     array(
                         'id'     => 'title_typography',
@@ -220,7 +221,7 @@ class Csts_Settings {
                     ),
                     array(
                         'type'    => 'heading',
-                        'content' => 'Page content typography',
+                        'content' => __( 'Page content typography', 'csts' ),
                     ),
                     array(
                         'id'     => 'content_typography',
@@ -237,7 +238,7 @@ class Csts_Settings {
                         'type'   => 'typography',
                         'title'  => __( 'Button typography', 'csts' ),
                         'output' => array( '.csts-page-wrapper .newsletter .btn', '.csts-page-wrapper .f-s-btn, .csts-page-wrapper form input[type="submit"],
-                                                            .csts-page-wrapper form input[type="submit"]:hover' ),
+                                                            .csts-page-wrapper form input[type="submit"]:hover', ),
                     ),
                     array(
                         'id'          => 'button_bg_color',
@@ -310,26 +311,26 @@ class Csts_Settings {
              * Home page settings
              */
             CSF::createSection( $prefix, array(
-                'title'  => 'Home',
+                'title'  => __( 'Home', 'csts' ),
                 'parent' => $prefix . '_settings',
                 'fields' => array(
                     array(
                         'id'      => 'home_menu_title',
                         'type'    => 'text',
                         'title'   => __( 'Menu title', 'csts' ),
-                        'default' => 'Home',
+                        'default' => __( 'Home', 'csts' ),
                     ),
                     array(
                         'id'      => 'home_title',
                         'type'    => 'text',
                         'title'   => __( 'Page title', 'csts' ),
-                        'default' => 'Home',
+                        'default' => __( 'Home', 'csts' ),
                     ),
                     array(
                         'id'      => 'home_description',
                         'type'    => 'wp_editor',
                         'title'   => __( 'Page description', 'csts' ),
-                        'default' => "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                        'default' => __( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', 'csts' ),
                     ),
                     array(
                         'type'    => 'heading',
@@ -384,19 +385,19 @@ class Csts_Settings {
                         'id'      => 'service_menu_title',
                         'type'    => 'text',
                         'title'   => __( 'Menu title', 'csts' ),
-                        'default' => 'Service',
+                        'default' => __( 'Service', 'csts' ),
                     ),
                     array(
                         'id'      => 'service_title',
                         'type'    => 'text',
                         'title'   => __( 'Page title', 'csts' ),
-                        'default' => 'Service',
+                        'default' => __( 'Service', 'csts' ),
                     ),
                     array(
                         'id'      => 'service_description',
                         'type'    => 'wp_editor',
                         'title'   => __( 'Page description', 'csts' ),
-                        'default' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s.',
+                        'default' => __( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s.', 'csts' ),
                     ),
                     array(
                         'id'     => 'service_box',
@@ -539,7 +540,8 @@ class Csts_Settings {
                         'id'      => 'blog_description',
                         'type'    => 'wp_editor',
                         'title'   => __( 'Page description', 'csts' ),
-                        'default' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
+                        'default' => __( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s', 'csts' ),
+
                     ),
                     array(
                         'id'          => 'blog_category',
@@ -643,19 +645,19 @@ class Csts_Settings {
                         'id'      => 'contact_menu_title',
                         'type'    => 'text',
                         'title'   => __( 'Menu title', 'csts' ),
-                        'default' => 'Contact',
+                        'default' => __( 'Contact', 'csts' ),
                     ),
                     array(
                         'id'      => 'contact_title',
                         'type'    => 'text',
                         'title'   => __( 'Page title', 'csts' ),
-                        'default' => 'Contact',
+                        'default' => __( 'Contact', 'csts' ),
                     ),
                     array(
                         'id'      => 'contact_description',
                         'type'    => 'wp_editor',
                         'title'   => __( 'Page description', 'csts' ),
-                        'default' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s.',
+                        'default' => __( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s.', 'csts' ),
                     ),
                 ),
             ) );
@@ -669,7 +671,7 @@ class Csts_Settings {
                     'id'      => 'copyright_text',
                     'type'    => 'text',
                     'title'   => __( 'Copyright text', 'csts' ),
-                    'default' => '©2022 Copyright.  All rights reserved',
+                    'default' => __( '©2022 Copyright.  All rights reserved', 'csts' ),
                 ),
                 array(
                     'id'      => 'footer_social_icons',
@@ -679,12 +681,12 @@ class Csts_Settings {
                         array(
                             'id'    => 'social_icon',
                             'type'  => 'icon',
-                            'title' => 'Icon',
+                            'title' => __( 'Icon', 'csts' ),
                         ),
                         array(
                             'id'    => 'social_icon_link',
                             'type'  => 'text',
-                            'title' => 'Link',
+                            'title' => __( 'Link', 'csts' ),
                         ),
                     ),
                     'default' => array(
@@ -704,7 +706,7 @@ class Csts_Settings {
                 ),
                 array(
                     'type'    => 'heading',
-                    'content' => 'Footer typography',
+                    'content' => __( 'Footer typography', 'csts' ),
                 ),
                 array(
                     'id'     => 'footer_typography',
