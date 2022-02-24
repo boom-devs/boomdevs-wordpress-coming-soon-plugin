@@ -1,5 +1,5 @@
 === BoomDevs WordPress Coming Soon Plugin ===
-Contributors: (boomdevs, robin-islam, noruzzaman,)
+Contributors: boomdevs, robin-islam, noruzzaman
 Tags: coming-soon-plugin, coming-soon-template, under-construction-mode
 Requires at least: 4.0
 Tested up to: 5.9
@@ -29,13 +29,12 @@ The best free WordPress coming soon plugin with unlimited customizations, additi
 
 Made with ❣️ By [BoomDeves](https://boomdeves.com/)
 
-If you really like this plugin please don't forget to give us your rating. Thanks so much! ⭐⭐⭐⭐⭐
-
-== Screenshots ==
+**If you really like this plugin please don't forget to give us your rating. Thanks so much!** ⭐⭐⭐⭐⭐
 
 == Support ==
+If you have any questions, please email us at **[contact@boomdevs.com](mailto:contact@boomdevs.com)**
 
-If you have any questions, please email us at (contact@boomdevs.com)
+== Screenshots ==
 
 == Installation ==
 
