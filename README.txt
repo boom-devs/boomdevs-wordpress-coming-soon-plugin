@@ -1,5 +1,5 @@
 === Coming Soon by BoomDeves ===
-Contributors: (BoomDeves, robin-islam, )
+Contributors: (BoomDeves, robin-islam, noruzzaman,)
 Tags: coming-soon-plugin, coming-soon-template, under-construction-mode
 Requires at least: 4.0
 Tested up to: 5.9
