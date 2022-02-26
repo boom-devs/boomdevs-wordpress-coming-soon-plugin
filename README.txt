@@ -46,7 +46,7 @@ There is no prerequisites for installing **Coming Soon by BoomDeves** plugin. Yo
 3.  Install and activate the plugin, that's it!
 
 = Manual Installation =
-1.  Download [Coming Soon by BoomDeves](https://downloads.wordpress.org/plugin/csts-coming-soon.zip "Coming Soon by BoomDeves") plugin.
-2.  Extract the `csts-coming-soon.zip` file. You'll get plugin files inside `csts-coming-soon` directory.
-3.  Upload the plugin files to the `/wp-content/plugins/csts-coming-soon` directory.
+1.  Download [Coming Soon by BoomDeves](https://downloads.wordpress.org/plugin/coming-soon-by-boomdevs.zip "Coming Soon by BoomDeves") plugin.
+2.  Extract the `coming-soon-by-boomdevs.zip` file. You'll get plugin files inside `coming-soon-by-boomdevs` directory.
+3.  Upload the plugin files to the `/wp-content/plugins/coming-soon-by-boomdevs` directory.
 4.  Activate the plugin through the 'Plugins' screen form your WordPress website dashboard.
