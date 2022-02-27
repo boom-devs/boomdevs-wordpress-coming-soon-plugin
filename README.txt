@@ -23,8 +23,7 @@ Didn’t like the Default color or font? That’s not a big deal though, you can
 
 == Customization panel with live preview ==
 Hard to customize blindly right?
-
- - BoomDevs WordPress Coming Soon plugin settings panel ships with WordPress Theme Customizer integration that lets you customize every part of our template with live preview. You can see exactly how it would look like for the visitors before you publish.
+BoomDevs WordPress Coming Soon plugin settings panel ships with WordPress Theme Customizer integration that lets you customize every part of our template with live preview. You can see exactly how it would look like for the visitors before you publish.
 
 == Integration with any email subscription service provider ==
 Wanna build your email list before launching the site? You can do that too. You can easily Ingrate with any email subscription service provider Like Mailchimp, MailerLite, Sender, etc.
@@ -89,7 +88,7 @@ If you have any questions, please email us at **[contact@boomdevs.com](mailto:co
 
 == Installation ==
 
-There is no prerequisites for installing **Coming Soon by BoomDeves** plugin. You can follow the steps below to complete the installation.
+There is no prerequisites for installing **Coming Soon by BoomDeves plugin**. You can follow the steps below to complete the installation.
 
 = Automatic Installation =
 1.  Go to `Plugins > Add New` screen from your WordPress website dashboard.
