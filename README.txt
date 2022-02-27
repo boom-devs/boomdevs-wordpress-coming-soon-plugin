@@ -31,6 +31,15 @@ Made with ❣️ By [BoomDeves](https://boomdeves.com/)
 
 **If you really like this plugin please don't forget to give us your rating. Thanks so much!** ⭐⭐⭐⭐⭐
 
+## Privacy Policy
+BoomDevs WordPress Coming Soon Plugin collects some telemetry data upon user's confirmation. This helps us to troubleshoot problems faster & make product improvements.
+
+BoomDevs **does not gather any data by default.** The tracking SDK only starts gathering basic telemetry data **when a user allows it via the admin notice**. We collect the data to ensure a great user experience for all our users.
+
+BoomDevs tracking SDK **DOES NOT IMMEDIATELY** start gathering data, **without confirmation from users in any case.**
+
+Learn more about how [BoomDevs collects and uses this data](https://appsero.com/privacy-policy/).
+
 == Support ==
 If you have any questions, please email us at **[contact@boomdevs.com](mailto:contact@boomdevs.com)**
 

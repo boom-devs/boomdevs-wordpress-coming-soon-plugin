@@ -30,6 +30,8 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+require __DIR__ . '/vendor/autoload.php';
+
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 include_once( ABSPATH . 'wp-includes/pluggable.php' );
 
@@ -41,6 +43,26 @@ define('CSTS_DIR_URI', plugin_dir_url(__FILE__));
 define( 'CSTS_NAME', 'csts' );
 define( 'CSTS_FULL_NAME', 'Coming Soon by BoomDevs' );
 define( 'CSTS_VERSION', '1.0.0' );
+
+/**
+ * Initialize the plugin tracker
+ *
+ * @return void
+ */
+function appsero_init_tracker_coming_soon_by_boomdevs() {
+
+    if ( ! class_exists( 'Appsero\Client' ) ) {
+      require_once __DIR__ . '/appsero/src/Client.php';
+    }
+
+    $client = new Appsero\Client( '170e322b-7626-4792-97f1-b3d42b39496c', 'BoomDevs WordPress Coming Soon Plugin', __FILE__ );
+
+    // Active insights
+    $client->insights()->init();
+
+}
+
+appsero_init_tracker_coming_soon_by_boomdevs();
 
 /**
  * The code that runs during plugin activation.

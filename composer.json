@@ -1,0 +1,13 @@
+{
+    "name": "r0b1n1sl4m/boomdevs-wordpress-coming-soon-plugin",
+    "type": "project",
+    "authors": [
+        {
+            "name": "BoomDevs",
+            "email": "contact@boomdevs.com"
+        }
+    ],
+    "require": {
+        "appsero/client": "^1.2"
+    }
+}
