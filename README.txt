@@ -1,5 +1,5 @@
 === BoomDevs WordPress Coming Soon Plugin ===
-Contributors: boomdevs, robin-islam, noruzzaman
+Contributors: boomdevs, robin-islam, noruzzaman, enamulwp
 Tags: coming-soon-plugin, coming-soon-template, under-construction-mode
 Requires at least: 5.0
 Tested up to: 5.9
