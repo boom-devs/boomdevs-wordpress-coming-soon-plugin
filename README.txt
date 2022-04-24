@@ -31,7 +31,7 @@ The best free WordPress coming soon plugin with unlimited customizations, additi
 
 [Submit Ticket](https://boomdevs.com/forums/forum/boomdevs-wordpress-coming-soon-plugin/)
 
-Made with ❣️ By [BoomDeves](https://boomdeves.com/)
+Made with ❣️ By [BoomDevs](https://boomdevs.com/)
 
 **If you really like this plugin please don't forget to give us your rating. Thanks so much!** ⭐⭐⭐⭐⭐
 
