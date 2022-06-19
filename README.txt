@@ -2,7 +2,7 @@
 Contributors: boomdevs, robin-islam, noruzzaman, enamulwp
 Tags: coming-soon-plugin, coming-soon-template, under-construction-mode
 Requires at least: 5.0
-Tested up to: 5.9
+Tested up to: 6.0
 Stable tag: 1.0.1
 Requires PHP: 7.0
 License: GPLv2 or later
