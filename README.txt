@@ -1,5 +1,5 @@
 === BoomDevs WordPress Coming Soon Plugin ===
-Contributors: boomdevs, robin-islam, noruzzaman, enamulwp
+Contributors: boomdevs, robin-islam
 Tags: coming-soon-plugin, coming-soon-template, under-construction-mode
 Requires at least: 5.0
 Tested up to: 6.2
@@ -34,6 +34,23 @@ The best free WordPress coming soon plugin with unlimited customizations, additi
 Made with ❣️ By [BoomDevs](https://boomdevs.com/)
 
 **If you really like this plugin please don't forget to give us your rating. Thanks so much!** ⭐⭐⭐⭐⭐
+
+### 🚀 Check out our Other Products 🚀
+
+Here are some of our amazing plugins that you can use to boost your WordPress website:
+
+[📑 TOP Table Of Contents 📑](https://wordpress.org/plugins/top-table-of-contents/): Confirms a well-crafted table of contents to engage readers and search engines. Easily organize your content and make it more accessible.
+
+[📱 WP Mobile Bottom Menu 📱](https://wordpress.org/plugins/mobile-bottom-menu-for-wp/): Streamline navigation for mobile users, making it easier for them to explore your website on their phones or tablets.
+
+[🤖 WP AI CoPilot 🤖](https://wordpress.org/plugins/ai-co-pilot-for-wp/): Create content like a pro with the best AI content writer plugin for WordPress. Let AI assist you in crafting engaging and high-quality articles effortlessly.
+
+[🎖️ Product Badge Manager For WooCommerce 🎖️](https://wordpress.org/plugins/product-badge-manager-for-woocommerce/): Boost sales by attracting customers with eye-catching promotional product badges. Encourage them to explore and make purchases with confidence.
+
+[👥 Tribute Testimonials – WordPress Testimonial Grid/Slider 👥](https://wordpress.org/plugins/tribute-testimonial-gridslider/): Build any grid or slider layout using the drag-and-drop Testimonial Builder. Showcase positive feedback from satisfied customers and build trust with your audience.
+
+[🔳 Unlimited Elementor Inner Sections 🔳](https://wordpress.org/plugins/unlimited-elementor-inner-sections-by-boomdevs/): Unlock the full potential of Elementor with unlimited inner sections. Now, you can create and customize as many inner sections as you desire, giving you complete design freedom.
+
 
 ## Privacy Policy
 
