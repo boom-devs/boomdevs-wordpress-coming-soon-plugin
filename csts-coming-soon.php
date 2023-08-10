@@ -16,7 +16,7 @@
  * Plugin Name:       BoomDevs WordPress Coming Soon Plugin
  * Plugin URI:        https://boomdevs.com/product/boomdevs-wordpress-coming-soon-plugin/
  * Description:       The best WordPress coming soon plugin that offers unlimited customizations, email marketing software integrations, additional pages, with some sexy designs.
- * Version:           1.0.1
+ * Version:           1.0.2
  * Author:            BoomDevs
  * Author URI:        https://boomdevs.com
  * License:           GPL-2.0+
@@ -42,7 +42,7 @@ define( 'CSTS_DIR', plugin_dir_path( __FILE__ ) );
 define('CSTS_DIR_URI', plugin_dir_url(__FILE__));  
 define( 'CSTS_NAME', 'csts' );
 define( 'CSTS_FULL_NAME', 'Coming Soon by BoomDevs' );
-define( 'CSTS_VERSION', '1.0.1' );
+define( 'CSTS_VERSION', '1.0.2' );
 
 /**
  * Initialize the plugin tracker

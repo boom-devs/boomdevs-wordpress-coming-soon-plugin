@@ -2,8 +2,8 @@
 Contributors: boomdevs, robin-islam
 Tags: coming-soon-plugin, coming-soon-template, under-construction-mode
 Requires at least: 5.0
-Tested up to: 6.2
-Stable tag: 1.0.1
+Tested up to: 6.3
+Stable tag: 1.0.2
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -105,3 +105,6 @@ There is no prerequisites for installing **Coming Soon by BoomDeves plugin**. Yo
 
 = 1.0.1 =
 * Added: user analytic
+
+= 1.0.2 =
+Update: Added support for WordPress 6.3
