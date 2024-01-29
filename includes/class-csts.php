@@ -71,7 +71,7 @@ class Csts {
         if ( defined( 'CSTS_VERSION' ) ) {
             $this->version = CSTS_VERSION;
         } else {
-            $this->version = '1.0.2';
+            $this->version = '1.0.3';
         }
 
         if ( defined( 'CSTS_FULL_NAME' ) ) {
