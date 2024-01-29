@@ -367,6 +367,14 @@
   .csf-checker{
     cursor: pointer;
   }
+
+  .csf-checkbox-all{
+    user-select: none;
+    cursor: pointer;
+    margin-top: 5px;
+    font-weight: 500;
+    text-decoration: none;
+  }
 }
 
 /**
@@ -806,12 +814,9 @@
  */
 .csf-field-icon{
 
-  .button{
-    margin-right: 5px;
-  }
-
   .csf-icon-select{
     display: flex;
+    grid-gap: 5px;
   }
 
   .csf-icon-preview:not(.hidden){
@@ -826,7 +831,6 @@
       align-items: center;
       width: 30px;
       font-size: 14px;
-      margin-right: 5px;
       text-align: center;
       vertical-align: top;
       color: #555;
