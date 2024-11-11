@@ -25,7 +25,7 @@
  * @since      1.0.0
  * @package    Csts
  * @subpackage Csts/includes
- * @author     BoomDeves <contact@boomdevs.com>
+ * @author     BoomDeves <contact@wpmessiah.com>
  */
 class Csts {
 
@@ -71,7 +71,7 @@ class Csts {
         if ( defined( 'CSTS_VERSION' ) ) {
             $this->version = CSTS_VERSION;
         } else {
-            $this->version = '1.0.3';
+            $this->version = '1.0.4';
         }
 
         if ( defined( 'CSTS_FULL_NAME' ) ) {

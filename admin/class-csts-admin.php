@@ -18,7 +18,7 @@
  *
  * @package    Csts
  * @subpackage Csts/admin
- * @author     BoomDeves <contact@boomdevs.com>
+ * @author     BoomDeves <contact@wpmessiah.com>
  */
 class Csts_Admin {
 

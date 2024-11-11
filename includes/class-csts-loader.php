@@ -19,7 +19,7 @@
  *
  * @package    Csts
  * @subpackage Csts/includes
- * @author     BoomDeves <contact@boomdevs.com>
+ * @author     BoomDeves <contact@wpmessiah.com>
  */
 class Csts_Loader {
 

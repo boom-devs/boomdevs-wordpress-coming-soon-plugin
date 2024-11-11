@@ -8,17 +8,17 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              https://boomdevs.com/product/boomdevs-wordpress-coming-soon-plugin/
+ * @link              https://wpmessiah.com/product/boomdevs-wordpress-coming-soon-plugin/
  * @since             1.0.1
  * @package           Csts
  *
  * @wordpress-plugin
  * Plugin Name:       BoomDevs WordPress Coming Soon Plugin
- * Plugin URI:        https://boomdevs.com/product/boomdevs-wordpress-coming-soon-plugin/
+ * Plugin URI:        https://wpmessiah.com/products/boomdevs-wordpress-coming-soon-plugin/
  * Description:       The best WordPress coming soon plugin that offers unlimited customizations, email marketing software integrations, additional pages, with some sexy designs.
- * Version:           1.0.3
- * Author:            BoomDevs
- * Author URI:        https://boomdevs.com
+ * Version:           1.0.4
+ * Author:            WP Messiah
+ * Author URI:        https://wpmessiah.com
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       csts
@@ -42,7 +42,7 @@ define( 'CSTS_DIR', plugin_dir_path( __FILE__ ) );
 define('CSTS_DIR_URI', plugin_dir_url(__FILE__));  
 define( 'CSTS_NAME', 'csts' );
 define( 'CSTS_FULL_NAME', 'Coming Soon by BoomDevs' );
-define( 'CSTS_VERSION', '1.0.3' );
+define( 'CSTS_VERSION', '1.0.4' );
 
 /**
  * Initialize the plugin tracker

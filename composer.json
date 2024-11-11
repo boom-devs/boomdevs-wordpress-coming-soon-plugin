@@ -4,10 +4,10 @@
     "authors": [
         {
             "name": "BoomDevs",
-            "email": "contact@boomdevs.com"
+            "email": "contact@wpmessiah.com"
         }
     ],
     "require": {
-        "appsero/client": "^1.2"
+        "appsero/client": "^2.0"
     }
 }

@@ -18,7 +18,7 @@
  *
  * @package    Csts
  * @subpackage Csts/public
- * @author     BoomDeves <contact@boomdevs.com>
+ * @author     BoomDeves <contact@wpmessiah.com>
  */
 class Csts_Public {
 
@@ -185,7 +185,7 @@ class Csts_Public {
                     }
 
                     if ( shouldRedirect ) {
-                        window.location.href = "https://boomdevs.com/product/boomdevs-wordpress-coming-soon#white-label";
+                        window.location.href = "https://wpmessiah.com/product/boomdevs-wordpress-coming-soon#white-label";
                     }
                 });
             </script>';

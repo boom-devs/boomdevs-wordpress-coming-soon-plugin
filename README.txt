@@ -1,9 +1,9 @@
 === BoomDevs WordPress Coming Soon Plugin ===
-Contributors: boomdevs, robin-islam
+Contributors: boomdevs, wpmessiah
 Tags: coming-soon-plugin, coming-soon-template, under-construction-mode
 Requires at least: 5.0
-Tested up to: 6.4
-Stable tag: 1.0.3
+Tested up to: 6.6.2
+Stable tag: 1.0.4
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -25,13 +25,11 @@ The best free WordPress coming soon plugin with unlimited customizations, additi
  - Dedicated blog page.
  - Contact page with any WordPress Contact form support.
 
-[View Demo](https://demo.boomdevs.com/boomdevs-wordpress-coming-soon-plugin/)
+[Read Documentation](https://wpmessiah.com/docs/boomdevs-wordpress-coming-soon-plugin/)
 
-[Read Documentation](https://boomdevs.com/docs/boomdevs-wordpress-coming-soon-plugin/)
+[Submit Ticket](https://wpmessiah.com/forums/forum/boomdevs-wordpress-coming-soon-plugin/)
 
-[Submit Ticket](https://boomdevs.com/forums/forum/boomdevs-wordpress-coming-soon-plugin/)
-
-Made with ❣️ By [BoomDevs](https://boomdevs.com/)
+Made with ❣️ By [WP Messiah](https://wpmessiah.com/)
 
 **If you really like this plugin please don't forget to give us your rating. Thanks so much!** ⭐⭐⭐⭐⭐
 
@@ -52,19 +50,9 @@ Here are some of our amazing plugins that you can use to boost your WordPress we
 [🔳 Unlimited Elementor Inner Sections 🔳](https://wordpress.org/plugins/unlimited-elementor-inner-sections-by-boomdevs/): Unlock the full potential of Elementor with unlimited inner sections. Now, you can create and customize as many inner sections as you desire, giving you complete design freedom.
 
 
-## Privacy Policy
-
-BoomDevs WordPress Coming Soon Plugin collects some telemetry data upon user's confirmation. This helps us to troubleshoot problems faster & make product improvements.
-
-BoomDevs **does not gather any data by default.** The tracking SDK only starts gathering basic telemetry data **when a user allows it via the admin notice**. We collect the data to ensure a great user experience for all our users.
-
-BoomDevs tracking SDK **DOES NOT IMMEDIATELY** start gathering data, **without confirmation from users in any case.**
-
-Learn more about how [BoomDevs collects and uses this data](https://appsero.com/privacy-policy/).
-
 == Support ==
 
-If you have any questions, please email us at **[contact@boomdevs.com](mailto:contact@boomdevs.com)**
+If you have any questions, please email us at **[contact@wpmessiah.com](mailto:contact@wpmessiah.com)**
 
 == Screenshots ==
 
@@ -72,11 +60,11 @@ If you have any questions, please email us at **[contact@boomdevs.com](mailto:co
 
 = Is it completely free? =
 
-Yes, it’s completely free. But on the free version, there will be a footer credit of BoomDevs. You will not able to remove it. To remove credit as a Courtesy you have to go for White Label.
+Yes, it’s completely free. But on the free version, there will be a footer credit of WP Messiah. You will not able to remove it. To remove credit as a Courtesy you have to go for White Label.
 
 = Can I remove credit from the footer? =
 
-Yes. If you purchase BoomDevs WordPress Coming Soon plugin then you can remove credit from the footer and can be able to put whatever you want on the Footer section.
+Yes. If you purchase WP Messiah WordPress Coming Soon plugin then you can remove credit from the footer and can be able to put whatever you want on the Footer section.
 
 = Can I get premium support from you guys? =
 
@@ -111,3 +99,6 @@ Update: Added support for WordPress 6.3
 
 = 1.0.3 =
 Update: Added support for WordPress 6.4
+
+= 1.0.4 =
+Update: Added support for WordPress 6.6.2
